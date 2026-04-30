@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+.uv-cache/
+.pip-cache/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+*.egg
+.coverage
+htmlcov/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Project ephemeral
+artifacts/
+!artifacts/.gitkeep
+.agent/notes.md
+.agent/checkpoint.md
+*.log
+.envrc
+.env
+
+# Lean (when added)
+.lake/
+build/
+
+# Data: keep raw search outputs but ignore large caches
+data/cache/
+data/*.parquet
+data/*.feather

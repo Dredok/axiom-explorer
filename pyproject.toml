@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "axiom-explorer"
+version = "0.1.0"
+description = "Autonomous deductive exploration over modern axiomatic seeds with tooling-assisted relevance filtering."
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Javier Vera", email = "dredok@loneorc.com" }]
+dependencies = [
+  "httpx>=0.27",
+  "feedparser>=6.0",     # arXiv API (Atom feed)
+  "pyyaml>=6.0",
+  "rich>=13.7",          # pretty CLI output
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+compute = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "sympy>=1.12",
+  "networkx>=3.2",
+  "matplotlib>=3.8",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+  "mypy>=1.10",
+]
+all = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "sympy>=1.12",
+  "networkx>=3.2",
+  "matplotlib>=3.8",
+  "pytest>=8.0",
+  "ruff>=0.5",
+  "mypy>=1.10",
+]
+
+[project.scripts]
+axiom-explorer = "axiom_explorer.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/axiom_explorer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+ignore_missing_imports = true

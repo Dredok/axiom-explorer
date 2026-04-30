@@ -1,0 +1,54 @@
+include:
+  - project: 'vera-studio/ci-templates'
+    ref: release/1.13
+    file: 'common.yml'
+  - project: 'vera-studio/ci-templates'
+    ref: release/1.13
+    file: 'python-jobs.yml'
+  - project: 'vera-studio/ci-templates'
+    ref: release/1.13
+    file: 'code-review.yml'
+
+stages:
+  - review
+  - lint
+  - test
+  - research
+
+default:
+  tags:
+    - docker-host
+
+ruff:
+  extends: .lint-ruff
+  stage: lint
+
+pytest:
+  extends: .python-base
+  stage: test
+  before_script:
+    - !reference [.python-base, before_script]
+    - uv pip install pytest
+  script:
+    - python -m pytest -q
+    - python -m compileall src
+
+# Manual job to run a research phase end-to-end and persist outputs as artifacts.
+# Trigger via pipeline variable: RESEARCH_PHASE=phase0 (or phase1, etc.)
+research:phase:
+  extends: .python-base
+  stage: research
+  rules:
+    - if: $RESEARCH_PHASE
+      when: manual
+  before_script:
+    - !reference [.python-base, before_script]
+    - uv pip install -e ".[dev]"
+  script:
+    - python -m axiom_explorer.run_phase "$RESEARCH_PHASE"
+  artifacts:
+    paths:
+      - "research/${RESEARCH_PHASE}*/output/"
+      - "data/${RESEARCH_PHASE}*/"
+    expire_in: 30 days
+    when: always
