@@ -1,0 +1,157 @@
+{
+  "query": "au:\"Scholze\" AND au:\"Bhatt\" AND cat:math.*",
+  "label": "co-author:Scholze+Bhatt(math)",
+  "timestamp_utc": "2026-04-30T23:47:55Z",
+  "total_results": 8,
+  "fetched": 8,
+  "papers": [
+    {
+      "arxiv_id": "1905.08229v4",
+      "title": "Prisms and Prismatic Cohomology",
+      "authors": [
+        "Bhargav Bhatt",
+        "Peter Scholze"
+      ],
+      "summary": "We introduce the notion of a prism, which may be regarded as a \"deperfection\" of the notion of a perfectoid ring. Using prisms, we attach a ringed site -- the prismatic site -- to a $p$-adic formal scheme. The resulting cohomology theory specializes to (and often refines) most known integral $p$-adic cohomology theories.   As applications, we prove an improved version of the almost purity theorem allowing ramification along arbitrary closed subsets (without using adic spaces), give a co-ordinate free description of $q$-de Rham cohomology as conjectured by the second author, and settle a vanishing conjecture for the $p$-adic Tate twists $\\mathbf{Z}_p(n)$ introduced in previous joint work with Morrow.",
+      "published": "2019-05-20T17:33:23Z",
+      "updated": "2022-01-12T13:58:54Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1905.08229v4",
+      "abs_url": "https://arxiv.org/abs/1905.08229v4"
+    },
+    {
+      "arxiv_id": "2106.14735v2",
+      "title": "Prismatic $F$-crystals and crystalline Galois representations",
+      "authors": [
+        "Bhargav Bhatt",
+        "Peter Scholze"
+      ],
+      "summary": "Let $K$ be a complete discretely valued field of mixed characteristic $(0,p)$ with perfect residue field. We prove that the category of prismatic $F$-crystals on $\\mathcal O_K$ is equivalent to the category of lattices in crystalline $G_K$-representations.",
+      "published": "2021-06-28T14:07:25Z",
+      "updated": "2023-09-12T13:57:16Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.AG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2106.14735v2",
+      "abs_url": "https://arxiv.org/abs/2106.14735v2"
+    },
+    {
+      "arxiv_id": "1309.1198v2",
+      "title": "The pro-étale topology for schemes",
+      "authors": [
+        "Bhargav Bhatt",
+        "Peter Scholze"
+      ],
+      "summary": "We give a new definition of the derived category of constructible $\\ell$-adic sheaves on a scheme, which is as simple as the geometric intuition behind them. Moreover, we define a refined fundamental group of schemes, which is large enough to see all lisse $\\ell$-adic sheaves, even on non-normal schemes. To accomplish these tasks, we define and study the pro-étale topology, which is a Grothendieck topology on schemes that is closely related to the étale topology, and yet better suited for infinite constructions typically encountered in $\\ell$-adic cohomology. An essential foundational result is that this site is locally contractible in a well-defined sense.",
+      "published": "2013-09-04T22:22:25Z",
+      "updated": "2014-12-17T15:10:47Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.AC"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1309.1198v2",
+      "abs_url": "https://arxiv.org/abs/1309.1198v2"
+    },
+    {
+      "arxiv_id": "1507.06490v3",
+      "title": "Projectivity of the Witt vector affine Grassmannian",
+      "authors": [
+        "Bhargav Bhatt",
+        "Peter Scholze"
+      ],
+      "summary": "We prove that the Witt vector affine Grassmannian, which parametrizes W(k)-lattices in W(k)[1/p]^n for a perfect field k of charactristic p, is representable by an ind-(perfect scheme) over k. This improves on previous results of Zhu by constructing a natural ample line bundle. Along the way, we establish various foundational results on perfect schemes, notably h-descent results for vector bundles.",
+      "published": "2015-07-23T13:38:54Z",
+      "updated": "2017-02-21T14:14:42Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1507.06490v3",
+      "abs_url": "https://arxiv.org/abs/1507.06490v3"
+    },
+    {
+      "arxiv_id": "1702.06395v1",
+      "title": "Vanishing theorems for perverse sheaves on abelian varieties, revisited",
+      "authors": [
+        "Bhargav Bhatt",
+        "Christian Schnell",
+        "Peter Scholze"
+      ],
+      "summary": "We revisit some of the basic results of generic vanishing theory, as pioneered by Green and Lazarsfeld, in the context of constructible sheaves. Using the language of perverse sheaves, we give new proofs of some of the basic results of this theory. Our approach is topological/arithmetic, and avoids Hodge theory.",
+      "published": "2017-02-21T14:22:59Z",
+      "updated": "2017-02-21T14:22:59Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1702.06395v1",
+      "abs_url": "https://arxiv.org/abs/1702.06395v1"
+    },
+    {
+      "arxiv_id": "1602.03148v3",
+      "title": "Integral p-adic Hodge theory",
+      "authors": [
+        "Bhargav Bhatt",
+        "Matthew Morrow",
+        "Peter Scholze"
+      ],
+      "summary": "We construct a new cohomology theory for proper smooth (formal) schemes over the ring of integers of C_p. It takes values in a mixed-characteristic analogue of Dieudonne modules, which was previously defined by Fargues as a version of Breuil-Kisin modules. Notably, this cohomology theory specializes to all other known p-adic cohomology theories, such as crystalline, de Rham and etale cohomology, which allows us to prove strong integral comparison theorems.   The construction of the cohomology theory relies on Faltings's almost purity theorem, along with a certain functor $Lη$ on the derived category, defined previously by Berthelot-Ogus. On affine pieces, our cohomology theory admits a relation to the theory of de Rham-Witt complexes of Langer-Zink, and can be computed as a q-deformation of de Rham cohomology.",
+      "published": "2016-02-09T20:07:46Z",
+      "updated": "2019-01-15T12:09:01Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1602.03148v3",
+      "abs_url": "https://arxiv.org/abs/1602.03148v3"
+    },
+    {
+      "arxiv_id": "1507.08129v1",
+      "title": "Integral $p$-adic Hodge theory - announcement",
+      "authors": [
+        "Bhargav Bhatt",
+        "Matthew Morrow",
+        "Peter Scholze"
+      ],
+      "summary": "Given a proper, smooth (formal) scheme over the ring of integers of $\\mathbb C_p$, we prove that if the crystalline cohomology of its special fibre is torsion-free then the $p$-adic étale cohomology of its generic fibre is also torsion-free. In this announcement we sketch the proof, which relies on the construction of a new cohomology theory interpolating between crystalline and étale cohomology. Further details and results, including a comparison isomorphism, will be presented in the full forthcoming article.",
+      "published": "2015-07-29T13:08:47Z",
+      "updated": "2015-07-29T13:08:47Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1507.08129v1",
+      "abs_url": "https://arxiv.org/abs/1507.08129v1"
+    },
+    {
+      "arxiv_id": "1802.03261v2",
+      "title": "Topological Hochschild homology and integral $p$-adic Hodge theory",
+      "authors": [
+        "Bhargav Bhatt",
+        "Matthew Morrow",
+        "Peter Scholze"
+      ],
+      "summary": "In mixed characteristic and in equal characteristic $p$ we define a filtration on topological Hochschild homology and its variants. This filtration is an analogue of the filtration of algebraic $K$-theory by motivic cohomology. Its graded pieces are related in mixed characteristic to the complex $AΩ$ constructed in our previous work, and in equal characteristic $p$ to crystalline cohomology. Our construction of the filtration on $\\mathrm{THH}$ is via flat descent to semiperfectoid rings.   As one application, we refine the construction of the $AΩ$-complex by giving a cohomological construction of Breuil--Kisin modules for proper smooth formal schemes over $\\mathcal O_K$, where $K$ is a discretely valued extension of $\\mathbb Q_p$ with perfect residue field. As another application, we define syntomic sheaves $\\mathbb Z_p(n)$ for all $n\\geq 0$ on a large class of $\\mathbb Z_p$-algebras, and identify them in terms of $p$-adic nearby cycles in mixed characteristic, and in terms of logarithmic de~Rham-Witt sheaves in equal characteristic $p$.",
+      "published": "2018-02-09T13:57:42Z",
+      "updated": "2019-04-09T17:16:41Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.KT",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1802.03261v2",
+      "abs_url": "https://arxiv.org/abs/1802.03261v2"
+    }
+  ]
+}

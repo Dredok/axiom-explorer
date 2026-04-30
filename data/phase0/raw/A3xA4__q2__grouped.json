@@ -1,0 +1,243 @@
+{
+  "query": "(all:\"perfectoid\" OR all:\"tilting equivalence\" OR all:\"diamond\" OR all:\"prismatic cohomology\" OR all:\"almost mathematics\" OR all:\"p-adic Hodge\" OR all:\"Fargues-Fontaine\" OR all:\"v-sheaves\" OR all:\"Berkovich space p-adic\" OR all:\"perfectoid space\" OR all:\"untilt\") AND (all:\"synthetic Ricci\" OR all:\"CD(K,N)\" OR all:\"Lott-Sturm-Villani\" OR all:\"RCD space\" OR all:\"metric measure space curvature\" OR all:\"optimal transport curvature\" OR all:\"RCD(K,N)\" OR all:\"Bakry-Emery\" OR all:\"BE(K,N)\" OR all:\"MCP(K,N)\" OR all:\"Wasserstein curvature\" OR all:\"lower Ricci bound metric measure\" OR all:\"Ricci limit space\" OR all:\"displacement convexity\")",
+  "label": "q2-grouped",
+  "timestamp_utc": "2026-04-30T23:49:37Z",
+  "total_results": 13,
+  "fetched": 13,
+  "papers": [
+    {
+      "arxiv_id": "2402.00960v2",
+      "title": "On the rationalization of the $K(n)$-local sphere",
+      "authors": [
+        "Tobias Barthel",
+        "Tomer M. Schlank",
+        "Nathaniel Stapleton",
+        "Jared Weinstein"
+      ],
+      "summary": "We compute the rational homotopy groups of the $K(n)$-local sphere for all heights $n$ and all primes $p$, verifying a prediction that goes back to the pioneering work of Morava in the early 1970s. More precisely, we show that the inclusion of the Witt vectors into the Lubin-Tate ring induces a split injection on continuous stabilizer cohomology with torsion cokernel of bounded exponent, thereby proving Hopkins' chromatic splitting conjecture and the vanishing conjecture of Beaudry-Goerss-Henn rationally. The key ingredients are the equivalence between the Lubin-Tate tower and the Drinfeld tower due to Faltings and Scholze-Weinstein, integral $p$-adic Hodge theory, and an integral refinement of a theorem of Tate on the Galois cohomology of non-archimedean fields.",
+      "published": "2024-02-01T19:26:39Z",
+      "updated": "2025-09-09T19:08:09Z",
+      "primary_category": "math.AT",
+      "categories": [
+        "math.AT",
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2402.00960v2",
+      "abs_url": "https://arxiv.org/abs/2402.00960v2"
+    },
+    {
+      "arxiv_id": "1807.01890v1",
+      "title": "Elementary proof of congruences modulo 25 for broken $k$-diamond partitions",
+      "authors": [
+        "Shane Chern",
+        "Dazhao Tang"
+      ],
+      "summary": "Let $Δ_{k}(n)$ denote the number of $k$-broken diamond partitions of $n$. Quite recently, the second author proved an infinite family of congruences modulo 25 for $Δ_{k}(n)$ with the help of modular forms. In this paper, we aim to provide an elementary proof of this result.",
+      "published": "2018-07-05T08:18:22Z",
+      "updated": "2018-07-05T08:18:22Z",
+      "primary_category": "math.CO",
+      "categories": [
+        "math.CO"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1807.01890v1",
+      "abs_url": "https://arxiv.org/abs/1807.01890v1"
+    },
+    {
+      "arxiv_id": "2207.12336v2",
+      "title": "Connected ($C_4$,Diamond)-free Graphs Are Uniquely Reconstructible from Their Token Graphs",
+      "authors": [
+        "Ruy Fabila-Monroy",
+        "Ana Laura Trujillo-Negrete"
+      ],
+      "summary": "A diamond is the graph that is obtained from removing an edge from the complete graph on $4$ vertices. A ($C_4$,diamond)-free graph is a graph that does not contain a diamond or a cycle on four vertices as induced subgraphs. Let $G$ be a connected ($C_4$,diamond)-free graph on $n$ vertices. Let $1 \\le k \\le n-1$ be an integer. The $k$-token graph, $F_k(G)$, of $G$ is the graph whose vertices are all the sets of $k$ vertices of $G$; two of which are adjacent if their symmetric difference is a pair of adjacent vertices in $G$. Let $F$ be a graph isomorphic to $F_k(G)$. In this paper we show that given only $F$, we can construct in polynomial time a graph isomorphic to $G$. Let $\\operatorname{Aut}(G)$ be the automorphism group of $G$. We also show that if $k\\neq n/2$, then $\\operatorname{Aut}(G) \\simeq \\operatorname{Aut}(F_k(G))$; and if $k = n/2$, then $\\operatorname{Aut}(G) \\simeq \\operatorname{Aut}(F_k(G)) \\times \\mathbb{Z}_2$.",
+      "published": "2022-07-25T16:53:07Z",
+      "updated": "2022-07-28T21:14:55Z",
+      "primary_category": "math.CO",
+      "categories": [
+        "math.CO"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2207.12336v2",
+      "abs_url": "https://arxiv.org/abs/2207.12336v2"
+    },
+    {
+      "arxiv_id": "1709.02584v1",
+      "title": "New congruences for broken $k$-diamond partitions",
+      "authors": [
+        "Dazhao Tang"
+      ],
+      "summary": "The notion of broken $k$-diamond partitions was introduced by Andrews and Paule. Let $Δ_{k}(n)$ denote the number of broken $k$-diamond partitions of $n$ for a fixed positive integer $k$. In this paper, we establish new infinite families of broken $k$-diamond partition congruences.",
+      "published": "2017-09-08T08:27:35Z",
+      "updated": "2017-09-08T08:27:35Z",
+      "primary_category": "math.CO",
+      "categories": [
+        "math.CO"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1709.02584v1",
+      "abs_url": "https://arxiv.org/abs/1709.02584v1"
+    },
+    {
+      "arxiv_id": "2305.17864v1",
+      "title": "Laguerre inequality and determinantal inequality for the broken $k$-diamond partition function",
+      "authors": [
+        "Eve Y. Y. Yang"
+      ],
+      "summary": "In 2007, Andrews and Paule introduced the broken $k$-diamond partition function $Δ_{k}(n)$, which has received a lot of researches on the arithmetic propertises. In this paper, we will prove the broken $k$-diamond partition function satisfies the Laguerre inequalities of order $2$ and the determinantal inequalities of order $3$ for $k=1$ or $2$. Moreover, we conjectured the thresholds for the Laguerre inequalities of order $m$ and the positivity of $m$-order determinants for $4\\leq m\\leq 14$ for the broken $k$-diamond partition function when $k=1$ or $2$.",
+      "published": "2023-05-29T03:10:50Z",
+      "updated": "2023-05-29T03:10:50Z",
+      "primary_category": "math.CO",
+      "categories": [
+        "math.CO"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2305.17864v1",
+      "abs_url": "https://arxiv.org/abs/2305.17864v1"
+    },
+    {
+      "arxiv_id": "1005.0111v2",
+      "title": "Model of hopping dc conductivity via nearest neighbor boron atoms in moderately compensated diamond crystals",
+      "authors": [
+        "N. A. Poklonski",
+        "S. A. Vyrko",
+        "A. G. Zabrodskii"
+      ],
+      "summary": "Expressions for dependences of the pre-exponential factor σ_3 and the thermal activation energy ε_3 of hopping electric conductivity of holes via boron atoms on the boron atom concentration N and the compensation ratio K are obtained in the quasiclassical approximation. It is assumed that the acceptors (boron atoms) in charge states (0) and (-1) and the donors that compensate them in the charge state (+1) form a nonstoichiometric simple cubic lattice with translational period R_h = [(1 + K)N]^{-1/3} within the crystalline matrix. A hopping event occurs only over the distance R_h at a thermally activated accidental coincidence of the acceptor levels in charge states (0) and (-1). Donors block the fraction K/(1 - K) of impurity lattice sites. The hole hopping conductivity is averaged over all possible orientations of the lattice with respect to the external electric field direction. It is supposed that an acceptor band is formed by Gaussian fluctuations of the potential energy of boron atoms in charge state (-1) due to Coulomb interaction only between the ions at distance R_h. The shift of the acceptor band towards the top of the valence band with increasing N due to screening (in the Debye--Hückel approximation) of the impurity ions by holes hopping via acceptor states was taken into account. The calculated values of σ_3(N) and ε_3(N) for K \\approx 0.25 agree well with known experimental data at the insulator side of the insulator--metal phase transition. The calculation is carried out at a temperature two times lower than the transition temperature from hole transport in v-band of diamond to hopping conductance via boron atoms.",
+      "published": "2010-05-01T22:23:56Z",
+      "updated": "2011-09-05T10:51:24Z",
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1005.0111v2",
+      "abs_url": "https://arxiv.org/abs/1005.0111v2"
+    },
+    {
+      "arxiv_id": "2110.14829v1",
+      "title": "Effective Methods for Diophantine Finiteness",
+      "authors": [
+        "David Urbanik"
+      ],
+      "summary": "Let $K \\subset \\mathbb{C}$ be a number field, and let $\\mathcal{O}_{K,N} = \\mathcal{O}_{K}[N^{-1}]$ be its ring of $N$-integers. Recently, Lawrence and Venkatesh proposed a general strategy for proving the Shafarevich conjecture for the fibres of a smooth projective family $f : X \\to S$ defined over $\\mathcal{O}_{K,N}$. To carry out their strategy, one needs to be able to decide whether the algebraic monodromy group $\\mathbf{H}_{Z}$ of any positive-dimensional geometrically irreducible subvariety $Z \\subset S_{\\mathbb{C}}$ is \"large enough\", in the sense that a certain orbit of $\\mathbf{H}_{Z}$ in a variety of Hodge flags has dimension bounded from below by a certain quantity. In this article we give an effective method for deciding this question. Combined with the effective methods of Lawrence-Venkatesh for understanding semisimplifications of global Galois representations using $p$-adic Hodge theory, this gives a fully effective strategy for solving Shafarevich-type problems for arbitrary families $f$.",
+      "published": "2021-10-28T00:32:58Z",
+      "updated": "2021-10-28T00:32:58Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.AG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2110.14829v1",
+      "abs_url": "https://arxiv.org/abs/2110.14829v1"
+    },
+    {
+      "arxiv_id": "1607.01441v3",
+      "title": "Network Simplification in Half-Duplex: Building on Submodularity",
+      "authors": [
+        "Martina Cardone",
+        "Yahya H. Ezzeldin",
+        "Christina Fragouli",
+        "Daniela Tuninetti"
+      ],
+      "summary": "This paper explores the {\\it network simplification} problem in the context of Gaussian Half-Duplex (HD) diamond networks. Specifically, given an $N$-relay diamond network, this problem seeks to derive fundamental guarantees on the capacity of the best $k$-relay subnetwork, as a function of the full network capacity. The main focus of this work is on the case when $k=N-1$ relays are selected out of the $N$ possible ones. First, a simple algorithm, which removes the relay with the minimum capacity (i.e., the worst relay), is analyzed and it is shown that the remaining $(N-1)$-relay subnetwork has an approximate (i.e., optimal up to a constant gap) HD capacity that is at least half of the approximate HD capacity of the full network. This fraction guarantee is shown to be tight if only the single relay capacities are known, i.e., there exists a class of Gaussian HD diamond networks with $N$ relays where, by removing the worst relay, the subnetwork of the remaining $k=N-1$ relays has an approximate capacity equal to half of the approximate capacity of the full network. Next, this work proves a fundamental guarantee, which improves over the previous fraction: there always exists a subnetwork of $k=N-1$ relays that achieves at least a fraction $\\frac{N-1}{N}$ of the approximate capacity of the full network. This fraction is proved to be tight and it is shown that any optimal schedule of the full network can be used by at least one of the $N$ subnetworks of $N-1$ relays to achieve a worst-case performance guarantee of $\\frac{N-1}{N}$. Additionally, these results are extended to derive lower bounds on the fraction guarantee for general $k \\in [1:N]$. The key steps in the proofs lie in the derivation of properties of submodular functions, which provide a combinatorial handle on the network simplification problem in Gaussian HD diamond networks.",
+      "published": "2016-07-06T00:00:34Z",
+      "updated": "2017-07-07T18:19:16Z",
+      "primary_category": "cs.IT",
+      "categories": [
+        "cs.IT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1607.01441v3",
+      "abs_url": "https://arxiv.org/abs/1607.01441v3"
+    },
+    {
+      "arxiv_id": "2110.04386v2",
+      "title": "A Lorentzian analog for Hausdorff dimension and measure",
+      "authors": [
+        "Robert J. McCann",
+        "Clemens Sämann"
+      ],
+      "summary": "We define a one-parameter family of canonical volume measures on Lorentzian (pre-)length spaces. In the Lorentzian setting, this allows us to define a geometric dimension - akin to the Hausdorff dimension for metric spaces - that distinguishes between e.g. spacelike and null subspaces of Minkowski spacetime. The volume measure corresponding to its geometric dimension gives a natural reference measure on a synthetic or limiting spacetime, and allows us to define what it means for such a spacetime to be collapsed (in analogy with metric measure geometry and the theory of Riemannian Ricci limit spaces). As a crucial tool we introduce a doubling condition for causal diamonds and a notion of causal doubling measures. Moreover, applications to continuous spacetimes and connections to synthetic timelike curvature bounds are given.",
+      "published": "2021-10-08T21:35:57Z",
+      "updated": "2021-11-01T21:45:42Z",
+      "primary_category": "math-ph",
+      "categories": [
+        "math-ph",
+        "gr-qc",
+        "math.DG",
+        "math.MG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2110.04386v2",
+      "abs_url": "https://arxiv.org/abs/2110.04386v2"
+    },
+    {
+      "arxiv_id": "2206.14205v1",
+      "title": "Linear Growth of Circuit Complexity from Brownian Dynamics",
+      "authors": [
+        "Shao-Kai Jian",
+        "Gregory Bentsen",
+        "Brian Swingle"
+      ],
+      "summary": "We calculate the frame potential for Brownian clusters of $N$ spins or fermions with time-dependent all-to-all interactions. In both cases the problem can be mapped to an effective statistical mechanics problem which we study using a path integral approach. We argue that the $k$th frame potential comes within $ε$ of the Haar value after a time of order $t \\sim k N + k \\log k + \\log ε^{-1}$. Using a bound on the diamond norm, this implies that such circuits are capable of coming very close to a unitary $k$-design after a time of order $t \\sim k N$. We also consider the same question for systems with a time-independent Hamiltonian and argue that a small amount of time-dependent randomness is sufficient to generate a $k$-design in linear time provided the underlying Hamiltonian is quantum chaotic. These models provide explicit examples of linear complexity growth that are also analytically tractable.",
+      "published": "2022-06-28T18:00:00Z",
+      "updated": "2022-06-28T18:00:00Z",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2206.14205v1",
+      "abs_url": "https://arxiv.org/abs/2206.14205v1"
+    },
+    {
+      "arxiv_id": "2509.06563v1",
+      "title": "Hausdorff dimension and failure of synthetic curvature bounds in the sub-Lorentzian Heisenberg group",
+      "authors": [
+        "Samuël Borza",
+        "Chiara Rigoni",
+        "Omar Zoghlami"
+      ],
+      "summary": "We study the geodesics, Hausdorff dimension, and curvature bounds of the sub-Lorentzian Heisenberg group. Through an elementary variational approach, we provide a new proof of the structure of its maximizing geodesics, showing that they are lifts of hyperbolae coming from a Lorentzian isoperimetric problem in the Minkowski plane. We prove that the Lorentzian Hausdorff dimension of the space is $4$ and that the corresponding measure coincides with the Haar measure. We further establish a novel result in the spirit of the Ball-Box theorem, giving a uniform estimate of causal diamonds by anisotropic boxes. Finally, we show that the Heisenberg group satisfies neither the timelike curvature-dimension condition $\\mathsf{TCD}(K,N)$ nor the timelike measure contraction property $\\mathsf{TMCP}(K,N)$ for any values of the parameters $K$ and $N$, in sharp contrast with its sub-Riemannian counterpart.",
+      "published": "2025-09-08T11:24:20Z",
+      "updated": "2025-09-08T11:24:20Z",
+      "primary_category": "math.DG",
+      "categories": [
+        "math.DG",
+        "math.MG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2509.06563v1",
+      "abs_url": "https://arxiv.org/abs/2509.06563v1"
+    },
+    {
+      "arxiv_id": "2405.10094v2",
+      "title": "Decidability of Quasi-Dense Modal Logics",
+      "authors": [
+        "Piotr Ostropolski-Nalewaja",
+        "Tim S. Lyon"
+      ],
+      "summary": "The decidability of axiomatic extensions of the modal logic K with modal reduction principles, i.e. axioms of the form $\\Diamond^{k} p \\rightarrow \\Diamond^{n} p$, has remained a long-standing open problem. In this paper, we make significant progress toward solving this problem and show that decidability holds for a large subclass of these logics, namely, for 'quasi-dense logics.' Such logics are extensions of K with with modal reduction axioms such that $0 < k < n$ (dubbed 'quasi-density axioms'). To prove decidability, we define novel proof systems for quasi-dense logics consisting of disjunctive existential rules, which are first-order formulae typically used to specify ontologies in the context of database theory. We show that such proof systems can be used to generate proofs and models of modal formulae, and provide an intricate model-theoretic argument showing that such generated models can be encoded as finite objects called 'templates.' By enumerating templates of bound size, we obtain an EXPSPACE decision procedure as a consequence.",
+      "published": "2024-05-16T13:47:25Z",
+      "updated": "2024-06-05T16:30:13Z",
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO",
+        "math.LO"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2405.10094v2",
+      "abs_url": "https://arxiv.org/abs/2405.10094v2"
+    },
+    {
+      "arxiv_id": "1204.2150v2",
+      "title": "Analog Network Coding in General SNR Regime: Performance of Network Simplification",
+      "authors": [
+        "Samar Agnihotri",
+        "Sidharth Jaggi",
+        "Minghua Chen"
+      ],
+      "summary": "We consider a communication scenario where a source communicates with a destination over a directed layered relay network. Each relay performs analog network coding where it scales and forwards the signals received at its input. In this scenario, we address the question: What portion of the maximum end-to-end achievable rate can be maintained if only a fraction of relay nodes available at each layer are used?   We consider, in particular, the Gaussian diamond network (layered network with a single layer of relay nodes) and a class of symmetric layered networks. For these networks we show that each relay layer increases the additive gap between the optimal analog network coding performance with and without network simplification (using k instead of N relays in each layer, k < N) by no more than log(N/k)^2 bits and the corresponding multiplicative gap by no more than a factor of (N/k)^2, asymptotically (in source power). To the best of our knowledge, this work offers the first characterization of the performance of network simplification in general layered amplify-and-forward relay networks. Further, unlike most of the current approximation results that attempt to bound optimal rates either within an additive gap or a multiplicative gap, our results suggest a new rate approximation scheme that allows for the simultaneous computation of additive and multiplicative gaps.",
+      "published": "2012-04-10T13:49:57Z",
+      "updated": "2012-04-23T08:32:25Z",
+      "primary_category": "cs.IT",
+      "categories": [
+        "cs.IT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1204.2150v2",
+      "abs_url": "https://arxiv.org/abs/1204.2150v2"
+    }
+  ]
+}

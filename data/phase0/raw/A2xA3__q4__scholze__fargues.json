@@ -1,0 +1,28 @@
+{
+  "query": "au:\"Scholze\" AND au:\"Fargues\" AND cat:math.*",
+  "label": "co-author:Scholze+Fargues(math)",
+  "timestamp_utc": "2026-04-30T23:47:59Z",
+  "total_results": 1,
+  "fetched": 1,
+  "papers": [
+    {
+      "arxiv_id": "2102.13459v4",
+      "title": "Geometrization of the local Langlands correspondence",
+      "authors": [
+        "Laurent Fargues",
+        "Peter Scholze"
+      ],
+      "summary": "Following the idea of [Far16], we develop the foundations of the geometric Langlands program on the Fargues--Fontaine curve. In particular, we define a category of $\\ell$-adic sheaves on the stack $\\mathrm{Bun}_G$ of $G$-bundles on the Fargues--Fontaine curve, prove a geometric Satake equivalence over the Fargues--Fontaine curve, and study the stack of $L$-parameters. As applications, we prove finiteness results for the cohomology of local Shimura varieties and general moduli spaces of local shtukas, and define $L$-parameters associated with irreducible smooth representations of $G(E)$, a map from the spectral Bernstein center to the Bernstein center, and the spectral action of the category of perfect complexes on the stack of $L$-parameters on the category of $\\ell$-adic sheaves on $\\mathrm{Bun}_G$.",
+      "published": "2021-02-26T13:34:06Z",
+      "updated": "2024-11-27T15:45:04Z",
+      "primary_category": "math.RT",
+      "categories": [
+        "math.RT",
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2102.13459v4",
+      "abs_url": "https://arxiv.org/abs/2102.13459v4"
+    }
+  ]
+}

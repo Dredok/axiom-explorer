@@ -1,0 +1,8 @@
+{
+  "query": "au:\"Scholze\" AND au:\"Sturm\" AND cat:math.*",
+  "label": "co-author:Scholze+Sturm(math)",
+  "timestamp_utc": "2026-04-30T23:50:05Z",
+  "total_results": 0,
+  "fetched": 0,
+  "papers": []
+}

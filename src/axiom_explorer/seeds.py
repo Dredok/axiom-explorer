@@ -1,4 +1,12 @@
-"""Definition of the four axiomatic seeds and their canonical search terms."""
+"""Definition of the four axiomatic seeds and their canonical search terms.
+
+Notes on terminology coverage:
+- We expand related_terms aggressively because authors in specialised
+  subcommunities rarely repeat the umbrella name. E.g. a perfectoid paper
+  may not say "perfectoid mathematics", only "tilting" or "diamond".
+- Synthetic Ricci is especially fragmented: CD(K,N), RCD, MCP, BE(K,N),
+  Bakry-Emery, Lott-Sturm-Villani are all part of the same program.
+"""
 
 from __future__ import annotations
 
@@ -10,11 +18,11 @@ class Seed:
     code: str
     name: str
     branch: str
-    # Canonical query phrases used for arXiv / web search. Phrases must be
-    # quoted in the actual query so multi-word terms are matched as units.
     primary_terms: tuple[str, ...]
-    # Synonyms / related terms used to expand recall.
     related_terms: tuple[str, ...] = field(default_factory=tuple)
+    # Authors strongly associated with the seed. Used to detect community
+    # overlap between two seeds even when terminology does not co-occur.
+    key_authors: tuple[str, ...] = field(default_factory=tuple)
 
 
 SEEDS: dict[str, Seed] = {
@@ -23,7 +31,22 @@ SEEDS: dict[str, Seed] = {
         name="Univalence Axiom",
         branch="Foundations / HoTT",
         primary_terms=("univalence", "homotopy type theory"),
-        related_terms=("HoTT", "cubical type theory", "univalent foundations"),
+        related_terms=(
+            "HoTT",
+            "cubical type theory",
+            "univalent foundations",
+            "synthetic homotopy theory",
+            "higher inductive type",
+        ),
+        key_authors=(
+            "Voevodsky",
+            "Awodey",
+            "Coquand",
+            "Shulman",
+            "Cherubini",
+            "Buchholtz",
+            "Rijke",
+        ),
     ),
     "A2": Seed(
         code="A2",
@@ -35,6 +58,18 @@ SEEDS: dict[str, Seed] = {
             "solid module",
             "condensed abelian",
             "pyknotic",
+            "condensed module",
+            "condensed group",
+            "condensed cohomology",
+            "Mann thesis",
+            "p-adic functional analysis condensed",
+        ),
+        key_authors=(
+            "Scholze",
+            "Clausen",
+            "Mann",
+            "Bhatt",
+            "Asgeirsson",
         ),
     ),
     "A3": Seed(
@@ -47,6 +82,22 @@ SEEDS: dict[str, Seed] = {
             "diamond",
             "prismatic cohomology",
             "almost mathematics",
+            "p-adic Hodge",
+            "Fargues-Fontaine",
+            "v-sheaves",
+            "Berkovich space p-adic",
+            "perfectoid space",
+            "untilt",
+        ),
+        key_authors=(
+            "Scholze",
+            "Bhatt",
+            "Fargues",
+            "Kedlaya",
+            "Caraiani",
+            "Hansen",
+            "Weinstein",
+            "Morrow",
         ),
     ),
     "A4": Seed(
@@ -59,6 +110,27 @@ SEEDS: dict[str, Seed] = {
             "RCD space",
             "metric measure space curvature",
             "optimal transport curvature",
+            "RCD(K,N)",
+            "Bakry-Emery",
+            "BE(K,N)",
+            "MCP(K,N)",
+            "Wasserstein curvature",
+            "lower Ricci bound metric measure",
+            "Ricci limit space",
+            "displacement convexity",
+        ),
+        key_authors=(
+            "Sturm",
+            "Lott",
+            "Villani",
+            "Ambrosio",
+            "Gigli",
+            "Cavalletti",
+            "Mondino",
+            "Erbar",
+            "Maas",
+            "Cheeger",
+            "Colding",
         ),
     ),
 }

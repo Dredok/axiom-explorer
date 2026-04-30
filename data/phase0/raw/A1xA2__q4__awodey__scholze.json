@@ -1,0 +1,8 @@
+{
+  "query": "au:\"Awodey\" AND au:\"Scholze\" AND cat:math.*",
+  "label": "co-author:Awodey+Scholze(math)",
+  "timestamp_utc": "2026-04-30T23:44:57Z",
+  "total_results": 0,
+  "fetched": 0,
+  "papers": []
+}

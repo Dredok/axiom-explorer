@@ -1,0 +1,48 @@
+{
+  "query": "all:\"condensed mathematics\" AND all:\"perfectoid\"",
+  "label": "q1-strict-primary",
+  "timestamp_utc": "2026-04-30T23:47:19Z",
+  "total_results": 2,
+  "fetched": 2,
+  "papers": [
+    {
+      "arxiv_id": "2508.11268v1",
+      "title": "Banach modules, almost mathematics and condensed mathematics",
+      "authors": [
+        "Dimitri Dine"
+      ],
+      "summary": "We study the relationship between almost mathematics, condensed mathematics and the categories of seminormed and Banach modules over a Banach ring $A$, with submetric (norm-decreasing) $A$-module homomorphisms for morphisms. If $A$ is a Banach ring with a norm-multiplicative topologically nilpotent unit $\\varpi$ contained in the closed unit ball $A_{\\leq1}$ such that $\\varpi$ admits a compatible system of $p$-power roots $\\varpi^{1/p^{n}}$ with \\begin{equation*}\\lVert\\varpi^{1/p^{n}}\\rVert=\\lVert\\varpi\\rVert^{1/p^{n}}\\end{equation*}for all $n$, we prove that the \"almost closed unit ball\" functor \\begin{equation*}M\\mapsto M_{\\leq1}^{a}\\end{equation*}is an equivalence between the category of Banach $A$-modules and submetric $A$-module maps and the category of $\\varpi$-adically complete, $\\varpi$-torsion-free almost $(A_{\\leq1}, (\\varpi^{1/p^{\\infty}}))$-modules. We also obtain an analogous result for Banach algebras and almost algebras. The main novelty in our approach is that we show that the norm on the Banach module $M$ is completely determined by the corresponding almost $A_{\\leq1}$-module $M_{\\leq1}^{a}$, rather than being determined only up to equivalence.   We deduce from our results the existence of a natural fully faithful embedding of the category of Banach $A$-modules and submetric $A$-module maps into the category of (static) condensed almost $(A_{\\leq1}, (\\varpi^{1/p^{\\infty}}))$-modules in the sense of Mann, which factors through the full subcategory of solid condensed $(A_{\\leq1}, (\\varpi^{1/p^{\\infty}}))$-almost modules. If $A$ is perfectoid and the adic spectrum of $(A, A^{\\circ})$ is totally disconnected, we show that this embedding transforms the complete tensor product of Banach $A$-modules into (an almost analog of) the solid tensor product of solid condensed almost modules.",
+      "published": "2025-08-15T07:04:40Z",
+      "updated": "2025-08-15T07:04:40Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.AC",
+        "math.AG",
+        "math.FA"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2508.11268v1",
+      "abs_url": "https://arxiv.org/abs/2508.11268v1"
+    },
+    {
+      "arxiv_id": "2602.22503v1",
+      "title": "A Perfectoid Duality Between M-Theory and F-Theory",
+      "authors": [
+        "Arshid Shabir",
+        "Bobby Eka Gunara",
+        "Mir Faizal"
+      ],
+      "summary": "We present a non-singular, definition-level formulation of F-theory by replacing the traditional shrinking-fiber limit of M-theory with compactification on a tower-completed circle described using perfectoid geometry and condensed mathematics. This construction provides an intrinsic eleven-dimensional carrier for modular data and admits a canonical tilting and comparison procedure that yields elliptic geometry as an output rather than an auxiliary input. Using this framework, we establish a precise M-theory/Type IIB dictionary in the constant-coupling sector, showing how the physical axio-dilaton is fixed by eleven-dimensional geometric and topological data. The correspondence is tested at the level of the ten-dimensional bosonic effective action, including its topological couplings inherited from eleven dimensions. The tower-completed geometry naturally organizes global sectors in generalized cohomology, with charge data governed by K-theory and exhibiting a canonical prime-power torsion structure. We further show how this framework extends to varying-coupling backgrounds and duality defects, admits a natural adelic completion with prime-independence, and generalizes to higher-rank and U-duality geometries. We also discuss holographic aspects and the anomaly-refined extension of the duality group beyond the bosonic truncation. Together, these results provide a coherent, non-singular foundation for F-theory and its extensions.",
+      "published": "2026-02-26T00:45:17Z",
+      "updated": "2026-02-26T00:45:17Z",
+      "primary_category": "hep-th",
+      "categories": [
+        "hep-th",
+        "math-ph",
+        "math.AG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.22503v1",
+      "abs_url": "https://arxiv.org/abs/2602.22503v1"
+    }
+  ]
+}

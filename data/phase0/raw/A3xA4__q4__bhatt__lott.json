@@ -1,0 +1,8 @@
+{
+  "query": "au:\"Bhatt\" AND au:\"Lott\" AND cat:math.*",
+  "label": "co-author:Bhatt+Lott(math)",
+  "timestamp_utc": "2026-04-30T23:50:21Z",
+  "total_results": 0,
+  "fetched": 0,
+  "papers": []
+}
