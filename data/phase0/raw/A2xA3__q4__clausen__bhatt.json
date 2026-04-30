@@ -1,0 +1,29 @@
+{
+  "query": "au:\"Clausen\" AND au:\"Bhatt\" AND cat:math.*",
+  "label": "co-author:Clausen+Bhatt(math)",
+  "timestamp_utc": "2026-04-30T23:48:07Z",
+  "total_results": 1,
+  "fetched": 1,
+  "papers": [
+    {
+      "arxiv_id": "2001.11622v2",
+      "title": "Remarks on $K(1)$-local $K$-theory",
+      "authors": [
+        "Bhargav Bhatt",
+        "Dustin Clausen",
+        "Akhil Mathew"
+      ],
+      "summary": "We prove two basic structural properties of the algebraic $K$-theory of rings after $K(1)$-localization at an implicit prime $p$. Our first result (also recently obtained by Land--Meier--Tamme by different methods) states that $L_{K(1)} K(R)$ is insensitive to inverting $p$ on $R$; we deduce this from recent advances in prismatic cohomology and $\\mathrm{TC}$. Our second result yields a Künneth formula in $K(1)$-local $K$-theory for adding $p$-power roots of unity to $R$.",
+      "published": "2020-01-31T01:03:31Z",
+      "updated": "2020-05-12T12:44:39Z",
+      "primary_category": "math.KT",
+      "categories": [
+        "math.KT",
+        "math.AG",
+        "math.AT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2001.11622v2",
+      "abs_url": "https://arxiv.org/abs/2001.11622v2"
+    }
+  ]
+}

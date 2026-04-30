@@ -1,0 +1,8 @@
+{
+  "query": "au:\"Awodey\" AND au:\"Bhatt\" AND cat:math.*",
+  "label": "co-author:Awodey+Bhatt(math)",
+  "timestamp_utc": "2026-04-30T23:46:02Z",
+  "total_results": 0,
+  "fetched": 0,
+  "papers": []
+}

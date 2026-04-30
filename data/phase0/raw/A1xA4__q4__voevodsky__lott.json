@@ -1,0 +1,8 @@
+{
+  "query": "au:\"Voevodsky\" AND au:\"Lott\" AND cat:math.*",
+  "label": "co-author:Voevodsky+Lott(math)",
+  "timestamp_utc": "2026-04-30T23:46:58Z",
+  "total_results": 0,
+  "fetched": 0,
+  "papers": []
+}

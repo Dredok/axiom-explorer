@@ -1,0 +1,94 @@
+{
+  "query": "(all:\"univalence\" OR all:\"homotopy type theory\" OR all:\"HoTT\" OR all:\"cubical type theory\" OR all:\"univalent foundations\" OR all:\"synthetic homotopy theory\" OR all:\"higher inductive type\") AND (all:\"perfectoid\" OR all:\"tilting equivalence\" OR all:\"diamond\" OR all:\"prismatic cohomology\" OR all:\"almost mathematics\" OR all:\"p-adic Hodge\" OR all:\"Fargues-Fontaine\" OR all:\"v-sheaves\" OR all:\"Berkovich space p-adic\" OR all:\"perfectoid space\" OR all:\"untilt\")",
+  "label": "q2-grouped",
+  "timestamp_utc": "2026-04-30T23:45:17Z",
+  "total_results": 3,
+  "fetched": 3,
+  "papers": [
+    {
+      "arxiv_id": "2603.12326v1",
+      "title": "All-electron dark matter-electron scattering with random-phase approximation dielectric screening and local field effects",
+      "authors": [
+        "Cyrus Dreyer",
+        "Rouven Essig",
+        "Marivi Fernandez-Serra",
+        "Megan Hott",
+        "Aman Singal"
+      ],
+      "summary": "Accurate predictions for dark matter-electron scattering in solids require an all-electron treatment together with a faithful description of dielectric screening beyond simple approximations. In particular, local field effects, arising from microscopic inhomogeneities of the electronic response, can significantly modify scattering rates across relevant momentum and energy scales. We present an all-electron framework for computing dark matter-electron scattering rates that incorporates dielectric screening at the random-phase approximation (RPA) level, including local field effects. Using crystalline silicon as a benchmark, we show that local field effects play an important role both at large momentum transfers, spanning multiple Brillouin zones, and at low momentum near the plasmon resonance. We compute electron recoil spectra and projected sensitivities for non-relativistic halo dark matter and for boosted dark matter or other dark-sector particles, which are sensitive to the impact of local field effects in these high and low momentum regimes, respectively. We further present RPA dielectric functions including local field effects for Ge, GaAs, SiC, and diamond, enabling a systematic comparison across target materials. These developments are implemented in the open source code QCDark2.",
+      "published": "2026-03-12T18:00:03Z",
+      "updated": "2026-03-12T18:00:03Z",
+      "primary_category": "hep-ph",
+      "categories": [
+        "hep-ph",
+        "astro-ph.CO",
+        "cond-mat.mtrl-sci",
+        "hep-ex",
+        "physics.comp-ph"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2603.12326v1",
+      "abs_url": "https://arxiv.org/abs/2603.12326v1"
+    },
+    {
+      "arxiv_id": "hep-ex/0204011v1",
+      "title": "Studies of aging and HV break down problems during development and operation of MSGC and GEM detectors for the Inner Tracking System of HERA-B",
+      "authors": [
+        "HERA-B Inner Tracker Collaboration",
+        ":",
+        "Y. Bagaturia",
+        "O. Baruth",
+        "H. B. Dreis",
+        "F. Eisele",
+        "I. Gorbunov",
+        "S. Gradl",
+        "W. Gradl",
+        "S. Hausmann",
+        "M. Hildebrandt",
+        "T. Hott",
+        "S. Keller",
+        "C. Krauss",
+        "B. Lomonosov",
+        "M. Negodaev",
+        "C. Richter",
+        "P. Robmann",
+        "B. Schmidt",
+        "U. Straumann",
+        "P. Truoel",
+        "S. Visbeck",
+        "T. Walter",
+        "C. Werner",
+        "U. Werthenbach",
+        "G. Zech",
+        "T. Zeuner",
+        "M. Ziegler"
+      ],
+      "summary": "The results of five years of development of the inner tracking system of the HERA-B experiment and first experience from the data taking period of the year 2000 are reported. The system contains 184 chambers, covering a sensitive area of about 20 * 20 cm2 each. The detector is based on microstrip gas counters (MSGCs) with diamond like coated (DLC) glass wafers and gas electron multipliers (GEMs). The main problems in the development phase were gas discharges in intense hadron beams and aging in a high radiation dose environment. The observation of gas discharges which damage the electrode structure of the MSGC led to the addition of the GEM as a first amplification step. Spurious sparking at the GEM cannot be avoided completely. It does not affect the GEM itself but can produce secondary damage of the MSGC if the electric field between the GEM and the MSGC is above a threshold depending on operation conditions. We observed that aging does not only depend on the dose but also on the spot size of the irradiated area. Ar-DME mixtures had to be abandoned whereas a mixture of 70% Ar and 30% CO2 showed no serious aging effects up to about 40 mC/cm deposited charge on the anodes. X-ray measurements indicate that the DLC of the MSGC is deteriorated by the gas amplification process. As a consequence, long term gain variations are expected. The Inner Tracker has successfully participated in the data taking at HERA-B during summer 2000.",
+      "published": "2002-04-09T12:52:00Z",
+      "updated": "2002-04-09T12:52:00Z",
+      "primary_category": "hep-ex",
+      "categories": [
+        "hep-ex"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/hep-ex/0204011v1",
+      "abs_url": "https://arxiv.org/abs/hep-ex/0204011v1"
+    },
+    {
+      "arxiv_id": "2512.01029v1",
+      "title": "Minimal surfaces over the Pitot quadrilaterals",
+      "authors": [
+        "Vladimir Dragović",
+        "David Kalaj"
+      ],
+      "summary": "We develop a fully explicit framework for constructing Scherk-type minimal graphs over the Pitot quadrilaterals (i.e. such that the two pairs of opposite sides have the same total length). For any Pitot quadrilateral \\(Q\\), we first produce a harmonic diffeomorphism of the unit disk onto \\(Q\\), whose dilatation is the square of a Möbius automorphism determined directly by the vertices of \\(Q\\). Using this map as the Weierstrass data, we obtain a minimal graph \\(Σ\\) whose Gauss map is a univalent Möbius transformation and whose height function exhibits alternating blow-up behavior along opposite sides of \\(Q\\), mirroring the classical Scherk surfaces. We further construct an associated canonical surface \\(Σ^\\diamond\\), with the same boundary asymptotics, and prove a sharp curvature comparison theorem: at the harmonic center of \\(Q\\), among all bounded minimal graphs with matching normal direction and mixed derivative, \\(Σ^\\diamond\\) uniquely maximizes the absolute Gaussian curvature. This provides a complete and constructive description of Scherk-type minimal graphs over all, both convex or concave, Pitot quadrilaterals.",
+      "published": "2025-11-30T18:56:25Z",
+      "updated": "2025-11-30T18:56:25Z",
+      "primary_category": "math.DG",
+      "categories": [
+        "math.DG",
+        "math.CV"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.01029v1",
+      "abs_url": "https://arxiv.org/abs/2512.01029v1"
+    }
+  ]
+}

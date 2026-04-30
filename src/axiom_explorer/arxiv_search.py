@@ -2,6 +2,16 @@
 
 We hit https://export.arxiv.org/api/query directly. Rate limit: roughly one
 request every 3 seconds is courteous (arXiv recommends 3s between calls).
+
+We support two query styles:
+- AND of all-fields phrases (`build_and_query`): strict joint signal.
+- AND of two OR-groups, where each group is a disjunction of phrases
+  (`build_grouped_and_query`): wider recall when each side has many
+  synonyms. Used for cross-community searches where neither side has a
+  single canonical phrase.
+- AND of all-fields + author co-mention (`build_author_query`): catches
+  cross-community work via authorship even when the text doesn't literally
+  combine the two terminologies.
 """
 
 from __future__ import annotations
@@ -15,7 +25,7 @@ import feedparser
 import httpx
 
 ARXIV_ENDPOINT = "https://export.arxiv.org/api/query"
-DEFAULT_DELAY_S = 3.1
+DEFAULT_DELAY_S = 4.0
 
 
 @dataclass
@@ -38,6 +48,7 @@ class ArxivPaper:
 @dataclass
 class ArxivQueryResult:
     query: str
+    label: str
     timestamp_utc: str
     total_results: int
     fetched: int
@@ -46,6 +57,7 @@ class ArxivQueryResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "query": self.query,
+            "label": self.label,
             "timestamp_utc": self.timestamp_utc,
             "total_results": self.total_results,
             "fetched": self.fetched,
@@ -53,42 +65,86 @@ class ArxivQueryResult:
         }
 
 
-def _build_search_query(terms: list[str], operator: str = "AND") -> str:
-    """Build an arXiv search_query string from a list of phrases.
+def build_and_query(terms: list[str]) -> str:
+    parts = [f'all:"{t}"' for t in terms]
+    return " AND ".join(parts)
 
-    Each phrase is wrapped in quotes and joined by the operator. We restrict
-    to all-fields by default (all:).
+
+def build_grouped_and_query(group_a: list[str], group_b: list[str]) -> str:
+    """AND of (OR group_a) and (OR group_b).
+
+    Each group is a disjunction of `all:"phrase"` clauses. Useful when each
+    side has many near-synonyms.
     """
+    if not group_a or not group_b:
+        raise ValueError("Both groups must be non-empty")
+    a = " OR ".join(f'all:"{t}"' for t in group_a)
+    b = " OR ".join(f'all:"{t}"' for t in group_b)
+    return f"({a}) AND ({b})"
+
+
+def build_author_pair_query(
+    author_a: str, author_b: str, *, math_only: bool = True
+) -> str:
+    """Papers co-authored by both authors (a proxy for cross-community work).
+
+    If `math_only` is True, restrict to arXiv's `math` archive to filter
+    out namesake collisions with physics catalog papers (e.g. LIGO author
+    lists contain a "Bhatt" and a "Lott" who are not the mathematicians).
+    """
+    base = f'au:"{author_a}" AND au:"{author_b}"'
+    if math_only:
+        return f"{base} AND cat:math.*"
+    return base
+
+
+# Backwards-compatible internal alias used by older code/tests.
+def _build_search_query(terms: list[str], operator: str = "AND") -> str:
     parts = [f'all:"{t}"' for t in terms]
     joiner = f" {operator} "
     return joiner.join(parts)
 
 
-def search(
-    terms: list[str],
-    *,
-    operator: str = "AND",
-    max_results: int = 50,
-    sort_by: str = "relevance",
-    sort_order: str = "descending",
-    timeout_s: float = 30.0,
-) -> ArxivQueryResult:
-    """Search arXiv with the given terms (joined by AND or OR).
-
-    Returns the parsed result. Caller is responsible for rate-limiting
-    between successive calls — see `polite_search` for a wrapper.
-    """
-    query = _build_search_query(terms, operator=operator)
+def _execute(query: str, label: str, max_results: int, timeout_s: float) -> ArxivQueryResult:
     params = {
         "search_query": query,
         "start": "0",
         "max_results": str(max_results),
-        "sortBy": sort_by,
-        "sortOrder": sort_order,
+        "sortBy": "relevance",
+        "sortOrder": "descending",
     }
-    with httpx.Client(timeout=timeout_s) as client:
-        resp = client.get(ARXIV_ENDPOINT, params=params)
-    resp.raise_for_status()
+    last_err: Exception | None = None
+    backoff = 5.0
+    for attempt in range(5):
+        try:
+            with httpx.Client(timeout=timeout_s) as client:
+                resp = client.get(ARXIV_ENDPOINT, params=params)
+            if resp.status_code == 429:
+                retry_after = float(resp.headers.get("Retry-After", backoff))
+                wait = max(retry_after, backoff)
+                print(f"[arxiv] 429 received, sleeping {wait:.1f}s (attempt {attempt+1}/5)")
+                time.sleep(wait)
+                backoff = min(backoff * 2, 120.0)
+                continue
+            resp.raise_for_status()
+            break
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code in (429, 503):
+                wait = backoff
+                print(f"[arxiv] {e.response.status_code} received, sleeping {wait:.1f}s")
+                time.sleep(wait)
+                backoff = min(backoff * 2, 120.0)
+                last_err = e
+                continue
+            raise
+        except (httpx.TimeoutException, httpx.NetworkError) as e:
+            print(f"[arxiv] network error: {e}; sleeping {backoff:.1f}s")
+            time.sleep(backoff)
+            backoff = min(backoff * 2, 120.0)
+            last_err = e
+            continue
+    else:
+        raise RuntimeError(f"arxiv API exhausted retries: {last_err}")
 
     parsed = feedparser.parse(resp.text)
     total = int(parsed.feed.get("opensearch_totalresults", 0))
@@ -118,6 +174,7 @@ def search(
         )
     return ArxivQueryResult(
         query=query,
+        label=label,
         timestamp_utc=datetime.utcnow().isoformat(timespec="seconds") + "Z",
         total_results=total,
         fetched=len(papers),
@@ -125,16 +182,48 @@ def search(
     )
 
 
-def polite_search(
-    terms_list: list[list[str]],
+def search(
+    terms: list[str],
     *,
-    delay_s: float = DEFAULT_DELAY_S,
-    **kwargs: Any,
-) -> list[ArxivQueryResult]:
-    """Run multiple searches with polite spacing between calls."""
-    results: list[ArxivQueryResult] = []
-    for i, terms in enumerate(terms_list):
-        if i > 0:
-            time.sleep(delay_s)
-        results.append(search(terms, **kwargs))
-    return results
+    label: str = "and-pair",
+    max_results: int = 50,
+    timeout_s: float = 30.0,
+) -> ArxivQueryResult:
+    """Strict AND search over a list of phrases."""
+    return _execute(build_and_query(terms), label, max_results, timeout_s)
+
+
+def search_grouped(
+    group_a: list[str],
+    group_b: list[str],
+    *,
+    label: str = "grouped-or-and",
+    max_results: int = 50,
+    timeout_s: float = 30.0,
+) -> ArxivQueryResult:
+    """AND of two OR-groups."""
+    return _execute(
+        build_grouped_and_query(group_a, group_b), label, max_results, timeout_s
+    )
+
+
+def search_author_pair(
+    author_a: str,
+    author_b: str,
+    *,
+    math_only: bool = True,
+    max_results: int = 50,
+    timeout_s: float = 30.0,
+) -> ArxivQueryResult:
+    """Papers co-authored by both authors."""
+    return _execute(
+        build_author_pair_query(author_a, author_b, math_only=math_only),
+        f"co-author:{author_a}+{author_b}{'(math)' if math_only else ''}",
+        max_results,
+        timeout_s,
+    )
+
+
+def polite_sleep(delay_s: float = DEFAULT_DELAY_S) -> None:
+    """Sleep between API calls to respect arXiv's recommended rate."""
+    time.sleep(delay_s)

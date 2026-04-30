@@ -1,0 +1,27 @@
+{
+  "query": "all:\"univalence\" AND all:\"diamond\"",
+  "label": "q3-primary-related",
+  "timestamp_utc": "2026-04-30T23:45:25Z",
+  "total_results": 1,
+  "fetched": 1,
+  "papers": [
+    {
+      "arxiv_id": "2512.01029v1",
+      "title": "Minimal surfaces over the Pitot quadrilaterals",
+      "authors": [
+        "Vladimir Dragović",
+        "David Kalaj"
+      ],
+      "summary": "We develop a fully explicit framework for constructing Scherk-type minimal graphs over the Pitot quadrilaterals (i.e. such that the two pairs of opposite sides have the same total length). For any Pitot quadrilateral \\(Q\\), we first produce a harmonic diffeomorphism of the unit disk onto \\(Q\\), whose dilatation is the square of a Möbius automorphism determined directly by the vertices of \\(Q\\). Using this map as the Weierstrass data, we obtain a minimal graph \\(Σ\\) whose Gauss map is a univalent Möbius transformation and whose height function exhibits alternating blow-up behavior along opposite sides of \\(Q\\), mirroring the classical Scherk surfaces. We further construct an associated canonical surface \\(Σ^\\diamond\\), with the same boundary asymptotics, and prove a sharp curvature comparison theorem: at the harmonic center of \\(Q\\), among all bounded minimal graphs with matching normal direction and mixed derivative, \\(Σ^\\diamond\\) uniquely maximizes the absolute Gaussian curvature. This provides a complete and constructive description of Scherk-type minimal graphs over all, both convex or concave, Pitot quadrilaterals.",
+      "published": "2025-11-30T18:56:25Z",
+      "updated": "2025-11-30T18:56:25Z",
+      "primary_category": "math.DG",
+      "categories": [
+        "math.DG",
+        "math.CV"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.01029v1",
+      "abs_url": "https://arxiv.org/abs/2512.01029v1"
+    }
+  ]
+}

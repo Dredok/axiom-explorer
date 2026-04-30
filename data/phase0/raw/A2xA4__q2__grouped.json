@@ -1,0 +1,28 @@
+{
+  "query": "(all:\"condensed mathematics\" OR all:\"condensed sets\" OR all:\"liquid tensor experiment\" OR all:\"solid module\" OR all:\"condensed abelian\" OR all:\"pyknotic\" OR all:\"condensed module\" OR all:\"condensed group\" OR all:\"condensed cohomology\" OR all:\"Mann thesis\" OR all:\"p-adic functional analysis condensed\") AND (all:\"synthetic Ricci\" OR all:\"CD(K,N)\" OR all:\"Lott-Sturm-Villani\" OR all:\"RCD space\" OR all:\"metric measure space curvature\" OR all:\"optimal transport curvature\" OR all:\"RCD(K,N)\" OR all:\"Bakry-Emery\" OR all:\"BE(K,N)\" OR all:\"MCP(K,N)\" OR all:\"Wasserstein curvature\" OR all:\"lower Ricci bound metric measure\" OR all:\"Ricci limit space\" OR all:\"displacement convexity\")",
+  "label": "q2-grouped",
+  "timestamp_utc": "2026-04-30T23:48:36Z",
+  "total_results": 1,
+  "fetched": 1,
+  "papers": [
+    {
+      "arxiv_id": "2411.15856v1",
+      "title": "Simultaneously nonvanishing higher derived limits",
+      "authors": [
+        "Matteo Casarosa",
+        "Chris Lambie-Hanson"
+      ],
+      "summary": "The derived functors $\\lim^n$ of the inverse limit find many applications in algebra and topology. In particular, the vanishing of certain derived limits $\\lim^n \\mathbf{A}[H]$, parametrized by an abelian group $H$, has implications for strong homology and condensed mathematics. In this paper, we prove that if $\\mathfrak{d}=ω_n$, then $\\lim^n \\mathbf{A}[H] \\neq 0$ holds for $H=\\mathbb{Z}^{(ω_n)}$ (i.e. the direct sum of $ω_n$-many copies of $\\mathbb{Z}$). The same holds for $H=\\mathbb{Z}$ under the assumption that $\\mathrm{w}\\diamondsuit(S^{k+1}_k)$ holds for all $k < n$. In particular, this shows that if $\\lim^n \\mathbf{A}[H] = 0$ holds for all $n \\geq 1$ and all abelian groups $H$, then $2^{\\aleph_0} \\geq \\aleph_{ω+1}$, thus answering a question of Bannister. Finally, we prove some consistency results regarding simultaneous nonvanishing of derived limits, again in the case of $H = \\mathbb{Z}$. In particular, we show the consistency, relative to $\\mathsf{ZFC}$, of $\\bigwedge_{2 \\leq k < ω} \\lim^k \\mathbf{A} \\neq 0$.",
+      "published": "2024-11-24T14:20:56Z",
+      "updated": "2024-11-24T14:20:56Z",
+      "primary_category": "math.LO",
+      "categories": [
+        "math.LO",
+        "math.AT",
+        "math.CT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2411.15856v1",
+      "abs_url": "https://arxiv.org/abs/2411.15856v1"
+    }
+  ]
+}

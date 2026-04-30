@@ -1,0 +1,102 @@
+{
+  "query": "(all:\"condensed mathematics\" OR all:\"condensed sets\" OR all:\"liquid tensor experiment\" OR all:\"solid module\" OR all:\"condensed abelian\" OR all:\"pyknotic\" OR all:\"condensed module\" OR all:\"condensed group\" OR all:\"condensed cohomology\" OR all:\"Mann thesis\" OR all:\"p-adic functional analysis condensed\") AND (all:\"perfectoid\" OR all:\"tilting equivalence\" OR all:\"diamond\" OR all:\"prismatic cohomology\" OR all:\"almost mathematics\" OR all:\"p-adic Hodge\" OR all:\"Fargues-Fontaine\" OR all:\"v-sheaves\" OR all:\"Berkovich space p-adic\" OR all:\"perfectoid space\" OR all:\"untilt\")",
+  "label": "q2-grouped",
+  "timestamp_utc": "2026-04-30T23:47:27Z",
+  "total_results": 5,
+  "fetched": 5,
+  "papers": [
+    {
+      "arxiv_id": "2508.11268v1",
+      "title": "Banach modules, almost mathematics and condensed mathematics",
+      "authors": [
+        "Dimitri Dine"
+      ],
+      "summary": "We study the relationship between almost mathematics, condensed mathematics and the categories of seminormed and Banach modules over a Banach ring $A$, with submetric (norm-decreasing) $A$-module homomorphisms for morphisms. If $A$ is a Banach ring with a norm-multiplicative topologically nilpotent unit $\\varpi$ contained in the closed unit ball $A_{\\leq1}$ such that $\\varpi$ admits a compatible system of $p$-power roots $\\varpi^{1/p^{n}}$ with \\begin{equation*}\\lVert\\varpi^{1/p^{n}}\\rVert=\\lVert\\varpi\\rVert^{1/p^{n}}\\end{equation*}for all $n$, we prove that the \"almost closed unit ball\" functor \\begin{equation*}M\\mapsto M_{\\leq1}^{a}\\end{equation*}is an equivalence between the category of Banach $A$-modules and submetric $A$-module maps and the category of $\\varpi$-adically complete, $\\varpi$-torsion-free almost $(A_{\\leq1}, (\\varpi^{1/p^{\\infty}}))$-modules. We also obtain an analogous result for Banach algebras and almost algebras. The main novelty in our approach is that we show that the norm on the Banach module $M$ is completely determined by the corresponding almost $A_{\\leq1}$-module $M_{\\leq1}^{a}$, rather than being determined only up to equivalence.   We deduce from our results the existence of a natural fully faithful embedding of the category of Banach $A$-modules and submetric $A$-module maps into the category of (static) condensed almost $(A_{\\leq1}, (\\varpi^{1/p^{\\infty}}))$-modules in the sense of Mann, which factors through the full subcategory of solid condensed $(A_{\\leq1}, (\\varpi^{1/p^{\\infty}}))$-almost modules. If $A$ is perfectoid and the adic spectrum of $(A, A^{\\circ})$ is totally disconnected, we show that this embedding transforms the complete tensor product of Banach $A$-modules into (an almost analog of) the solid tensor product of solid condensed almost modules.",
+      "published": "2025-08-15T07:04:40Z",
+      "updated": "2025-08-15T07:04:40Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.AC",
+        "math.AG",
+        "math.FA"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2508.11268v1",
+      "abs_url": "https://arxiv.org/abs/2508.11268v1"
+    },
+    {
+      "arxiv_id": "2602.22503v1",
+      "title": "A Perfectoid Duality Between M-Theory and F-Theory",
+      "authors": [
+        "Arshid Shabir",
+        "Bobby Eka Gunara",
+        "Mir Faizal"
+      ],
+      "summary": "We present a non-singular, definition-level formulation of F-theory by replacing the traditional shrinking-fiber limit of M-theory with compactification on a tower-completed circle described using perfectoid geometry and condensed mathematics. This construction provides an intrinsic eleven-dimensional carrier for modular data and admits a canonical tilting and comparison procedure that yields elliptic geometry as an output rather than an auxiliary input. Using this framework, we establish a precise M-theory/Type IIB dictionary in the constant-coupling sector, showing how the physical axio-dilaton is fixed by eleven-dimensional geometric and topological data. The correspondence is tested at the level of the ten-dimensional bosonic effective action, including its topological couplings inherited from eleven dimensions. The tower-completed geometry naturally organizes global sectors in generalized cohomology, with charge data governed by K-theory and exhibiting a canonical prime-power torsion structure. We further show how this framework extends to varying-coupling backgrounds and duality defects, admits a natural adelic completion with prime-independence, and generalizes to higher-rank and U-duality geometries. We also discuss holographic aspects and the anomaly-refined extension of the duality group beyond the bosonic truncation. Together, these results provide a coherent, non-singular foundation for F-theory and its extensions.",
+      "published": "2026-02-26T00:45:17Z",
+      "updated": "2026-02-26T00:45:17Z",
+      "primary_category": "hep-th",
+      "categories": [
+        "hep-th",
+        "math-ph",
+        "math.AG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.22503v1",
+      "abs_url": "https://arxiv.org/abs/2602.22503v1"
+    },
+    {
+      "arxiv_id": "2509.25981v2",
+      "title": "Topological Vector Spaces",
+      "authors": [
+        "Pierre Colmez",
+        "Wiesława Nizioł"
+      ],
+      "summary": "Motivated by applications to duality theorems for $p$-adic pro-étale cohomology of rigid analytic spaces, we study the category of Topological Vector Spaces in the setting of condensed mathematics. We prove that it contains, as full subcategories, both the category of (topologically) bounded algebraic Vector Spaces and the category of perfect complexes on the Fargues-Fontaine curve. Vector Spaces coming from $p$-adic pro-étale cohomology of smooth partially proper rigid analytic varieties are examples of sheaves belonging to the former category.",
+      "published": "2025-09-30T09:12:39Z",
+      "updated": "2025-11-23T00:06:01Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.FA",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2509.25981v2",
+      "abs_url": "https://arxiv.org/abs/2509.25981v2"
+    },
+    {
+      "arxiv_id": "2510.13673v1",
+      "title": "Solid locally analytic representations in mixed characteristic",
+      "authors": [
+        "Gal Porat"
+      ],
+      "summary": "The theory of locally analytic representations of $p$-adic Lie groups with $\\mathbf{Q}_p$-coefficients is a powerful tool in $p$-adic Hodge theory and in the $p$-adic Langlands program. This perspective reveals important differential structures, such as the Sen and Casimir operators.   Rodríguez Camargo and Rodrigues Jacinto developed in \\cite{RJRC22} a solid version of this theory using the language of condensed mathematics. This provides more robust homological tools (comparison theorems, spectral sequences...) for studying these representations.   In this article, we extend the solid theory of locally analytic representations to a much broader class of mixed characteristic coefficients, such as $\\mathbf{F}_p((X))$ or $\\mathbf{Z}_p[[X]]\\langle p/X\\rangle[1/X]$, as well as to semilinear representations. In the introduction, we explain how these ideas could relate to mixed characteristic phenomena in $p$-adic Hodge theory, extend eigenvarieties, and the Langlands program.",
+      "published": "2025-10-15T15:32:04Z",
+      "updated": "2025-10-15T15:32:04Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.RT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2510.13673v1",
+      "abs_url": "https://arxiv.org/abs/2510.13673v1"
+    },
+    {
+      "arxiv_id": "2110.10683v2",
+      "title": "On the $p$-adic pro-étale cohomology of Drinfeld symmetric spaces",
+      "authors": [
+        "Guido Bosco"
+      ],
+      "summary": "Via the relative fundamental exact sequence of $p$-adic Hodge theory, we determine the geometric $p$-adic pro-étale cohomology of the Drinfeld symmetric spaces defined over a $p$-adic field, thus giving an alternative proof of a theorem of Colmez-Dospinescu-Niziol. Along the way, we describe, in terms of differential forms, the geometric pro-étale cohomology of the positive de Rham period sheaf on any connected, paracompact, smooth rigid-analytic variety over a $p$-adic field, and we do it with coefficients. A key new ingredient is the condensed mathematics recently developed by Clausen-Scholze.",
+      "published": "2021-10-20T17:56:40Z",
+      "updated": "2023-06-09T17:47:11Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.AG",
+        "math.RT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2110.10683v2",
+      "abs_url": "https://arxiv.org/abs/2110.10683v2"
+    }
+  ]
+}
