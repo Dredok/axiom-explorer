@@ -101,3 +101,28 @@ The harness stops and reports to the human operator on any of:
 
 See [.agent/checkpoint.md](.agent/checkpoint.md) (gitignored, local state).
 Public progress: GitLab issues tagged by phase.
+
+---
+
+## Current state (autonomous run completed)
+
+After a full autonomous Phase 0 -> Phase 5 sweep:
+
+- **Top candidate**: C-A2A3-2 cardinality envelope `|π_1^{cond}(X_k)| <= 2^|k|`, with
+  three independent corroboration angles (geometric, model-theoretic, set-theoretic).
+  L2-strong; falsifiable; structural argument written. See
+  [research/phase4-final-report/REPORT.md](research/phase4-final-report/REPORT.md).
+- **L0 verified deliverable**: Lean 4 axiomatic skeleton of Synthetic Stone Duality
+  in `lean/AxiomExplorer/SyntheticStoneDuality.lean`. Builds clean.
+- **Negative control**: A3 x A4 (Perfectoid x Synthetic Ricci) confirmed as
+  bibliometrically and structurally sparse.
+- **Methodology delta**: Q5 author-topic search added to the bibliometric harness
+  (Phase 0 v4); now catches Cherubini-Coquand and Mann/Haine/Scholze cross-area
+  work autonomously.
+- **Forward question (Phase 5)**: does the envelope extend to higher π_n^{cond},
+  n >= 2? Most informative test case identified: K3 surface at n=2.
+
+Hypothesis qualitatively corroborated: cross-search across modern axiomatic
+seeds did surface fresh cross-branch unification (announced in 2024-2026 papers).
+The strongest output is a conjecture, not a theorem.
+
