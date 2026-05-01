@@ -24,6 +24,10 @@ def main(argv: list[str] | None = None) -> int:
         from axiom_explorer.phases import phase0_bibliometric
 
         return phase0_bibliometric.run(out_dir=args.out_dir)
+    if phase in ("phase1", "phase1-formal-state"):
+        from axiom_explorer.phases import phase1_formal_state
+
+        return phase1_formal_state.run(out_dir=args.out_dir)
     raise SystemExit(f"Unknown phase: {phase}")
 
 

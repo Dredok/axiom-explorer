@@ -1,0 +1,547 @@
+{
+  "generated_utc": "2026-05-01T00:09:57Z",
+  "mathlib4": {
+    "A2": [
+      {
+        "path": "Mathlib/Condensed/AB.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 2,
+        "todos": [
+          "TODO: universe levels from type are unified in proof",
+          "TODO: universe levels from type are unified in proof"
+        ],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 72
+      },
+      {
+        "path": "Mathlib/Condensed/Basic.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 4,
+        "todos": [],
+        "authors": [
+          "Adam Topaz"
+        ],
+        "lines": 84
+      },
+      {
+        "path": "Mathlib/Condensed/CartesianClosed.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 18
+      },
+      {
+        "path": "Mathlib/Condensed/Discrete/Basic.lean",
+        "n_defs": 6,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 101
+      },
+      {
+        "path": "Mathlib/Condensed/Discrete/Characterization.lean",
+        "n_defs": 0,
+        "n_theorems": 4,
+        "n_lemmas": 4,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 267
+      },
+      {
+        "path": "Mathlib/Condensed/Discrete/Colimit.lean",
+        "n_defs": 27,
+        "n_theorems": 0,
+        "n_lemmas": 20,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 597
+      },
+      {
+        "path": "Mathlib/Condensed/Discrete/LocallyConstant.lean",
+        "n_defs": 19,
+        "n_theorems": 0,
+        "n_lemmas": 5,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 433
+      },
+      {
+        "path": "Mathlib/Condensed/Discrete/Module.lean",
+        "n_defs": 14,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 287
+      },
+      {
+        "path": "Mathlib/Condensed/EffectiveEpi.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Jonas van der Schaaf, Dagur Asgeirsson"
+        ],
+        "lines": 38
+      },
+      {
+        "path": "Mathlib/Condensed/Epi.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 6,
+        "todos": [
+          "TODO: universe levels from type are unified in proof",
+          "TODO: universe levels from type are unified in proof"
+        ],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 101
+      },
+      {
+        "path": "Mathlib/Condensed/Equivalence.lean",
+        "n_defs": 4,
+        "n_theorems": 0,
+        "n_lemmas": 2,
+        "todos": [],
+        "authors": [
+          "Adam Topaz, Nikolas Kuhn, Dagur Asgeirsson"
+        ],
+        "lines": 115
+      },
+      {
+        "path": "Mathlib/Condensed/Explicit.lean",
+        "n_defs": 6,
+        "n_theorems": 2,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson, Riccardo Brasca, Filippo A. E. Nuccio"
+        ],
+        "lines": 201
+      },
+      {
+        "path": "Mathlib/Condensed/Functors.lean",
+        "n_defs": 5,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 83
+      },
+      {
+        "path": "Mathlib/Condensed/Light/AB.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 39
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Basic.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 4,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 70
+      },
+      {
+        "path": "Mathlib/Condensed/Light/CartesianClosed.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 15
+      },
+      {
+        "path": "Mathlib/Condensed/Light/EffectiveEpi.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Jonas van der Schaaf, Dagur Asgeirsson"
+        ],
+        "lines": 36
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Epi.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 5,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 154
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Explicit.lean",
+        "n_defs": 2,
+        "n_theorems": 1,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 105
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Functors.lean",
+        "n_defs": 2,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 88
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Instances.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Joël Riou"
+        ],
+        "lines": 48
+      },
+      {
+        "path": "Mathlib/Condensed/Light/InternallyProjective.lean",
+        "n_defs": 1,
+        "n_theorems": 0,
+        "n_lemmas": 10,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 303
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Limits.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 25
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Module.lean",
+        "n_defs": 3,
+        "n_theorems": 0,
+        "n_lemmas": 3,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 98
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Monoidal.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 70
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Sequence.lean",
+        "n_defs": 11,
+        "n_theorems": 0,
+        "n_lemmas": 14,
+        "todos": [
+          "TODO: make a universe polymorphic `ℕ∪∞` and generalize this result."
+        ],
+        "authors": [
+          "Jonas van der Schaaf, Dagur Asgeirsson"
+        ],
+        "lines": 362
+      },
+      {
+        "path": "Mathlib/Condensed/Light/Small.lean",
+        "n_defs": 2,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 78
+      },
+      {
+        "path": "Mathlib/Condensed/Light/TopCatAdjunction.lean",
+        "n_defs": 12,
+        "n_theorems": 0,
+        "n_lemmas": 2,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 215
+      },
+      {
+        "path": "Mathlib/Condensed/Light/TopComparison.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 37
+      },
+      {
+        "path": "Mathlib/Condensed/Limits.lean",
+        "n_defs": 0,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 56
+      },
+      {
+        "path": "Mathlib/Condensed/Module.lean",
+        "n_defs": 3,
+        "n_theorems": 0,
+        "n_lemmas": 1,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 83
+      },
+      {
+        "path": "Mathlib/Condensed/Solid.lean",
+        "n_defs": 4,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [
+          "TODO (hard): prove that `((profiniteSolid ℤ).obj S).IsSolid` for `S : Profinite`.",
+          "TODO (slightly easier): prove that `((profiniteSolid 𝔽ₚ).obj S).IsSolid` for `S : Profinite`.",
+          "TODO: This is not the correct definition of solid `R`-modules for a general `R`. The correct one is"
+        ],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 87
+      },
+      {
+        "path": "Mathlib/Condensed/TopCatAdjunction.lean",
+        "n_defs": 12,
+        "n_theorems": 0,
+        "n_lemmas": 2,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 216
+      },
+      {
+        "path": "Mathlib/Condensed/TopComparison.lean",
+        "n_defs": 2,
+        "n_theorems": 2,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Dagur Asgeirsson"
+        ],
+        "lines": 147
+      }
+    ],
+    "A3": [
+      {
+        "path": "Mathlib/RingTheory/Perfectoid/BDeRham.lean",
+        "n_defs": 3,
+        "n_theorems": 0,
+        "n_lemmas": 0,
+        "todos": [
+          "TODO"
+        ],
+        "authors": [
+          "Jiedong Jiang"
+        ],
+        "lines": 99
+      },
+      {
+        "path": "Mathlib/RingTheory/Perfectoid/FontaineTheta.lean",
+        "n_defs": 3,
+        "n_theorems": 11,
+        "n_lemmas": 0,
+        "todos": [
+          "TODO"
+        ],
+        "authors": [
+          "Jiedong Jiang"
+        ],
+        "lines": 213
+      },
+      {
+        "path": "Mathlib/RingTheory/Perfectoid/Untilt.lean",
+        "n_defs": 1,
+        "n_theorems": 3,
+        "n_lemmas": 0,
+        "todos": [],
+        "authors": [
+          "Jiedong Jiang"
+        ],
+        "lines": 79
+      },
+      {
+        "path": "Mathlib/RingTheory/Perfection.lean",
+        "n_defs": 21,
+        "n_theorems": 64,
+        "n_lemmas": 4,
+        "todos": [
+          "TODO"
+        ],
+        "authors": [
+          "Kenny Lau"
+        ],
+        "lines": 840
+      }
+    ]
+  },
+  "synthetic_zariski": {
+    "open_questions": [
+      {
+        "question": "Is every étale proposition (formally étale and a scheme) an open proposition?"
+      },
+      {
+        "question": "Is every étale scheme a sub-quotient of a finite set?"
+      },
+      {
+        "question": "If $A$ is an étale $R$-algebra (finitely presented and the spectrum is étale),"
+      },
+      {
+        "question": "Can every bundle (on $Sp A$) of strongly quasicoherent $R$-modules be recovered"
+      },
+      {
+        "question": "Can we compute some interesting étale/fppf cohomology groups?"
+      },
+      {
+        "question": "Is the intergral closure of $R$ in a finitely presented $R$-algebra $A$ finitely presented?"
+      }
+    ],
+    "stone_duality_axioms": [
+      {
+        "name": "Stone duality",
+        "body": "For any countably presented Boolean algebra $B$, the evaluation map $B\\rightarrow 2^{Sp(B)}$ is an isomorphism."
+      },
+      {
+        "name": "Surjections are formal Surjections",
+        "body": "A map $f:Sp(B')\\to Sp(B)$ is surjective if and only if the corresponding map $B \\to B'$ is injective."
+      },
+      {
+        "name": "Local choice",
+        "body": "Whenever $S$ Stone and $E\\twoheadrightarrow S$ surjective, then there exists some $T$ Stone, a surjection $T \\twoheadrightarrow S$ and a map $T\\to E$ such that the following diagram commutes: \\begin{equation}\\begin{tikzcd} E \\arrow[d,\"\"',two heads]\\\\ S & \\arrow[l, \"\", two heads] T\\arrow[lu, \"\"'] \\end{tikzcd}\\end{equation}"
+      },
+      {
+        "name": "Dependent choice",
+        "body": "\\label{axDependentChoice} Given a sequence of surjections: \\begin{center} \\begin{tikzcd} X_0 & X_1\\arrow[l,\"\"',two heads] & X_2 \\arrow[l,\"\"',two heads] & \\arrow[l,\"\"',two heads] \\cdots \\end{tikzcd} \\end{center} we have an induced surjection: \\begin{center} \\begin{tikzcd} X_0 & \\arrow[l,\"\"',two heads] \\varprojlim X_k \\end{tikzcd} \\end{center}"
+      }
+    ]
+  },
+  "synthetic_geometry_agda": [
+    {
+      "path": "SyntheticGeometry/Affine.lagda.md",
+      "lines": 194,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/Divisor.lagda.md",
+      "lines": 66,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/Open/Properties.lagda.md",
+      "lines": 69,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/Open.lagda.md",
+      "lines": 98,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/ProjectiveLine.lagda.md",
+      "lines": 252,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/ProjectiveSpace/LineThroughPoints.lagda.md",
+      "lines": 279,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/ProjectiveSpace.lagda.md",
+      "lines": 274,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/QUESTS/Boundedness.lagda.md",
+      "lines": 40,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/SQC/Consequences.lagda.md",
+      "lines": 150,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/SQC.lagda.md",
+      "lines": 71,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/Spec.lagda.md",
+      "lines": 103,
+      "n_postulate": 0
+    },
+    {
+      "path": "SyntheticGeometry/qc-Scheme.lagda.md",
+      "lines": 70,
+      "n_postulate": 0
+    }
+  ]
+}
