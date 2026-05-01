@@ -1,18 +1,18 @@
 {
-  "title": "A cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric, model-theoretic and set-theoretic instances",
+  "title": "A conjectural cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric and analogical instances",
   "upload_type": "publication",
   "publication_type": "preprint",
-  "description": "We formulate a candidate cardinality envelope for the underlying group at section level of the fundamental group of the condensed classifying anima of a spectral infinity-topos: for X spectral with kappa = |Pt(X)(*)|, we conjecture |pi_1(B Pt^coh(X))(*)| <= 2^kappa. We observe that this envelope is consistent with seven attestations across three nominally unrelated mathematical branches \u2014 geometric (the condensed homotopy type of a scheme, after Haine, Holzschuh, Lara, Mair, Martini and Wolf), model-theoretic (the Lascar group of a complete first-order theory, classical bounds and Haine's forthcoming joint work with Damaj and Zhang), and set-theoretic (Whitehead's problem in condensed mathematics, after Clausen-Scholze and Bergfalk-Lambie-Hanson-\u0160aroch / Bannister-Basak). The unifying classifying-anima construction is itself an announced result; the envelope as a uniform statement across the unification is, to the best of our knowledge, not formulated as such in any single source. We present the candidate as a falsifiable conjecture, with explicit confidence levels per claim, an honest declaration of author position and production method, and an explicit invitation to experts in any of the three branches to confirm, refute, or locate it in existing literature.",
+  "description": "We formulate a candidate cardinality envelope for the underlying group at section level of the fundamental group of the condensed classifying anima of a spectral infinity-topos: with kappa_X a size invariant defined in the paper, we conjecture |pi_1(B Pt^coh(X))(*)| <= 2^kappa_X. We test this against two direct geometric attestations (Haine-Holzschuh-Lara-Mair-Martini-Wolf, on P^1 over C and over Q) and discuss related cardinal phenomena in model theory (Lascar groups via the unifying classifying-anima construction recently announced by Haine 2026, building on Campion-Cousins-Ye 2024) and set theory (Whitehead's problem in condensed mathematics, after Clausen-Scholze and follow-ups by Bergfalk-Lambie-Hanson-Šaroch and Bannister-Basak). The unifying classifying-anima construction is itself an announced result; the envelope as a uniform statement across the unification is, to the best of our knowledge, not formulated as such in any single source. We present the candidate as a falsifiable conjecture, with explicit confidence levels per claim, an honest declaration of author position and production method, and an explicit invitation to specialists to confirm, refute, or locate it in existing literature. This v1.1 incorporates substantive corrections from two anonymous AI reviewers: separating the upper bound from a saturation claim, fixing the size invariant, correcting the cardinality bound on free profinite groups, correcting the model-theoretic discussion (ACF_0 and DLO), demoting the set-theoretic and certain model-theoretic discussion from \"attestation\" to \"related cardinal phenomena\", and reformulating the falsifiability section.",
   "creators": [
     {
-      "name": "Vera G\u00f3mez, Francisco Javier",
+      "name": "Vera Gómez, Francisco Javier",
       "affiliation": "Independent researcher",
       "orcid": "0009-0001-3516-5871"
     }
   ],
   "access_right": "open",
   "license": "cc-by-4.0",
-  "version": "v1-preprint",
+  "version": "v1.1-preprint",
   "language": "eng",
   "keywords": [
     "condensed mathematics",
@@ -63,7 +63,12 @@
       "identifier": "10.48550/arXiv.2312.09122",
       "relation": "cites",
       "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.48550/arXiv.2401.13881",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
     }
   ],
-  "notes": "Produced via the axiom-explorer workflow, a systematic LLM-assisted cross-search across modern axiomatic seeds. Code, data, full per-phase reports, and a Lean 4 axiomatic skeleton of the closely related Synthetic Stone Duality axioms (Cherubini-Coquand-Geerligs-Moeneclaey) are versioned at https://gitlab.loneorc.com/research/axiom-explorer with reproducibility instructions in the repository's HANDOFF.md."
+  "notes": "Produced via the axiom-explorer workflow, a systematic LLM-assisted cross-search across modern axiomatic seeds. v1.1 incorporates corrections from two anonymous AI reviews of v1; see Acknowledgments section of the manuscript. Code, data, full per-phase reports, and a Lean 4 axiomatic skeleton of the closely related Synthetic Stone Duality axioms (Cherubini-Coquand-Geerligs-Moeneclaey) are versioned at https://gitlab.loneorc.com/research/axiom-explorer with reproducibility instructions in the repository's HANDOFF.md."
 }

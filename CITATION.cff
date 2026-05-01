@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite the preprint and the archived release."
-title: "A cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric, model-theoretic and set-theoretic instances"
-version: "v1-preprint"
+title: "A conjectural cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric and analogical instances"
+version: "v1.1-preprint"
 date-released: "2026-05-01"
 authors:
   - family-names: "Vera Gómez"
@@ -9,14 +9,15 @@ authors:
     affiliation: "Independent researcher"
     orcid: "https://orcid.org/0009-0001-3516-5871"
 abstract: >-
-  Synthesis preprint formulating a candidate cardinality envelope for the underlying
+  Synthesis preprint formulating a conjectural cardinality envelope for the underlying
   group at section level of the fundamental group of the condensed classifying anima of
-  a spectral infinity-topos. The envelope 2^kappa, where kappa is the cardinality of
-  the underlying point set, is shown consistent with seven attestations across three
-  nominally unrelated mathematical branches (geometric, model-theoretic, set-theoretic)
-  under the unifying classifying-anima construction recently announced by Haine.
+  a spectral infinity-topos: |pi_1| <= 2^kappa, where kappa is a size invariant of the
+  topos defined in the paper. Tested against two direct geometric attestations from
+  Haine-Holzschuh-Lara-Mair-Martini-Wolf (2025) and discussed alongside related cardinal
+  phenomena in model theory (Lascar groups) and set theory (Whitehead in condensed Ab).
   Falsifiable conjecture with explicit confidence levels per claim and an honest
-  declaration of author position and LLM-assisted production method.
+  declaration of author position and LLM-assisted production method. v1.1 incorporates
+  substantive corrections from two anonymous AI reviewers.
 keywords:
   - condensed mathematics
   - condensed homotopy type
@@ -33,5 +34,5 @@ preferred-citation:
       given-names: "Francisco Javier"
       affiliation: "Independent researcher"
       orcid: "https://orcid.org/0009-0001-3516-5871"
-  title: "A cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric, model-theoretic and set-theoretic instances"
+  title: "A conjectural cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric and analogical instances"
   year: 2026

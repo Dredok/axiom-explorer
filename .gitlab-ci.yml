@@ -40,6 +40,7 @@ paper-pdf:
     - >
       apt-get install -y --no-install-recommends
       latexmk
+      lmodern
       texlive-fonts-recommended
       texlive-latex-base
       texlive-latex-extra
