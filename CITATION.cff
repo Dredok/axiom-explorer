@@ -7,7 +7,7 @@ authors:
   - family-names: "Vera Gómez"
     given-names: "Francisco Javier"
     affiliation: "Independent researcher"
-    orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+    orcid: "https://orcid.org/0009-0001-3516-5871"
 abstract: >-
   Synthesis preprint formulating a candidate cardinality envelope for the underlying
   group at section level of the fundamental group of the condensed classifying anima of
@@ -32,6 +32,6 @@ preferred-citation:
     - family-names: "Vera Gómez"
       given-names: "Francisco Javier"
       affiliation: "Independent researcher"
-      orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+      orcid: "https://orcid.org/0009-0001-3516-5871"
   title: "A cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric, model-theoretic and set-theoretic instances"
   year: 2026
