@@ -72,7 +72,7 @@
 \href{https://orcid.org/0009-0001-3516-5871}{ORCID: 0009-0001-3516-5871}\\
 Repository:
 \href{https://gitlab.loneorc.com/research/axiom-explorer}{gitlab.loneorc.com/research/axiom-explorer}\\
-Version: v1.1-preprint}
+Version: v1.2-preprint}
 
 \date{\today}
 
@@ -123,28 +123,50 @@ of objects of $\Pt(\mathcal X)(\ast)$ as a complexity parameter. That is not
 invariant under equivalence of $\infty$-categories. Following a reviewer's
 correction, we use:
 
+For a topological group $G$, let $\mathrm{wt}(G)$ denote the topological
+weight of $G$ (the minimum cardinality of a basis of open neighbourhoods of
+the identity). For a profinite group $G$, $\mathrm{wt}(G)$ equals the minimum
+cardinality of a generating family of $G$ as a topological group, and one has
+$|G| \le 2^{\mathrm{wt}(G)}$ in general, with equality for free profinite
+groups.
+
 \begin{convention}\label{conv:kappa}
 For a spectral $\infty$-topos $\mathcal X$, let
 \begin{equation}\label{eq:kappa}
 \kappa_{\mathcal X} \;:=\; \max\!\left(
   \aleph_0,\;
   |\pi_0\,\Pt(\mathcal X)(\ast)|,\;
-  \sup_{x,y \in \pi_0\,\Pt(\mathcal X)(\ast)} \!\!|\pi_0\,\Map(x,y)|
-\right),
+  \sup_{x \in \pi_0\,\Pt(\mathcal X)(\ast)} \mathrm{wt}\bigl(\pi_1(\Pt(\mathcal X)(\ast),\,x)\bigr)
+\right).
 \end{equation}
-where $|\cdot|$ on a set returns its cardinality. We use $\continuum := 2^{\aleph_0}$
-throughout.
+We use $\continuum := 2^{\aleph_0}$ throughout.
 \end{convention}
 
-The conjecture below is invariant under equivalence of categories of points
-since each ingredient on the right of \eqref{eq:kappa} is. The third term
-controls automorphism complexity at the level of components.
+The third term measures the \emph{topological weight} of the loop groups at
+points (typically profinite generating size), not the cardinality of the
+underlying group. This distinction is crucial: a free profinite group on
+a set $S$ has weight $|S|$ but cardinality up to $2^{|S|}$. Using cardinality
+in \eqref{eq:kappa} would force the bound to grow one full beth level
+beyond what the geometric attestations actually realise; using weight
+recovers the regime in which the conjecture is meant to hold.
+
+The conjecture below is invariant under equivalence of $\infty$-categories
+of points since each ingredient on the right of \eqref{eq:kappa} is.
 
 \begin{remark}\label{rem:kappa-coarse}
-Convention \ref{conv:kappa} is deliberately coarse. It is plausible that an
-even tighter invariant is possible (e.g.\ involving the weight of the relevant
-profinite groups). A sharper definition is left open as part of the
-conjecture's refinement.
+Convention \ref{conv:kappa} is one specific choice. A sharper invariant
+might further weight the higher Postnikov data of $\Pt(\mathcal X)$. Refining
+the precise size invariant is left open as part of the conjecture's
+calibration.
+\end{remark}
+
+\begin{remark}[Reviewer correction, v1.1 \textrightarrow{} v1.2]
+An earlier draft used $\sup |\pi_0\Map(x,y)|$ as the third term in
+\eqref{eq:kappa}. A reviewer pointed out that for the geometric \'etale
+$\infty$-topos this term equals (up to $\pi_0$) the cardinality of the
+absolute Galois group of a generic point, which can already be as large as
+$2^{|k|}$, breaking the geometric attestations of \S\ref{sec:direct}. The
+weight-based formulation above is the corresponding fix.
 \end{remark}
 
 \subsection{Statement}
@@ -194,7 +216,7 @@ the classifying $\infty$-topos of $T$ --- recovered as $\pi_1$ of the
 condensed classifying anima of $\mathrm{Mod}_T$ in forthcoming work of Haine,
 Damaj and Zhang announced in \cite[\S 0]{Haine2026classifying}. The classical
 unconditional identification $\GalL(T) \simeq \pi_1(|\mathrm{Mod}_T|)$ is due
-to Campion, Cousins and Ye \cite{CampionCousinsYe2024}; the condensed-group
+to Campion, Cousins and Ye \cite{CampionCousinsYe2021}; the condensed-group
 upgrade is the announced extension.
 \end{itemize}
 
@@ -237,15 +259,25 @@ Working over the complex numbers and over the rationals respectively,
 \end{equation}
 \end{theorem}
 
-For $\Pone_k$ over an infinite separably closed field $k$, the size invariant
-of Convention \ref{conv:kappa} reduces in this case to $\kappa = \max(\aleph_0,
-|k|)$ via the absolute Galois group of the generic point and the cardinality
-of the set of closed points; we have $\kappa = \continuum$ for $k = \C$ and
-$\kappa = \aleph_0$ for $k = \Q$. Both attestations of
-Theorem \ref{thm:geomatt} match the envelope $2^{\kappa}$ of
-Conjecture \ref{conj:envelope} exactly. The first is attained; the second is
-the upper bound the paper proves. (Whether the second is also attained is, as
-far as we know, open: it bears on Question \ref{q:saturation}.)
+\paragraph{Computing $\kappa$ for $\Pone_{\C}$.}
+For $\Pone_{\C}$, the closed points are indexed by $\C \sqcup \{\infty\}$, so
+$|\pi_0\Pt(\Pone_{\C})(\ast)| = \continuum$. The loop group at the generic
+point is the absolute Galois group of $\C(T)$, a free profinite group on a
+set of size $\continuum$ \cite[Theorem 2]{Douady1964}, of \emph{topological
+weight} $\continuum$ even though its underlying cardinality is
+$2^{\continuum}$. Hence $\kappa_{\Pone_{\C}} = \continuum$ under
+Convention \ref{conv:kappa}, the envelope $2^{\kappa}$ is $2^{\continuum}$,
+and the attested $|\pi_1^{\mathrm{cond}}(\Pone_{\C})(\ast)| = 2^{\continuum}$
+\textbf{attains} it.
+
+\paragraph{Computing $\kappa$ for $\Pone_{\Q}$.}
+For $\Pone_{\Q}$, closed points form a countable set and the absolute
+Galois group of $\Q(T)$ is a free profinite group on a countable index set,
+of weight at most $\aleph_0$. Hence $\kappa_{\Pone_{\Q}} = \aleph_0$, the
+envelope $2^{\kappa}$ is $\continuum$, and the attested upper bound
+$|\pi_1^{\mathrm{cond}}(\Pone_{\Q})(\ast)| \le \continuum$ sits inside it.
+Whether the bound is also \emph{attained} for $\Pone_{\Q}$ is, as far as we
+know, open: it bears on Question \ref{q:saturation}.
 
 \subsection{The mechanism in \cite{HHLMMW2025}}
 
@@ -305,27 +337,41 @@ is a quasi-compact topological group attached to a sufficiently saturated
 ``monster'' model $\mathfrak C$ \cite[Ch.~6]{Casanovas2011}. It is independent
 of the choice of $\mathfrak C$ above some saturation cardinal.
 
-The work of Campion, Cousins, and Ye \cite{CampionCousinsYe2024} identifies
-$\GalL(T)$ with $\pi_1$ of the geometric realisation of the category of models
-$|\mathrm{Mod}_T|$. The condensed-group upgrade of this identification, asserted
-in \cite[\S 0]{Haine2026classifying} as joint forthcoming work of Haine, Damaj
+The classical model-theoretic upper bound is the sharp inequality
+\begin{equation}\label{eq:lascar-bound}
+|\GalL(T)| \;\le\; 2^{|T|},
+\end{equation}
+where $|T|$ is the cardinality of the language plus parameters
+\cite[Theorem 1.4]{CampionCousinsYe2021}. For countable $T$ this gives
+$|\GalL(T)| \le \continuum$.
+
+Campion, Cousins, and Ye \cite{CampionCousinsYe2021} establish the
+unconditional identification
+\begin{equation}
+\GalL(T) \;\cong\; \pi_1\bigl(|\mathrm{Mod}_T|\bigr),
+\end{equation}
+the fundamental group of the geometric realisation of the category of
+models. The condensed-group upgrade of this identification, asserted in
+\cite[\S 0]{Haine2026classifying} as joint forthcoming work of Haine, Damaj
 and Zhang, would place $\GalL(T)$ inside the framework of
 Conjecture \ref{conj:envelope}.
 
-What is true \emph{classically} about $|\GalL(T)|$:
+What is true \emph{classically} about $|\GalL(T)|$ in two specific cases:
 
 \begin{itemize}
 \item For ACF$_0$ (algebraically closed fields of characteristic $0$), in
-the formulation without naming constants for $\overline{\Q}$, the group
-$\GalL(\mathrm{ACF}_0)$ is isomorphic to the absolute Galois group
-$\Galabs(\overline{\Q}/\Q)$, which is a profinite group of cardinality
-$\continuum$ \cite[\S 6.1]{Casanovas2011}. This sits inside the envelope
-$2^{\kappa} = \continuum$ for $\kappa = \aleph_0$, but does not attain it.
-\item For DLO (dense linear orders without endpoints), the theory is
-$\omega$-categorical, $\GalL(\mathrm{DLO})$ is trivial \cite{Casanovas2011}.
-This sits trivially inside the envelope but does not attain it. (We retract
-an earlier claim that DLO is ``simple''; DLO is the prototype of an
-\emph{unstable} theory \cite{nLab-DLO}.)
+the formulation without naming constants for $\overline{\Q}$,
+$\GalL(\mathrm{ACF}_0) \cong \Galabs(\overline{\Q}/\Q)$
+\cite[Example 4.6]{CampionCousinsYe2021}, a profinite group of cardinality
+$\continuum$. With the natural model-theoretic size invariant
+$\kappa = |T| = \aleph_0$, the envelope $2^{\kappa} = \continuum$ is
+\textbf{attained} cardinally.
+\item For DLO (dense linear orders without endpoints),
+$|\mathrm{Mod}(\mathrm{DLO})|$ is contractible
+\cite[Example 4.4]{CampionCousinsYe2021}, hence $\GalL(\mathrm{DLO})$ is
+trivial. This sits trivially inside the envelope. (DLO is the prototype of
+an \emph{unstable} theory \cite{nLab-DLO}; we retract the v1 claim that
+DLO is ``simple''.)
 \end{itemize}
 
 What we do \emph{not} attempt to claim, after the reviewer's correction:
@@ -337,13 +383,13 @@ illustrate the envelope but require precise references to known computations
 which we have not located. We do not include them in any tabulated evidence.
 \end{itemize}
 
-The model-theoretic analogue of Conjecture \ref{conj:envelope}, conditional on
-the announced Haine-Damaj-Zhang condensed-group upgrade, would read: for $T$
-of cardinality $\le \continuum$ with monster of cardinality $\kappa$,
-$|\GalL(T)| \le 2^{\kappa}$. The classical Lascar group is in any case bounded
-above by the cardinality of the monster's automorphism group, which gives a
-very weak version of this; sharper bounds are exactly what the conjecture
-would predict.
+The classical bound \eqref{eq:lascar-bound} is tight up to a factor of $\le c$
+in many natural cases (\cite[\S 4]{CampionCousinsYe2021}). The proposed
+envelope of Conjecture~\ref{conj:envelope} is not meant to improve this
+classical model-theoretic bound in isolation; its point is to ask whether the
+same size principle persists \emph{uniformly across} the geometric and
+model-theoretic sides of the announced Haine-Damaj-Zhang classifying-anima
+identification.
 
 \subsection{Set theory: condensed mathematics and forcing}
 
@@ -385,8 +431,8 @@ the underlying group. We discuss this in \S\ref{sec:scope}.
 Direct (\S\ref{sec:direct}) & $\pi_1^{\mathrm{cond}}(\Pone_{\C})(\ast)$ & $\continuum$ & $= 2^{\continuum}$ (attained) & \cite[Rmk 7.14]{HHLMMW2025} \\
 Direct (\S\ref{sec:direct}) & $\pi_1^{\mathrm{cond}}(\Pone_{\Q})(\ast)$ & $\aleph_0$ & $\le \continuum$ & \cite[Rmk 7.14]{HHLMMW2025} \\
 \addlinespace
-Analogical (\S\ref{sec:modeltheory}) & $\GalL(\mathrm{ACF}_0) \simeq \Galabs(\overline{\Q}/\Q)$ & $\aleph_0$ & $= \continuum$ (within envelope, not attained) & \cite[\S 6.1]{Casanovas2011} \\
-Analogical (\S\ref{sec:modeltheory}) & $\GalL(\mathrm{DLO})$ & $\aleph_0$ & trivial (within envelope) & \cite{Casanovas2011} \\
+Analogical (\S\ref{sec:modeltheory}) & $\GalL(\mathrm{ACF}_0) \simeq \Galabs(\overline{\Q}/\Q)$ & $\aleph_0$ & $= \continuum$ (\textbf{attained}) & \cite[Ex.~4.6]{CampionCousinsYe2021} \\
+Analogical (\S\ref{sec:modeltheory}) & $\GalL(\mathrm{DLO})$ & $\aleph_0$ & trivial (within envelope) & \cite[Ex.~4.4]{CampionCousinsYe2021} \\
 \addlinespace
 Analogical (set-th.) & Whitehead in $\Cond(\mathrm{Ab})$ for discrete & --- & cardinal regime $\le 2^{\continuum}$ & \cite{ClausenScholze2019Lectures}, \cite{BLHS2023} \\
 Analogical (set-th.) & Solovay $\to$ $\kappa$-pyknotic morphism & --- & cardinal regime $\le 2^{\continuum}$ & \cite{BannisterBasak2026} \\
@@ -412,8 +458,11 @@ $\pi_1(\Bcat\,\Pt^{\mathrm{coh}}(\mathcal{X}))(\ast)$:
 \begin{enumerate}
 \item \textbf{An ambient profinite group}, in the form of an absolute Galois
 or automorphism group attached to the data of $\Pt(\mathcal X)(\ast)$, has
-cardinality at most $2^{\max(\kappa, \aleph_0)} = 2^{\kappa}$ by
-\eqref{eq:Frbound} applied to a generating set of size at most $\kappa$.
+\emph{topological weight} at most $\kappa$ (controlled by the third term of
+\eqref{eq:kappa}), hence underlying cardinality at most $2^{\kappa}$ by
+\eqref{eq:Frbound}. The argument runs through the
+weight/generation-size invariant, not through the cardinality of the
+group of morphisms in $\Pt(\mathcal X)$.
 \item \textbf{Quotienting by an abstract normal closure} can only shrink the
 group. Hence $|\pi_1| \le 2^{\kappa}$.
 \end{enumerate}
@@ -421,9 +470,10 @@ group. Hence $|\pi_1| \le 2^{\kappa}$.
 The lower bound side --- the existence of a natural product family indexed by
 $\kappa$ many points whose quotient by the direct sum reaches $2^{\kappa}$ ---
 is the point flagged by the reviewer as the \emph{most fragile heuristic} of
-the generalisation. For $X = \Pone_k$ with $k$ infinite separably closed,
+the generalisation. For $X = \Pone_{\C}$ over the algebraically closed field $\C$,
 this lower bound input is realised by the construction of
-\cite[\S 7.1]{HHLMMW2025}, which is what makes $\Pone_{\C}$ saturate. Whether
+\cite[\S 7.1]{HHLMMW2025}, which is what makes $\Pone_{\C}$ saturate.
+The analogous question for $\Pone_{\Q}$ remains open as far as we know. Whether
 the analogous lower-bound input is available for general spectral
 $\mathcal X$ is precisely the content of Question \ref{q:saturation}, and we
 \emph{do not} claim it.
@@ -472,7 +522,7 @@ $|\pi_1^{\mathrm{cond}}(X_k)(\ast)|$ exceeding $2^{\kappa_{X_{\mathrm{\acute{e}t
 with the right-hand side computed using \eqref{eq:kappa} on the \'etale
 $\infty$-topos of $X$.
 \item Conditional on the announced Haine-Damaj-Zhang condensed-group upgrade
-of \cite{CampionCousinsYe2024}: a complete theory $T$ for which the condensed
+of \cite{CampionCousinsYe2021}: a complete theory $T$ for which the condensed
 $\GalL(T)$ exceeds $2^{\kappa_{T}}$ for the appropriate $\kappa_T$ derived
 from the classifying $\infty$-topos.
 \end{itemize}
@@ -548,18 +598,38 @@ axiomatic skeleton of Synthetic Stone Duality \cite{CCGM2024} in the
 accompanying repository was built in dialogue with that paper's stated
 axioms.
 
-We are grateful to two anonymous AI reviewers (one moderately permissive,
-one technically severe) whose commentary on draft v1 led to the substantive
-corrections embodied in this v1.1: separating the upper bound from the
-saturation claim (\S\ref{sec:intro}); correcting the size invariant
-$\kappa_{\mathcal X}$ (Convention \ref{conv:kappa}); fixing the cardinality
-bound on free profinite groups \eqref{eq:Frbound}; correcting the model-theoretic
-discussion of $\GalL(\mathrm{ACF}_0)$ and DLO (\S\ref{sec:modeltheory});
-demoting the set-theoretic discussion from ``attestation'' to ``related
-cardinal phenomena'' (\S\ref{sec:analogical}); reformulating the
-falsifiability section to avoid a near-tautological bound
-(\S\ref{sec:falsifiability}); and toning the title from
-\emph{cardinality envelope} to \emph{conjectural cardinality envelope}.
+We are grateful to multiple anonymous AI reviewers whose commentary on
+successive drafts led to the substantive corrections embodied in v1.1 and
+v1.2.
+
+The v1.1 corrections, prompted by a first round of review, included:
+separating the upper bound from the saturation claim (\S\ref{sec:intro});
+introducing an equivalence-invariant size invariant $\kappa_{\mathcal X}$
+(an earlier first attempt, in v1.1, was further refined in v1.2); fixing
+the cardinality bound on free profinite groups \eqref{eq:Frbound};
+correcting the model-theoretic discussion of $\GalL(\mathrm{ACF}_0)$ and
+DLO (\S\ref{sec:modeltheory}); demoting the set-theoretic discussion from
+``attestation'' to ``related cardinal phenomena'' (\S\ref{sec:analogical});
+reformulating the falsifiability section to avoid a near-tautological bound
+(\S\ref{sec:falsifiability}); and toning the title from \emph{cardinality
+envelope} to \emph{conjectural cardinality envelope}.
+
+The v1.2 corrections, prompted by a second round of review of v1.1,
+were equally substantive: replacing the $\kappa_{\mathcal X}$ third term
+from set-cardinality of mapping spaces to \emph{topological weight} of the
+loop groups (Convention \ref{conv:kappa} and the new explanatory paragraph),
+which restores compatibility between the definition and the geometric
+attestations of \S\ref{sec:direct}; correcting the bibliographic
+identifier and journal reference for Campion-Cousins-Ye (the v1.1
+preprint cited an unrelated arXiv identifier; v1.2 cites the published
+JSL paper, arXiv:1808.04915); correcting the v1.1 claim that the
+ACF$_0$ instance was ``not attained'' (it does attain the envelope at
+$\kappa = \aleph_0$, since both sides equal $\continuum$); strengthening
+the model-theoretic context with the classical bound $|\GalL(T)| \le 2^{|T|}$
+\eqref{eq:lascar-bound} and direct citations to Campion-Cousins-Ye for
+the DLO and ACF examples; and tightening the cardinality computations
+in \S\ref{sec:direct} to use weight rather than underlying cardinality.
+
 The remaining errors are our responsibility.
 
 The axiom-explorer harness is open source; reproducibility instructions and
@@ -625,12 +695,16 @@ hold?
 \end{question}
 
 The cleanest test case we identify is the K3 surface over $\C$ at $n=2$,
-where classical $\pi_2^{\mathrm{\acute{e}t}}(\mathrm{K3}_{\C}, \mathbf{Z}_l)$
-is non-trivial of rank $22$:
+which is motivated by the rank-$22$ second integral cohomology
+$H^2(\mathrm{K3}, \mathbf{Z}) \cong \mathbf{Z}^{22}$ (the K3 lattice, of
+signature $(3,19)$) and the corresponding rank-$22$ $\ell$-adic \'etale
+realisation. The natural question, set against the conjectural higher
+envelope above, is:
 
 \begin{question}[K3 at $n=2$]
 Does $|\pi_2^{\mathrm{cond}}(\mathrm{K3}_{\C}, \overline{x})(\ast)|$ attain
-$2^{\continuum}$, or does it remain at the classical rank-$22$ structure?
+$2^{\continuum}$, or does it remain bounded by the rank-$22$ classical
+structure?
 \end{question}
 
 We do not know of a published computation of $\pi_n^{\mathrm{cond}}$ for K3
