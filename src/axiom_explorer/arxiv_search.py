@@ -224,6 +224,35 @@ def search_author_pair(
     )
 
 
+def build_author_topic_query(author: str, topic_terms: list[str]) -> str:
+    """Single-author papers that match any of the topic terms.
+
+    Useful when a key author works on cross-area material that does NOT
+    co-publish with the other side's authors but does mention some of the
+    other side's terminology.
+    """
+    if not topic_terms:
+        raise ValueError("topic_terms must be non-empty")
+    topic_or = " OR ".join(f'all:"{t}"' for t in topic_terms)
+    return f'au:"{author}" AND ({topic_or}) AND cat:math.*'
+
+
+def search_author_topic(
+    author: str,
+    topic_terms: list[str],
+    *,
+    max_results: int = 50,
+    timeout_s: float = 30.0,
+) -> ArxivQueryResult:
+    """Single-author + topic OR + math archive."""
+    return _execute(
+        build_author_topic_query(author, topic_terms),
+        f"author-topic:{author}+{len(topic_terms)}terms(math)",
+        max_results,
+        timeout_s,
+    )
+
+
 def polite_sleep(delay_s: float = DEFAULT_DELAY_S) -> None:
     """Sleep between API calls to respect arXiv's recommended rate."""
     time.sleep(delay_s)
