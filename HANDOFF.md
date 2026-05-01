@@ -7,13 +7,17 @@
 
 ## Status snapshot (as of 2026-05-01)
 
-- **Phase 0 → Phase 6 complete**. All merged to `main` via 8 MRs.
+- **Phase 0 → Phase 7 toolchain complete**. All merged to `main` via 11 MRs.
 - **51 tests green**, ruff clean, Lean module builds.
+- **CI: paper-pdf job builds the preprint with latexmk + texlive** in ~50 s.
+- **CI: publication-bundle job produces Zenodo + arXiv-source ZIPs** as 90-day artifacts.
 - **Top output**: candidate L2-strong cardinality envelope of the
   condensed classifying anima of spectral ∞-topoi, corroborated across
   3 branches (geometric, model-theoretic, set-theoretic).
-- **Currently paused** awaiting Phase 7: publication to Zenodo + email
-  to Haine (et al.).
+- **Currently paused awaiting the user** to:
+  1. Replace the three ORCID placeholders flagged in `docs/preprint_checklist.md`.
+  2. Click "Publish" on Zenodo manually (orchestrator does not publish).
+  3. Send the courtesy email to Haine using `docs/synthesis/EMAIL_DRAFT_HAINE.md`.
 
 ## What to read, in order, before doing anything
 
@@ -51,18 +55,19 @@ courtesy notification rather than a request for deep dialogue.
 
 ## Concrete first steps for the next session
 
-### Step A — publication infrastructure
+### Step A — publication infrastructure (DONE in MR !10)
 
-Build `src/axiom_explorer/publish.py`:
+The Zenodo bundle pipeline is built and CI-validated, following the
+pattern of `research/vera-paper`:
 
-- Pandoc-based markdown → LaTeX → PDF pipeline.
-- LaTeX templates under `templates/` (`findings-note.tex` and
-  `synthesis-paper.tex`).
-- Zenodo API client: build a draft deposition with metadata, attach
-  PDF + repo ZIP. **Do NOT publish.** Final click is the user's.
-- Zenodo token via `secret-store` (suggested key:
-  `zenodo/api/token`).
-- ORCID linkage in metadata.
+- `paper/preprint.tex` + `paper/references.bib` → `latexmk -pdf` → `paper/preprint.pdf`.
+- `scripts/build_publication_bundle.py` → `dist/publication/*.zip`.
+- `.zenodo.json` + `CITATION.cff` at root for native Zenodo/ORCID linkage.
+- `LICENSE` set to CC-BY-4.0.
+- `.gitlab-ci.yml` jobs `paper-pdf` and `publication-bundle` with
+  90-day artifacts.
+
+**Nothing else to build for Step A.** Move directly to Step B.
 
 ### Step B — write the v1 preprint
 
