@@ -24,11 +24,13 @@ compute = [
   "sympy>=1.12",
   "networkx>=3.2",
   "matplotlib>=3.8",
+  "z3-solver>=4.13",
 ]
 dev = [
   "pytest>=8.0",
   "ruff>=0.5",
   "mypy>=1.10",
+  "z3-solver>=4.13",
 ]
 all = [
   "numpy>=1.26",
@@ -36,6 +38,7 @@ all = [
   "sympy>=1.12",
   "networkx>=3.2",
   "matplotlib>=3.8",
+  "z3-solver>=4.13",
   "pytest>=8.0",
   "ruff>=0.5",
   "mypy>=1.10",
