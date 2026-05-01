@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the preprint and the archived release."
+title: "A cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric, model-theoretic and set-theoretic instances"
+version: "v1-preprint"
+date-released: "2026-05-01"
+authors:
+  - family-names: "Vera Gómez"
+    given-names: "Francisco Javier"
+    affiliation: "Independent researcher"
+    orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+abstract: >-
+  Synthesis preprint formulating a candidate cardinality envelope for the underlying
+  group at section level of the fundamental group of the condensed classifying anima of
+  a spectral infinity-topos. The envelope 2^kappa, where kappa is the cardinality of
+  the underlying point set, is shown consistent with seven attestations across three
+  nominally unrelated mathematical branches (geometric, model-theoretic, set-theoretic)
+  under the unifying classifying-anima construction recently announced by Haine.
+  Falsifiable conjecture with explicit confidence levels per claim and an honest
+  declaration of author position and LLM-assisted production method.
+keywords:
+  - condensed mathematics
+  - condensed homotopy type
+  - Lascar group
+  - infinity-topos
+  - cardinal arithmetic
+  - LLM-assisted research
+license: "CC-BY-4.0"
+repository-code: "https://gitlab.loneorc.com/research/axiom-explorer"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Vera Gómez"
+      given-names: "Francisco Javier"
+      affiliation: "Independent researcher"
+      orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+  title: "A cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric, model-theoretic and set-theoretic instances"
+  year: 2026

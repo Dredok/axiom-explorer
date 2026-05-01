@@ -1,18 +1,17 @@
 include:
   - project: 'vera-studio/ci-templates'
     ref: release/1.13
-    file: 'common.yml'
-  - project: 'vera-studio/ci-templates'
-    ref: release/1.13
-    file: 'python-jobs.yml'
-  - project: 'vera-studio/ci-templates'
-    ref: release/1.13
-    file: 'code-review.yml'
+    file:
+      - 'common.yml'
+      - 'python-jobs.yml'
+      - 'code-review.yml'
 
 stages:
   - review
   - lint
   - test
+  - paper
+  - package
   - research
 
 default:
@@ -33,8 +32,53 @@ pytest:
     - python -m pytest -q
     - python -m compileall src
 
+paper-pdf:
+  extends: .python-base
+  stage: paper
+  before_script:
+    - apt-get update
+    - >
+      apt-get install -y --no-install-recommends
+      latexmk
+      texlive-fonts-recommended
+      texlive-latex-base
+      texlive-latex-extra
+      texlive-latex-recommended
+      texlive-pictures
+    - rm -rf /var/lib/apt/lists/*
+    - !reference [.python-base, before_script]
+  script:
+    - cd paper
+    - latexmk -pdf -interaction=nonstopmode -halt-on-error preprint.tex
+  artifacts:
+    paths:
+      - paper/preprint.pdf
+      - paper/preprint.bbl
+    expire_in: 30 days
+
+publication-bundle:
+  extends: .python-base
+  stage: package
+  needs:
+    - job: paper-pdf
+      artifacts: true
+  before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends git
+    - rm -rf /var/lib/apt/lists/*
+    - !reference [.python-base, before_script]
+  script:
+    - python3 scripts/build_publication_bundle.py --allow-dirty
+  artifacts:
+    name: "axiom-explorer-publication-bundle-${CI_COMMIT_SHORT_SHA}"
+    paths:
+      - dist/publication/*-zenodo.zip
+      - dist/publication/*-arxiv-source.zip
+      - dist/publication/*/release_manifest.json
+      - dist/publication/*/RELEASE_MANIFEST.txt
+    expire_in: 90 days
+
 # Manual job to run a research phase end-to-end and persist outputs as artifacts.
-# Trigger via pipeline variable: RESEARCH_PHASE=phase0 (or phase1, etc.)
 research:phase:
   extends: .python-base
   stage: research

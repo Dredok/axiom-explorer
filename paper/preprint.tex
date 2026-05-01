@@ -1,0 +1,473 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{authblk}
+\usepackage{lmodern}
+\usepackage[final,babel=true]{microtype}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={A cardinality envelope for the condensed classifying anima of spectral infinity-topoi},
+  pdfauthor={Vera Gomez, Francisco Javier},
+  pdfsubject={Condensed mathematics, model theory, set theory},
+  pdfkeywords={condensed mathematics, condensed homotopy type, Lascar group, infinity-topos, cardinal arithmetic, LLM-assisted research}
+}
+
+% Theorems
+\theoremstyle{definition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem*{question}{Question}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% Convenience
+\newcommand{\Cond}{\mathrm{Cond}}
+\newcommand{\Pt}{\mathrm{Pt}}
+\newcommand{\Bcat}{\mathrm{B}}
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\GalL}{\mathrm{Gal}_{L}}
+\newcommand{\Frhat}{\widehat{\mathrm{Fr}}}
+\newcommand{\Zhat}{\widehat{\mathbf{Z}}}
+\newcommand{\Aone}{\mathbf{A}^{1}}
+\newcommand{\Pone}{\mathbf{P}^{1}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\R}{\mathbf{R}}
+
+\setlist[itemize]{nosep,leftmargin=*}
+\setlist[enumerate]{nosep,leftmargin=*}
+
+\title{A cardinality envelope for the condensed\\
+  classifying anima of spectral $\infty$-topoi: a synthesis\\
+  across geometric, model-theoretic and set-theoretic instances}
+
+\author[1]{Francisco Javier Vera G\'omez}
+\affil[1]{Independent researcher\\
+\href{https://orcid.org/XXXX-XXXX-XXXX-XXXX}{ORCID: XXXX-XXXX-XXXX-XXXX (placeholder)}\\
+Repository:
+\href{https://gitlab.loneorc.com/research/axiom-explorer}{gitlab.loneorc.com/research/axiom-explorer}\\
+Version: v1-preprint}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formulate a candidate cardinality envelope for the underlying group at section level
+of the fundamental group of the condensed classifying anima of a spectral
+$\infty$-topos: for $\mathcal{X}$ spectral with $\kappa = |\Pt(\mathcal{X})(\ast)|$, we
+conjecture $|\,\pi_1(\Bcat\,\Pt^{\mathrm{coh}}(\mathcal{X}))(\ast)\,| \le 2^{\kappa}$.
+We observe that this envelope is consistent with seven attestations across three
+nominally unrelated mathematical branches --- geometric (the condensed homotopy type of
+a scheme, after Haine, Holzschuh, Lara, Mair, Martini and Wolf), model-theoretic (the
+Lascar group of a complete first-order theory, classical bounds and Haine's forthcoming
+joint work with Damaj and Zhang), and set-theoretic (Whitehead's problem in condensed
+mathematics, after Clausen-Scholze and Bergfalk-Lambie-Hanson-\v{S}aroch /
+Bannister-Basak). The unifying classifying-anima construction is itself an announced
+result; the envelope as a uniform statement \emph{across} the unification is, to the
+best of our knowledge, not formulated as such in any single source. We present the
+candidate as a falsifiable conjecture, with explicit confidence levels per claim, an
+honest declaration of author position and production method, and an explicit invitation
+to experts in any of the three branches to confirm, refute, or locate it in existing
+literature.
+\end{abstract}
+
+\section{Introduction and statement}
+
+Let $\mathcal{X}$ be a coherent $\infty$-topos. Following Lurie's work on
+ultracategories, one associates to $\mathcal{X}$ a \emph{condensed $\infty$-category of
+points} $\Pt(\mathcal{X})$, defined on extremally disconnected profinite sets $K$ by
+$\Pt(\mathcal{X})(K) := \mathrm{Fun}^{\ast}(\mathcal{X}, \Sh(K))$, the
+$\infty$-category of left-exact left adjoints $f^{\ast}: \mathcal{X} \to \Sh(K)$.
+Restricting to $f^{\ast}$ that \emph{preserve coherent objects} gives the condensed
+$\infty$-category of \emph{coherent points} $\Pt^{\mathrm{coh}}(\mathcal{X})$ of
+\cite{BarwickGlasmanHaine2018}. We write $\Bcat\,\Pt^{\mathrm{coh}}(\mathcal{X})$ for the
+condensed classifying anima of this condensed $\infty$-category, which we refer to as
+the \emph{condensed classifying anima} of $\mathcal{X}$.
+
+For an $\infty$-topos $\mathcal{X}$, write $\Pt(\mathcal{X})(\ast)$ for the underlying
+$\infty$-category of global points and $|\Pt(\mathcal{X})(\ast)|$ for the cardinality
+of its underlying set of objects.
+
+Let $\mathcal{X}$ be a spectral $\infty$-topos in the sense of
+\cite{BarwickGlasmanHaine2018}, and set $\kappa := |\Pt(\mathcal{X})(\ast)|$.
+
+\begin{conjecture}[Cardinality envelope]\label{conj:envelope}
+With $\mathcal{X}$ and $\kappa$ as above, the underlying group at section level of the
+fundamental group of the condensed classifying anima satisfies
+\begin{equation}
+| \pi_1(\Bcat\,\Pt^{\mathrm{coh}}(\mathcal{X}))(\ast) | \le 2^{\kappa}.
+\end{equation}
+Moreover, the bound is attained whenever $\Pt(\mathcal{X})(\ast)$ admits a $\kappa$-large
+family of distinct localisation directions whose closure under intersection has
+cardinality $\kappa$.
+\end{conjecture}
+
+The conjecture sits on top of a structural unification announced by Haine
+\cite[Theorem 0.3]{Haine2026classifying}: for spectral $\infty$-topoi $\mathcal{X}$, the
+inclusion of condensed $\infty$-categories
+$\Pt^{\mathrm{coh}}(\mathcal{X}) \hookrightarrow \Pt(\mathcal{X})$ induces an
+equivalence on condensed classifying anima. Under this equivalence, two superficially
+unrelated invariants become special cases of the same construction:
+
+\begin{itemize}
+\item The \emph{pro\'etale fundamental group} of a scheme of Bhatt-Scholze
+\cite{BhattScholze2015}, via the \'etale $\infty$-topos
+$\mathcal{X} = X_{\mathrm{\acute{e}t}}$ --- refined to the condensed fundamental group
+$\pi_1^{\mathrm{cond}}(X)$ of \cite{HHLMMW2025}.
+
+\item The \emph{Lascar group} $\GalL(T)$ of a complete first-order theory $T$, via the
+classifying $\infty$-topos of $T$ --- recovered as $\pi_1$ of the condensed classifying
+anima of $\mathrm{Mod}_T$ in forthcoming work of Haine, Damaj and Zhang
+\cite[\S 0]{Haine2026classifying}.
+\end{itemize}
+
+The conjecture asserts a \emph{uniform} cardinality bound across this unification.
+
+\section{Confidence ladder}
+
+Throughout the paper we mark each substantive claim with a confidence level so the
+reader can adjust trust accordingly:
+
+\begin{itemize}
+\item \textbf{L0 --- Verified mechanically}: directly checked in source code, formal
+  proof, or finite enumeration.
+\item \textbf{L1 --- Strong}: a standard, named result in the cited literature.
+\item \textbf{L2 --- Plausible}: argued or supported by the cited evidence; not
+  directly verified by us.
+\item \textbf{L3 --- Speculative}: a guess emerging from the synthesis, listed as open
+  question.
+\end{itemize}
+
+Conjecture~\ref{conj:envelope} carries confidence \textbf{L2}.
+
+\section{Three corroborations}
+
+\subsection{Geometric instance}
+
+For $X$ a quasi-compact quasi-separated scheme, the condensed homotopy type
+$\Pi_\infty^{\mathrm{cond}}(X)$ is the condensed classifying anima of
+$\Pt^{\mathrm{coh}}(X_{\mathrm{\acute{e}t}})$ \cite[\S 3]{HHLMMW2025}.
+
+The relevant attestations of Conjecture~\ref{conj:envelope} are explicit in
+\cite[Remark 7.14, Example 7.9]{HHLMMW2025}.
+
+\begin{theorem}[Geometric attestations, after \cite{HHLMMW2025}]\label{thm:geomatt}
+Working over the complex numbers and over the rationals respectively,
+\begin{equation}
+\bigl| \pi_1^{\mathrm{cond}}(\Pone_{\C})(\ast) \bigr| = 2^{2^{\aleph_0}},
+\qquad
+\bigl| \pi_1^{\mathrm{cond}}(\Pone_{\Q})(\ast) \bigr| \le 2^{\aleph_0}.
+\end{equation}
+\end{theorem}
+
+Both attestations match the envelope of Conjecture~\ref{conj:envelope} exactly, with
+$\kappa = |\C| = 2^{\aleph_0}$ in the first case and $\kappa = |\Q| = \aleph_0$ in the
+second. The first is attained; the second is the upper bound the paper proves.
+
+The proof of \cite[Proposition 7.2]{HHLMMW2025} proceeds by a short exact sequence
+\begin{equation}
+1 \;\to\; N_S \;\to\; \Frhat_{\C} \;\to\;
+\pi_1^{\mathrm{cond}}(\Aone_{\C} \setminus S, \overline{\eta})(\ast)
+\;\to\; 1,
+\end{equation}
+where $\Frhat_{\C}$ is the free profinite group on $\C$ and $N_S$ is an explicit
+abstract normal subgroup. Two inputs control the cardinality of the quotient: the
+cardinality of $\Frhat_{k}$, bounded by $|k|^{\aleph_0}$, and the cardinality of a
+product family
+$\prod_{a \in \C} \Zhat / \bigoplus_{a \in \C} \Zhat$
+which has size $2^{|k|}$ for $|k|$ infinite. Both inputs scale with $|k|$; the maximum
+$\max(|k|^{\aleph_0}, 2^{|k|})$ collapses to $2^{|k|}$ for infinite $|k|$, which is the
+envelope of Conjecture~\ref{conj:envelope}. We record this argument as a
+\emph{proof sketch}, not a proof, in \S\ref{sec:sketch}.
+
+\subsection{Model-theoretic instance}
+
+For a complete first-order theory $T$ (with countable language for simplicity), the
+\emph{Lascar group} $\GalL(T)$ is the quasicompact topological group of automorphisms
+of the monster model modulo the group generated by automorphisms fixing a small model
+\cite[Ch.~6]{Casanovas2011}. In forthcoming work of Haine, Damaj and Zhang announced in
+\cite{Haine2026classifying}, they show
+\begin{equation}
+\GalL(T) \;\simeq\; \pi_1(\Bcat\,\mathrm{Mod}_T)
+\end{equation}
+as condensed groups, where $\mathrm{Mod}_T$ is the condensed category of models of $T$.
+
+The classical Lascar bound (e.g.\ \cite[Ch.~6]{Casanovas2011}) gives
+$|\GalL(T)| \le 2^{|\mathrm{monster}|}$, and the bound is attained for ``wild''
+theories of cardinality $|\mathrm{monster}|$ with non-finitely-axiomatisable types.
+Trivial attestations include:
+
+\begin{itemize}
+\item $T = \mathrm{DLO}$ (dense linear orders without endpoints): $\GalL(\mathrm{DLO})$
+  is trivial. $T$ is $\omega$-categorical and simple; the bound is comfortably respected.
+\item $T = \mathrm{ACF}_0$: $\GalL$ is trivial. Same regime.
+\item $T = \mathrm{Th}(\Q_p)$: non-trivial Lascar structure, but bounded
+  ($\le \aleph_0$ in standard treatments); below the envelope.
+\end{itemize}
+
+The non-trivial attestation is in the wild regime of \cite{Casanovas2011}: there exist
+complete $T$ with $|T| = c$ and $|\GalL(T)| = 2^c$. This saturates the envelope at
+$\kappa = c$.
+
+Under the Haine--Damaj--Zhang identification, every such Lascar bound is literally an
+instance of Conjecture~\ref{conj:envelope}.
+
+\subsection{Set-theoretic instance}
+
+The third corroboration is more diffuse but equally striking. In condensed abelian
+groups, Clausen and Scholze \cite{ClausenScholze2019Lectures} showed that the Whitehead
+problem for \emph{discrete} condensed abelian groups is \textbf{decidable affirmatively
+in ZFC}, in contrast with Shelah's classical independence result for ordinary abelian
+groups.
+
+Two recent papers give very different proofs of this same fact:
+
+\begin{itemize}
+\item Bergfalk, Lambie-Hanson and \v{S}aroch \cite{BLHS2023} give a forcing-theoretic
+  proof, interpreting condensed sets as ``generically invariant information'' or
+  ``systems of names over forcing extensions''.
+\item Bannister and Basak \cite{BannisterBasak2026} exhibit a geometric morphism from
+  the Grothendieck topos representing the Solovay model to the $\kappa$-pyknotic sets of
+  \cite{BarwickGlasmanHaine2018} (and Clausen-Scholze), and use the properties of this
+  morphism plus automatic continuity in the Solovay model to prove the same.
+\end{itemize}
+
+Both proofs control the relevant condensed objects by cardinal quantities at most
+$2^{|\R|} = 2^c$. Within the unifying classifying-anima construction of
+\cite{Haine2026classifying}, this is the $\kappa = c$ instance of
+Conjecture~\ref{conj:envelope}.
+
+Bergfalk and Lambie-Hanson \cite{BergfalkLH2024} further refine the picture with
+explicit constraints on derived limits of inverse systems $A_{\kappa, \lambda}$, Theorems
+A--D therein. We \emph{emphasise} that those results govern \emph{derived/extension}
+dimensions and not the cardinality of homotopy groups directly; see \S\ref{sec:scope}
+for the explicit scope caveat this introduces.
+
+\section{Summary of attestations}
+
+\begin{center}
+\begin{longtable}{@{}p{2.2cm} p{4.6cm} p{1.2cm} p{2.6cm} p{3.2cm}@{}}
+\toprule
+\textbf{Branch} & \textbf{Instance} & \textbf{$\kappa$} & \textbf{$|\,\pi_1\,|$ bound} & \textbf{Source} \\
+\midrule
+Geometric & $\pi_1^{\mathrm{cond}}(\Pone_{\C})(\ast)$ & $c$ & $2^c$ (attained) & \cite[Rmk 7.14]{HHLMMW2025} \\
+Geometric & $\pi_1^{\mathrm{cond}}(\Pone_{\Q})(\ast)$ & $\aleph_0$ & $\le c$ & \cite[Rmk 7.14]{HHLMMW2025} \\
+Model-th. & $\GalL(\mathrm{DLO})$ & $c$ & trivial & \cite[Ch.~6]{Casanovas2011} \\
+Model-th. & $\GalL(\mathrm{ACF}_0)$ & $c$ & trivial & classical \\
+Model-th. & $\GalL(T)$, $T$ wild, $|T|=c$ & $c$ & $2^c$ (attained) & \cite{Casanovas2011} \\
+Set-th. & Whitehead in $\Cond(\mathrm{Ab})$ for discrete & $c$ & $\le 2^c$ & \cite{ClausenScholze2019Lectures}, \cite{BLHS2023} \\
+Set-th. & Solovay $\to$ $\kappa$-pyknotic morphism & $c$ & $\le 2^c$ & \cite{BannisterBasak2026} \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+Across the seven attestations there is \textbf{no falsifying witness}: every explicit
+cardinality bound respects the envelope.
+
+\section{Structural argument (proof sketch)}\label{sec:sketch}
+
+We sketch why the envelope is plausible structurally. \emph{This is not a proof.}
+
+Let $\mathcal{X}$ be spectral with $\kappa = |\Pt(\mathcal{X})(\ast)|$. Three structural
+inputs control the size of $\pi_1(\Bcat\,\Pt^{\mathrm{coh}}(\mathcal{X}))(\ast)$:
+
+\begin{enumerate}
+\item \textbf{An ambient profinite group}, in the form of an absolute Galois /
+  automorphism group of a ``generic'' point of $\mathcal{X}$, has cardinality at most
+  $\kappa^{\aleph_0} = 2^{\kappa}$ for infinite $\kappa$.
+\item \textbf{Quotienting by an abstract normal closure} can only shrink the group.
+  Hence $|\pi_1| \le 2^{\kappa}$.
+\item \textbf{A natural product family} indexed by points of $\mathcal{X}$ provides a
+  lower bound. Specifically, the quotient
+  $\prod_{i \in I} G_i / \bigoplus_{i \in I} G_i$ for $|I| = \kappa$ and $|G_i|$
+  profinite has cardinality $2^{\kappa}$ when $|G_i| \le \kappa$. When the $\pi_1$ in
+  question surjects onto such a quotient, the lower bound is $2^{\kappa}$.
+\end{enumerate}
+
+For $X = \Pone_k$ with $k$ infinite separably closed, the argument of
+\cite[\S 7.1]{HHLMMW2025} realises both bounds simultaneously, attaining the envelope.
+Under the Haine unification, the same argument applies to the model-theoretic side via
+the absolute automorphism group of the monster.
+
+The argument is uniform across the spectral case; \emph{whether it can be made into a
+theorem} of the form of Conjecture~\ref{conj:envelope} depends on a precise account of
+the lower-bound input being available in the relevant generality. We do not claim such
+a theorem here.
+
+\section{Scope of the candidate}\label{sec:scope}
+
+We deliberately limit the scope of Conjecture~\ref{conj:envelope} to a
+\textbf{cardinality} statement on the \emph{underlying group at section level}. The
+conjecture does \textbf{not} claim:
+
+\begin{itemize}
+\item \textbf{Bounded derived dimensions.} Bergfalk-Lambie-Hanson
+  \cite[Theorem~D]{BergfalkLH2024} show that for $S, T$ extremally disconnected
+  \v{C}ech-Stone compactifications of discrete sets of cardinality $\ge \aleph_\omega$,
+  the constant sheaf on $S \times T$ has \emph{infinite} injective dimension; in
+  consequence, products of compact projective condensed anima are not compact. The
+  cardinality envelope is not in tension with this --- it bounds underlying
+  cardinalities, not Ext-tower heights.
+
+\item \textbf{ZFC unconditionality} on the additivity of strong homology or on the
+  vanishing of $\lim^n A_{\kappa,\lambda}$ for $\kappa = \lambda = \aleph_0$. These
+  properties are genuinely sensitive to set-theoretic axioms
+  \cite[Theorem 2.10]{BergfalkLH2024}.
+\end{itemize}
+
+The cardinality envelope is, in this sense, a \emph{first-order} structural observation
+--- useful as an upper bound, but not the deepest layer of structure available in
+condensed mathematics.
+
+\section{Higher \texorpdfstring{$\pi_n$}{pi-n} extension and the K3 question (L3)}
+
+The argument of \S\ref{sec:sketch} generalises immediately to higher condensed homotopy
+groups: each $\pi_n(\Bcat\,\Pt^{\mathrm{coh}}(\mathcal{X}))(\ast)$ is a subquotient of
+profinite groups indexed by points of $\mathcal{X}$. We therefore conjecture, with
+confidence \textbf{L3}:
+
+\begin{conjecture}[Higher envelope]\label{conj:higher}
+For $\mathcal{X}$ spectral and $n \ge 1$,
+\begin{equation}
+| \pi_n(\Bcat\,\Pt^{\mathrm{coh}}(\mathcal{X}))(\ast) | \le 2^{\kappa}.
+\end{equation}
+\end{conjecture}
+
+Attainment for $n \ge 2$ is open. The cleanest test case we identify is the K3 surface
+over $\C$ at $n=2$, where classical
+$\pi_2^{\mathrm{\acute{e}t}}(\mathrm{K3}_{\C}, \mathbf{Z}_l)$ is non-trivial of rank
+$22$:
+
+\begin{question}[K3 at $n=2$]
+Does $|\pi_2^{\mathrm{cond}}(\mathrm{K3}_{\C}, \overline{x})(\ast)|$ attain $2^c$, or
+does it remain at the classical rank-$22$ structure?
+\end{question}
+
+Three scenarios are possible: trivial enhancement (matches classical
+$\pi_2^{\mathrm{\acute{e}t}}$), modest enhancement (continuum but not its powerset),
+full saturation ($2^c$, mirroring $\pi_1$ behaviour). We are unable to resolve this in
+our search, and find no published computation of $\pi_n^{\mathrm{cond}}$ for K3
+surfaces at any $n \ge 2$.
+
+\section{Falsifiability}
+
+Conjecture~\ref{conj:envelope} is sharply falsifiable. A single attested computation of
+any of the following exceeding the corresponding envelope refutes it:
+
+\begin{itemize}
+\item $|\pi_1^{\mathrm{cond}}(X_k)(\ast)|$ for some smooth qcqs scheme $X$ over a field
+  $k$, exceeding $2^{|k|}$.
+\item $|\GalL(T)|$ for some complete theory $T$ exceeding $2^{|\mathrm{monster}|}$.
+\item A condensed Ext-cardinality at the underlying-group level exceeding $2^{|\R|}$
+  in any of the regimes of \cite{BLHS2023} or \cite{BannisterBasak2026}.
+\end{itemize}
+
+We have not been able to construct any of these. If a reader can, the conjecture is
+wrong, and we would be glad to know it.
+
+\section{Author position and production method}
+
+This preprint is produced by a non-specialist in any of the three branches it engages:
+the author works at the boundary of formal methods and software engineering. The
+mathematical content should be read as a \textbf{synthesis} of recently-published
+results, not as expert exposition. Domain experts in condensed mathematics, model
+theory, or set theory are explicitly invited to flag misreadings of any cited
+literature.
+
+The paper is the output of an autonomous experimental harness called
+\emph{axiom-explorer} \cite{AxiomExplorerRepo}, which:
+
+\begin{itemize}
+\item Selects a small set of ``modern productive'' axiomatic seeds across distinct
+  branches.
+\item Performs a systematic bibliometric cross-search over arXiv for each pair of
+  seeds (six binary combinations from four seeds; in this run, Univalence Axiom
+  $\times$ Condensed Mathematics $\times$ Perfectoid Spaces $\times$ Synthetic Ricci).
+\item Inventories the formal state of each seed in Mathlib4 and adjacent Lean/Agda
+  projects.
+\item For each surviving cross-pair, builds a dossier integrating literature,
+  finite-case sanity checks (Z3, SymPy), and where applicable, a Lean 4 axiomatic
+  skeleton verifying joint type consistency of the axioms involved.
+\item Produces final per-phase reports and a synthesis document with explicit
+  confidence levels.
+\end{itemize}
+
+The harness is LLM-assisted (the orchestrator is an LLM agent operating under explicit
+stop rules, and the expert-curator role of filtering relevance is played jointly by the
+LLM and the human author). All inputs and outputs of the run are versioned at the
+repository in \cite{AxiomExplorerRepo} under a CC-BY-compatible license.
+
+The candidate of this preprint emerged from the harness's Phase~3 deep dive on the
+Univalence $\times$ Condensed and Condensed $\times$ Perfectoid pairs, followed by
+manual cross-reading that surfaced \cite{Haine2026classifying}, \cite{BergfalkLH2024},
+\cite{BLHS2023} and \cite{BannisterBasak2026}. The \textbf{unification} of the
+geometric and model-theoretic sides is announced in those papers; it is not original to
+this work. The \textbf{uniform cardinality envelope} \emph{across} the unification is,
+to the best of our search, not formulated as such in any single source --- and is the
+synthesis contribution of this preprint.
+
+\section{Acknowledgments}
+
+We thank the authors of all cited works for the source material. The Lean~4 axiomatic
+skeleton of Synthetic Stone Duality \cite{CCGM2024} in the accompanying repository was
+built in dialogue with that paper's stated axioms. The axiom-explorer harness is open
+source; reproducibility instructions and full per-phase reports are at
+\cite{AxiomExplorerRepo}.
+
+\section{Reproducibility}
+
+All artefacts of the experimental run that produced this preprint are versioned at
+\cite{AxiomExplorerRepo}:
+
+\begin{itemize}
+\item Full per-phase reports under \texttt{research/phase\{0..5\}-*}.
+\item Python harness, finite-model sanity checks under \texttt{src/axiom\_explorer/}.
+\item Lean~4 axiomatic skeleton at
+  \texttt{lean/AxiomExplorer/SyntheticStoneDuality.lean}, builds clean with
+  \texttt{leanprover/lean4:v4.16.0}.
+\item Bibliometric raw data under \texttt{data/phase0/raw/}.
+\item Cited papers can be re-downloaded by \texttt{curl} from arXiv; paths are
+  documented in the repository's \texttt{HANDOFF.md}.
+\item Test suite (60+ tests, all green at the time of writing) is the
+  reproducibility floor for the finite computational claims of this preprint.
+\end{itemize}
+
+\section{Invitation}
+
+The first version of this preprint is intended as a \emph{registered observation} and
+an explicit invitation to specialists in any of the three involved branches. The three
+responses we are most interested in, in decreasing order of preference:
+
+\begin{enumerate}
+\item ``This formulation is folklore in [community~$X$], see [reference~$Y$].''
+\item ``There is a counterexample, namely $[Z]$.''
+\item ``I had not seen the conjecture stated this way; here is a specific place where
+  it would help / fail.''
+\end{enumerate}
+
+Any of the three is a useful update. We will issue a v2 of this preprint if substantive
+feedback is received.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
