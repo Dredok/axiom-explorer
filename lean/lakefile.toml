@@ -1,0 +1,5 @@
+name = "axiom_explorer"
+defaultTargets = ["AxiomExplorer"]
+
+[[lean_lib]]
+name = "AxiomExplorer"

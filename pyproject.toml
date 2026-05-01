@@ -31,6 +31,7 @@ dev = [
   "ruff>=0.5",
   "mypy>=1.10",
   "z3-solver>=4.13",
+  "sympy>=1.12",
 ]
 all = [
   "numpy>=1.26",
