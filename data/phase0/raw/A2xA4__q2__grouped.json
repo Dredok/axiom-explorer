@@ -1,7 +1,7 @@
 {
-  "query": "(all:\"condensed mathematics\" OR all:\"condensed sets\" OR all:\"liquid tensor experiment\" OR all:\"solid module\" OR all:\"condensed abelian\" OR all:\"pyknotic\" OR all:\"condensed module\" OR all:\"condensed group\" OR all:\"condensed cohomology\" OR all:\"Mann thesis\" OR all:\"p-adic functional analysis condensed\") AND (all:\"synthetic Ricci\" OR all:\"CD(K,N)\" OR all:\"Lott-Sturm-Villani\" OR all:\"RCD space\" OR all:\"metric measure space curvature\" OR all:\"optimal transport curvature\" OR all:\"RCD(K,N)\" OR all:\"Bakry-Emery\" OR all:\"BE(K,N)\" OR all:\"MCP(K,N)\" OR all:\"Wasserstein curvature\" OR all:\"lower Ricci bound metric measure\" OR all:\"Ricci limit space\" OR all:\"displacement convexity\")",
+  "query": "(all:\"condensed mathematics\" OR all:\"condensed sets\" OR all:\"liquid tensor experiment\" OR all:\"solid module\" OR all:\"condensed abelian\" OR all:\"pyknotic\" OR all:\"condensed module\" OR all:\"condensed group\" OR all:\"condensed cohomology\" OR all:\"Mann thesis\" OR all:\"p-adic functional analysis condensed\" OR all:\"condensed homotopy type\" OR all:\"kappa-pyknotic\" OR all:\"condensed infinity-category\" OR all:\"Solovay model condensed\" OR all:\"Whitehead condensed\") AND (all:\"synthetic Ricci\" OR all:\"CD(K,N)\" OR all:\"Lott-Sturm-Villani\" OR all:\"RCD space\" OR all:\"metric measure space curvature\" OR all:\"optimal transport curvature\" OR all:\"RCD(K,N)\" OR all:\"Bakry-Emery\" OR all:\"BE(K,N)\" OR all:\"MCP(K,N)\" OR all:\"Wasserstein curvature\" OR all:\"lower Ricci bound metric measure\" OR all:\"Ricci limit space\" OR all:\"displacement convexity\")",
   "label": "q2-grouped",
-  "timestamp_utc": "2026-04-30T23:48:36Z",
+  "timestamp_utc": "2026-05-01T00:51:32Z",
   "total_results": 1,
   "fetched": 1,
   "papers": [

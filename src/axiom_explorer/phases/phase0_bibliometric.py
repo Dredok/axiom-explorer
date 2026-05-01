@@ -28,6 +28,7 @@ from axiom_explorer.arxiv_search import (
     polite_sleep,
     search,
     search_author_pair,
+    search_author_topic,
     search_grouped,
 )
 from axiom_explorer.seeds import SEEDS, binary_combinations
@@ -207,6 +208,53 @@ def _run_pair(
         if pair_count >= MAX_AUTHOR_PAIR_QUERIES:
             break
 
+    # --- Q5: single key-author + topic OR + math archive
+    # Catches cross-area work where authors specialise in adjacent terminology
+    # without co-authoring across the divide (e.g. Haine on condensed homotopy
+    # type without being a Scholze co-author).
+    q5_topic_papers: set[str] = set()
+    pair_count_q5 = 0
+    for au_a in sa.key_authors[:3]:
+        if pair_count_q5 >= MAX_AUTHOR_PAIR_QUERIES:
+            break
+        topics_b = list(sb.primary_terms) + list(sb.related_terms[:6])
+        if topics_b:
+            r = search_author_topic(au_a, topics_b, max_results=20)
+            polite_sleep()
+            _save(r, raw_dir / f"{pair}__q5__{_slug(au_a)}.json")
+            queries_log.write(
+                json.dumps(
+                    {"pair": pair, "kind": "q5", "author": au_a,
+                     "topics": topics_b, "total_results": r.total_results},
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+            for p_paper in r.papers:
+                q5_topic_papers.add(p_paper.arxiv_id)
+            all_results.append(r)
+            pair_count_q5 += 1
+    for au_b in sb.key_authors[:3]:
+        if pair_count_q5 >= 2 * MAX_AUTHOR_PAIR_QUERIES:
+            break
+        topics_a = list(sa.primary_terms) + list(sa.related_terms[:6])
+        if topics_a:
+            r = search_author_topic(au_b, topics_a, max_results=20)
+            polite_sleep()
+            _save(r, raw_dir / f"{pair}__q5b__{_slug(au_b)}.json")
+            queries_log.write(
+                json.dumps(
+                    {"pair": pair, "kind": "q5b", "author": au_b,
+                     "topics": topics_a, "total_results": r.total_results},
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+            for p_paper in r.papers:
+                q5_topic_papers.add(p_paper.arxiv_id)
+            all_results.append(r)
+            pair_count_q5 += 1
+
     # Aggregate
     q2_unique = len(unique_q2_ids)
     q2_unique_math = len(q2_math_ids)
@@ -216,12 +264,15 @@ def _run_pair(
     )
     bridged = bridge_papers > 0 or len(self_authors) > 0
 
-    # Use the math-filtered Q2 count for classification — this is the cleaner
-    # signal for "is there real cross-area math literature here?".
+    # Use the math-filtered Q2 count for classification, with Q5 also
+    # contributing as a 'bridge present' signal when it returns
+    # cross-area papers from key authors.
+    bridged = bridged or len(q5_topic_papers) > 0
     classification = _classify(q2_unique_math, bridged)
     print(
         f"[phase0]   q2_total={r2.total_results}  q2_math={q2_unique_math}  "
-        f"bridge={bridge_papers}  self={self_authors}  -> {classification}"
+        f"q5_topic={len(q5_topic_papers)}  bridge={bridge_papers}  "
+        f"self={self_authors}  -> {classification}"
     )
 
     return {
@@ -237,6 +288,7 @@ def _run_pair(
         ),
         "q4_bridge_papers": bridge_papers,
         "q4_self_authors": self_authors,
+        "q5_topic_papers": len(q5_topic_papers),
         "n_queries": len(all_results),
         "classification": classification,
     }
@@ -314,21 +366,22 @@ def _emit_report(
     lines.append("## Density per binary combination\n")
     lines.append(
         "| Pair | Q1 hits | Q2 total | Q2 math-only | Q3 hits | "
-        "Q4 bridge | shared authors | classification |"
+        "Q4 bridge | Q5 topic | shared authors | classification |"
     )
     lines.append(
-        "|------|---------|----------|--------------|---------|----------|----------------|----------------|"
+        "|------|---------|----------|--------------|---------|----------|----------|----------------|----------------|"
     )
     for a, b in pairs:
         key = f"{a}x{b}"
         d = summary.get(key, {})
         if "error" in d:
-            lines.append(f"| {key} | error | error | error | error | error | error | {d['error']} |")
+            lines.append(f"| {key} | error | error | error | error | error | error | error | {d['error']} |")
             continue
         lines.append(
             f"| {key} | {d['q1_total_hits_sum']} | {d['q2_total_results']} | "
             f"{d['q2_unique_math']} | {d['q3_total_hits_sum']} | "
-            f"{d['q4_bridge_papers']} | {', '.join(d['q4_self_authors']) or '-'} | "
+            f"{d['q4_bridge_papers']} | {d.get('q5_topic_papers', 0)} | "
+            f"{', '.join(d['q4_self_authors']) or '-'} | "
             f"**{d['classification']}** |"
         )
     lines.append("")

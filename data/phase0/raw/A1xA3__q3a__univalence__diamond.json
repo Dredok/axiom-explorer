@@ -1,7 +1,7 @@
 {
   "query": "all:\"univalence\" AND all:\"diamond\"",
   "label": "q3-primary-related",
-  "timestamp_utc": "2026-04-30T23:45:25Z",
+  "timestamp_utc": "2026-05-01T00:46:35Z",
   "total_results": 1,
   "fetched": 1,
   "papers": [

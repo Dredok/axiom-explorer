@@ -1,7 +1,7 @@
 {
   "query": "au:\"Scholze\" AND au:\"Fargues\" AND cat:math.*",
   "label": "co-author:Scholze+Fargues(math)",
-  "timestamp_utc": "2026-04-30T23:47:59Z",
+  "timestamp_utc": "2026-05-01T00:50:22Z",
   "total_results": 1,
   "fetched": 1,
   "papers": [

@@ -1,7 +1,7 @@
 {
   "query": "au:\"Mann\" AND au:\"Scholze\" AND cat:math.*",
   "label": "co-author:Mann+Scholze(math)",
-  "timestamp_utc": "2026-04-30T23:48:15Z",
+  "timestamp_utc": "2026-05-01T00:50:40Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

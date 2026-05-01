@@ -1,7 +1,7 @@
 {
   "query": "all:\"perfectoid\" AND all:\"CD(K,N)\"",
   "label": "q1-strict-primary",
-  "timestamp_utc": "2026-04-30T23:49:32Z",
+  "timestamp_utc": "2026-05-01T00:53:00Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

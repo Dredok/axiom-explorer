@@ -1,0 +1,98 @@
+{
+  "query": "au:\"Mann\" AND (all:\"perfectoid\" OR all:\"tilting equivalence\" OR all:\"diamond\" OR all:\"prismatic cohomology\" OR all:\"almost mathematics\" OR all:\"p-adic Hodge\" OR all:\"Fargues-Fontaine\") AND cat:math.*",
+  "label": "author-topic:Mann+7terms(math)",
+  "timestamp_utc": "2026-05-01T00:50:54Z",
+  "total_results": 5,
+  "fetched": 5,
+  "papers": [
+    {
+      "arxiv_id": "2403.01951v2",
+      "title": "Descent for solid quasi-coherent sheaves on perfectoid spaces",
+      "authors": [
+        "Johannes Anschütz",
+        "Lucas Mann"
+      ],
+      "summary": "We prove $v$-descent for solid quasi-coherent sheaves on perfectoid spaces as a key technical input for the development of a $6$-functor formalism with values in solid quasi-coherent sheaves on relative Fargues--Fontaine curves.",
+      "published": "2024-03-04T11:39:52Z",
+      "updated": "2024-12-02T16:15:22Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2403.01951v2",
+      "abs_url": "https://arxiv.org/abs/2403.01951v2"
+    },
+    {
+      "arxiv_id": "2005.06855v1",
+      "title": "Local systems on diamonds and $p$-adic vector bundles",
+      "authors": [
+        "Lucas Mann",
+        "Annette Werner"
+      ],
+      "summary": "We use Scholze's framework of diamonds to gain new insights in correspondences between $p$-adic vector bundles and local systems. Such correspondences arise in the context of $p$-adic Simpson theory in the case of vanishing Higgs fields. In the present paper we provide a detailed analysis of local systems on diamonds for the étale, pro-étale, and the $v$-topology, and study the structure sheaves for all three topologies in question. Applied to proper adic spaces of finite type over $\\mathbb{C}_p$ this enables us to prove a category equivalence between $\\mathbb{C}_p$-local systems with integral models, and modules under the $v$-structure sheaf which modulo each $p^n$ can be trivialized on a proper cover. The flexibility of the $v$-topology together with a descent result on integral models of local systems allows us to prove that the trivializability condition in the module category may be checked on any normal proper cover. This result leads to an extension of the parallel transport theory by Deninger and the second author to vector bundles with numerically flat reduction on a proper normal cover.",
+      "published": "2020-05-14T10:15:26Z",
+      "updated": "2020-05-14T10:15:26Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2005.06855v1",
+      "abs_url": "https://arxiv.org/abs/2005.06855v1"
+    },
+    {
+      "arxiv_id": "2412.20968v1",
+      "title": "A 6-functor formalism for solid quasi-coherent sheaves on the Fargues-Fontaine curve",
+      "authors": [
+        "Johannes Anschütz",
+        "Arthur-César Le Bras",
+        "Lucas Mann"
+      ],
+      "summary": "We develop a 6-functor formalism $\\mathcal{D}_{[0,\\infty)}(-)$ with $\\mathbb{Z}_p$-linear coefficients on small v-stacks, and discuss consequences for duality and finiteness for pro-étale cohomology of rigid-analytic varieties of general pro-étale $\\mathbb{Q}_p$-local systems as well as first examples motivated by a potential $p$-adic analog of Fargues-Scholze's geometrization program of the local Langlands correspondence.",
+      "published": "2024-12-30T14:15:20Z",
+      "updated": "2024-12-30T14:15:20Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2412.20968v1",
+      "abs_url": "https://arxiv.org/abs/2412.20968v1"
+    },
+    {
+      "arxiv_id": "2107.09403v2",
+      "title": "The $p$-adic Corlette-Simpson correspondence for abeloids",
+      "authors": [
+        "Ben Heuer",
+        "Lucas Mann",
+        "Annette Werner"
+      ],
+      "summary": "For an abeloid variety $A$ over a complete algebraically closed field extension $K$ of $\\mathbb Q_p$, we construct a $p$-adic Corlette-Simpson correspondence, namely an equivalence between finite-dimensional continuous $K$-linear representations of the Tate module and a certain subcategory of the Higgs bundles on $A$. To do so, our central object of study is the category of vector bundles for the $v$-topology on the diamond associated to $A$. We prove that any pro-finite-étale $v$-vector bundle can be built from pro-finite-étale $v$-line bundles and unipotent $v$-bundles. To describe the latter, we extend the theory of universal vector extensions to the $v$-topology and use this to generalise a result of Brion by relating unipotent $v$-bundles on abeloids to representations of vector groups.",
+      "published": "2021-07-20T10:50:45Z",
+      "updated": "2022-03-15T18:04:35Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2107.09403v2",
+      "abs_url": "https://arxiv.org/abs/2107.09403v2"
+    },
+    {
+      "arxiv_id": "2209.08135v1",
+      "title": "The 6-Functor Formalism for $\\mathbb Z_\\ell$- and $\\mathbb Q_\\ell$-Sheaves on Diamonds",
+      "authors": [
+        "Lucas Mann"
+      ],
+      "summary": "For every nuclear $\\mathbb Z_\\ell$-algebra $Λ$ and every small v-stack $X$ we construct an $\\infty$-category $\\mathcal D_{\\mathrm{nuc}}(X,Λ)$ of nuclear $Λ$-modules on $X$. We then construct a full 6-functor formalism for these sheaves, generalizing the étale 6-functor formalism for $Λ= \\mathbb F_\\ell$. Prominent choices for $Λ$ are $\\mathbb Z_\\ell$, $\\mathbb Q_\\ell$ and $\\bar{\\mathbb Q_\\ell}$ and especially in the latter two cases, no satisfying 6-functor formalism has been found before. Applied to classifying stacks we obtain a theory of nuclear representations, i.e. continuous representations on filtered colimits of Banach spaces.",
+      "published": "2022-09-16T19:07:49Z",
+      "updated": "2022-09-16T19:07:49Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2209.08135v1",
+      "abs_url": "https://arxiv.org/abs/2209.08135v1"
+    }
+  ]
+}

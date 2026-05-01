@@ -1,7 +1,7 @@
 {
   "query": "au:\"Clausen\" AND au:\"Bhatt\" AND cat:math.*",
   "label": "co-author:Clausen+Bhatt(math)",
-  "timestamp_utc": "2026-04-30T23:48:07Z",
+  "timestamp_utc": "2026-05-01T00:50:31Z",
   "total_results": 1,
   "fetched": 1,
   "papers": [

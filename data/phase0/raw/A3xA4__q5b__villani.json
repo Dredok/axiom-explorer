@@ -1,0 +1,8 @@
+{
+  "query": "au:\"Villani\" AND (all:\"perfectoid\" OR all:\"tilting equivalence\" OR all:\"diamond\" OR all:\"prismatic cohomology\" OR all:\"almost mathematics\" OR all:\"p-adic Hodge\" OR all:\"Fargues-Fontaine\") AND cat:math.*",
+  "label": "author-topic:Villani+7terms(math)",
+  "timestamp_utc": "2026-05-01T00:54:24Z",
+  "total_results": 0,
+  "fetched": 0,
+  "papers": []
+}

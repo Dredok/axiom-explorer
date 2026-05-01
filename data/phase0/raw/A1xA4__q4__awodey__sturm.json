@@ -1,7 +1,7 @@
 {
   "query": "au:\"Awodey\" AND au:\"Sturm\" AND cat:math.*",
   "label": "co-author:Awodey+Sturm(math)",
-  "timestamp_utc": "2026-04-30T23:47:07Z",
+  "timestamp_utc": "2026-05-01T00:48:55Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

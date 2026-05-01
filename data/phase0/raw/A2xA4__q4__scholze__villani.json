@@ -1,7 +1,7 @@
 {
   "query": "au:\"Scholze\" AND au:\"Villani\" AND cat:math.*",
   "label": "co-author:Scholze+Villani(math)",
-  "timestamp_utc": "2026-04-30T23:49:12Z",
+  "timestamp_utc": "2026-05-01T00:52:12Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

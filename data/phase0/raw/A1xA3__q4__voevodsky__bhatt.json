@@ -1,7 +1,7 @@
 {
   "query": "au:\"Voevodsky\" AND au:\"Bhatt\" AND cat:math.*",
   "label": "co-author:Voevodsky+Bhatt(math)",
-  "timestamp_utc": "2026-04-30T23:45:49Z",
+  "timestamp_utc": "2026-05-01T00:47:01Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

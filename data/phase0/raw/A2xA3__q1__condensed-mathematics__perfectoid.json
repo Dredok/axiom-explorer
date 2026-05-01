@@ -1,7 +1,7 @@
 {
   "query": "all:\"condensed mathematics\" AND all:\"perfectoid\"",
   "label": "q1-strict-primary",
-  "timestamp_utc": "2026-04-30T23:47:19Z",
+  "timestamp_utc": "2026-05-01T00:49:38Z",
   "total_results": 2,
   "fetched": 2,
   "papers": [

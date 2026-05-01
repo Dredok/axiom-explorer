@@ -1,0 +1,267 @@
+{
+  "query": "au:\"Scholze\" AND (all:\"perfectoid\" OR all:\"tilting equivalence\" OR all:\"diamond\" OR all:\"prismatic cohomology\" OR all:\"almost mathematics\" OR all:\"p-adic Hodge\" OR all:\"Fargues-Fontaine\") AND cat:math.*",
+  "label": "author-topic:Scholze+7terms(math)",
+  "timestamp_utc": "2026-05-01T00:50:45Z",
+  "total_results": 14,
+  "fetched": 14,
+  "papers": [
+    {
+      "arxiv_id": "2510.15196v2",
+      "title": "Analytic de Rham stacks of Fargues-Fontaine curves",
+      "authors": [
+        "Johannes Anschütz",
+        "Guido Bosco",
+        "Arthur-César Le Bras",
+        "Juan Esteban Rodríguez Camargo",
+        "Peter Scholze"
+      ],
+      "summary": "We define and initiate the study of analytic de Rham stacks of relative Fargues-Fontaine curves. To this end, we develop a theory of analytic de Rham stacks with sufficiently strong descent and approximation properties. Specializing to the de Rham stack of the Fargues-Fontaine curve attached to $\\mathbb{C}_p$, we apply the general theory to obtain a new geometric proof of the $p$-adic monodromy theorem, avoiding any reliance on earlier results on $p$-adic differential equations. Building on the foundations established here, we plan in a sequel to investigate the cohomology of de Rham stacks of relative Fargues-Fontaine curves in geometric situations and, in particular, provide a stack-theoretic definition of Hyodo-Kato cohomology.",
+      "published": "2025-10-16T23:40:13Z",
+      "updated": "2026-03-03T10:05:25Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2510.15196v2",
+      "abs_url": "https://arxiv.org/abs/2510.15196v2"
+    },
+    {
+      "arxiv_id": "1111.4914v1",
+      "title": "Perfectoid spaces",
+      "authors": [
+        "Peter Scholze"
+      ],
+      "summary": "We introduce a certain class of so-called perfectoid rings and spaces, which give a natural framework for Faltings' almost purity theorem, and for which there is a natural tilting operation which exchanges characteristic 0 and characteristic p. We deduce the weight-monodromy conjecture in certain cases by reduction to equal characteristic.",
+      "published": "2011-11-21T16:14:23Z",
+      "updated": "2011-11-21T16:14:23Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.AC"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1111.4914v1",
+      "abs_url": "https://arxiv.org/abs/1111.4914v1"
+    },
+    {
+      "arxiv_id": "1303.5948v1",
+      "title": "Perfectoid Spaces: A survey",
+      "authors": [
+        "Peter Scholze"
+      ],
+      "summary": "This paper, written in relation to the Current Developments in Mathematics 2012 Conference, discusses the recent papers on perfectoid spaces. Apart from giving an introduction to their content, it includes some open questions, as well as complements to the results of the previous papers.",
+      "published": "2013-03-24T13:42:41Z",
+      "updated": "2013-03-24T13:42:41Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1303.5948v1",
+      "abs_url": "https://arxiv.org/abs/1303.5948v1"
+    },
+    {
+      "arxiv_id": "1709.07343v4",
+      "title": "Etale cohomology of diamonds",
+      "authors": [
+        "Peter Scholze"
+      ],
+      "summary": "Motivated by problems on the étale cohomology of Rapoport--Zink spaces and their generalizations, as well as Fargues's geometrization conjecture for the local Langlands correspondence, we develop a six functor formalism for the étale cohomology of diamonds, and more generally small v-stacks on the category of perfectoid spaces of characteristic $p$. Using a natural functor from analytic adic spaces over $\\mathbb Z_p$ to diamonds which identifies étale sites, this induces a similar formalism in that setting, which in the noetherian setting recovers the formalism from Huber's book.",
+      "published": "2017-09-21T14:27:30Z",
+      "updated": "2026-04-14T07:29:30Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1709.07343v4",
+      "abs_url": "https://arxiv.org/abs/1709.07343v4"
+    },
+    {
+      "arxiv_id": "1205.3463v2",
+      "title": "p-adic Hodge theory for rigid-analytic varieties",
+      "authors": [
+        "Peter Scholze"
+      ],
+      "summary": "We give proofs of de Rham comparison isomorphisms for rigid-analytic varieties, with coefficients and in families. This relies on the theory of perfectoid spaces. Another new ingredient is the pro-etale site, which makes all constructions completely functorial.",
+      "published": "2012-05-15T18:17:51Z",
+      "updated": "2012-11-03T21:08:48Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1205.3463v2",
+      "abs_url": "https://arxiv.org/abs/1205.3463v2"
+    },
+    {
+      "arxiv_id": "1905.08229v4",
+      "title": "Prisms and Prismatic Cohomology",
+      "authors": [
+        "Bhargav Bhatt",
+        "Peter Scholze"
+      ],
+      "summary": "We introduce the notion of a prism, which may be regarded as a \"deperfection\" of the notion of a perfectoid ring. Using prisms, we attach a ringed site -- the prismatic site -- to a $p$-adic formal scheme. The resulting cohomology theory specializes to (and often refines) most known integral $p$-adic cohomology theories.   As applications, we prove an improved version of the almost purity theorem allowing ramification along arbitrary closed subsets (without using adic spaces), give a co-ordinate free description of $q$-de Rham cohomology as conjectured by the second author, and settle a vanishing conjecture for the $p$-adic Tate twists $\\mathbf{Z}_p(n)$ introduced in previous joint work with Morrow.",
+      "published": "2019-05-20T17:33:23Z",
+      "updated": "2022-01-12T13:58:54Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1905.08229v4",
+      "abs_url": "https://arxiv.org/abs/1905.08229v4"
+    },
+    {
+      "arxiv_id": "1211.6357v2",
+      "title": "Moduli of p-divisible groups",
+      "authors": [
+        "Peter Scholze",
+        "Jared Weinstein"
+      ],
+      "summary": "We prove several results about p-divisible groups and Rapoport-Zink spaces. Our main goal is to prove that Rapoport-Zink spaces at infinite level are naturally perfectoid spaces, and to give a description of these spaces purely in terms of p-adic Hodge theory. This allows us to formulate and prove duality isomorphisms between basic Rapoport-Zink spaces at infinite level in general. Moreover, we identify the image of the period morphism, reproving results of Faltings. For this, we give a general classification of p-divisible groups over the ring of integers of a complete algebraically closed field in the spirit of Riemann's classification of complex abelian varieties. Another key ingredient is a full faithfulness result for the Dieudonné module functor for p-divisible groups over semiperfect rings (meaning rings on which the Frobenius map is surjective).",
+      "published": "2012-11-27T16:48:21Z",
+      "updated": "2013-04-13T10:48:56Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.AG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1211.6357v2",
+      "abs_url": "https://arxiv.org/abs/1211.6357v2"
+    },
+    {
+      "arxiv_id": "1602.03148v3",
+      "title": "Integral p-adic Hodge theory",
+      "authors": [
+        "Bhargav Bhatt",
+        "Matthew Morrow",
+        "Peter Scholze"
+      ],
+      "summary": "We construct a new cohomology theory for proper smooth (formal) schemes over the ring of integers of C_p. It takes values in a mixed-characteristic analogue of Dieudonne modules, which was previously defined by Fargues as a version of Breuil-Kisin modules. Notably, this cohomology theory specializes to all other known p-adic cohomology theories, such as crystalline, de Rham and etale cohomology, which allows us to prove strong integral comparison theorems.   The construction of the cohomology theory relies on Faltings's almost purity theorem, along with a certain functor $Lη$ on the derived category, defined previously by Berthelot-Ogus. On affine pieces, our cohomology theory admits a relation to the theory of de Rham-Witt complexes of Langer-Zink, and can be computed as a q-deformation of de Rham cohomology.",
+      "published": "2016-02-09T20:07:46Z",
+      "updated": "2019-01-15T12:09:01Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1602.03148v3",
+      "abs_url": "https://arxiv.org/abs/1602.03148v3"
+    },
+    {
+      "arxiv_id": "2102.13459v4",
+      "title": "Geometrization of the local Langlands correspondence",
+      "authors": [
+        "Laurent Fargues",
+        "Peter Scholze"
+      ],
+      "summary": "Following the idea of [Far16], we develop the foundations of the geometric Langlands program on the Fargues--Fontaine curve. In particular, we define a category of $\\ell$-adic sheaves on the stack $\\mathrm{Bun}_G$ of $G$-bundles on the Fargues--Fontaine curve, prove a geometric Satake equivalence over the Fargues--Fontaine curve, and study the stack of $L$-parameters. As applications, we prove finiteness results for the cohomology of local Shimura varieties and general moduli spaces of local shtukas, and define $L$-parameters associated with irreducible smooth representations of $G(E)$, a map from the spectral Bernstein center to the Bernstein center, and the spectral action of the category of perfect complexes on the stack of $L$-parameters on the category of $\\ell$-adic sheaves on $\\mathrm{Bun}_G$.",
+      "published": "2021-02-26T13:34:06Z",
+      "updated": "2024-11-27T15:45:04Z",
+      "primary_category": "math.RT",
+      "categories": [
+        "math.RT",
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2102.13459v4",
+      "abs_url": "https://arxiv.org/abs/2102.13459v4"
+    },
+    {
+      "arxiv_id": "2409.07363v1",
+      "title": "Geometric Eisenstein series I: finiteness theorems",
+      "authors": [
+        "Linus Hamann",
+        "David Hansen",
+        "Peter Scholze"
+      ],
+      "summary": "We develop the theory of geometric Eisenstein series and constant term functors for $\\ell$-adic sheaves on stacks of bundles on the Fargues-Fontaine curve. In particular, we prove essentially optimal finiteness theorems for these functors, analogous to the usual finiteness properties of parabolic inductions and Jacquet modules. We also prove a geometric form of Bernstein's second adjointness theorem, generalizing the classical result and its recent extension to more general coefficient rings proved in [Dat-Helm-Kurinczuk-Moss]. As applications, we decompose the category of sheaves on $\\mathrm{Bun}_G$ into cuspidal and Eisenstein parts, and show that the gluing functors between strata of $\\mathrm{Bun}_G$ are continuous in a very strong sense.",
+      "published": "2024-09-11T15:51:18Z",
+      "updated": "2024-09-11T15:51:18Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.AG",
+        "math.RT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2409.07363v1",
+      "abs_url": "https://arxiv.org/abs/2409.07363v1"
+    },
+    {
+      "arxiv_id": "1507.08129v1",
+      "title": "Integral $p$-adic Hodge theory - announcement",
+      "authors": [
+        "Bhargav Bhatt",
+        "Matthew Morrow",
+        "Peter Scholze"
+      ],
+      "summary": "Given a proper, smooth (formal) scheme over the ring of integers of $\\mathbb C_p$, we prove that if the crystalline cohomology of its special fibre is torsion-free then the $p$-adic étale cohomology of its generic fibre is also torsion-free. In this announcement we sketch the proof, which relies on the construction of a new cohomology theory interpolating between crystalline and étale cohomology. Further details and results, including a comparison isomorphism, will be presented in the full forthcoming article.",
+      "published": "2015-07-29T13:08:47Z",
+      "updated": "2015-07-29T13:08:47Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1507.08129v1",
+      "abs_url": "https://arxiv.org/abs/1507.08129v1"
+    },
+    {
+      "arxiv_id": "1802.03261v2",
+      "title": "Topological Hochschild homology and integral $p$-adic Hodge theory",
+      "authors": [
+        "Bhargav Bhatt",
+        "Matthew Morrow",
+        "Peter Scholze"
+      ],
+      "summary": "In mixed characteristic and in equal characteristic $p$ we define a filtration on topological Hochschild homology and its variants. This filtration is an analogue of the filtration of algebraic $K$-theory by motivic cohomology. Its graded pieces are related in mixed characteristic to the complex $AΩ$ constructed in our previous work, and in equal characteristic $p$ to crystalline cohomology. Our construction of the filtration on $\\mathrm{THH}$ is via flat descent to semiperfectoid rings.   As one application, we refine the construction of the $AΩ$-complex by giving a cohomological construction of Breuil--Kisin modules for proper smooth formal schemes over $\\mathcal O_K$, where $K$ is a discretely valued extension of $\\mathbb Q_p$ with perfect residue field. As another application, we define syntomic sheaves $\\mathbb Z_p(n)$ for all $n\\geq 0$ on a large class of $\\mathbb Z_p$-algebras, and identify them in terms of $p$-adic nearby cycles in mixed characteristic, and in terms of logarithmic de~Rham-Witt sheaves in equal characteristic $p$.",
+      "published": "2018-02-09T13:57:42Z",
+      "updated": "2019-04-09T17:16:41Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.KT",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1802.03261v2",
+      "abs_url": "https://arxiv.org/abs/1802.03261v2"
+    },
+    {
+      "arxiv_id": "1912.10932v3",
+      "title": "Purity for flat cohomology",
+      "authors": [
+        "Kestutis Cesnavicius",
+        "Peter Scholze"
+      ],
+      "summary": "We establish the flat cohomology version of the Gabber-Thomason purity for étale cohomology: for a complete intersection Noetherian local ring $(R, \\mathfrak{m})$ and a commutative, finite, flat $R$-group $G$, the flat cohomology $H^i_{\\mathfrak{m}}(R, G)$ vanishes for $i < \\mathrm{dim}(R)$. For small $i$, this settles conjectures of Gabber that extend the Grothendieck-Lefschetz theorem and give purity for the Brauer group for schemes with complete intersection singularities. For the proof, we reduce to a flat purity statement for perfectoid rings, establish $p$-complete arc descent for flat cohomology of perfectoids, and then relate to coherent cohomology of $\\mathbb{A}_{\\mathrm{inf}}$ via prismatic Dieudonné theory. We also present an algebraic version of tilting for étale cohomology, use it to reprove the Gabber-Thomason purity, and exhibit general properties of fppf cohomology of (animated) rings with finite, locally free group scheme coefficients, such as excision, agreement with fpqc cohomology, and continuity.",
+      "published": "2019-12-23T15:47:43Z",
+      "updated": "2023-04-26T08:32:05Z",
+      "primary_category": "math.AG",
+      "categories": [
+        "math.AG",
+        "math.NT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1912.10932v3",
+      "abs_url": "https://arxiv.org/abs/1912.10932v3"
+    },
+    {
+      "arxiv_id": "1306.2070v2",
+      "title": "On torsion in the cohomology of locally symmetric varieties",
+      "authors": [
+        "Peter Scholze"
+      ],
+      "summary": "The main result of this paper is the existence of Galois representations associated with the mod $p$ (or mod $p^m$) cohomology of the locally symmetric spaces for $\\GL_n$ over a totally real or CM field, proving conjectures of Ash and others. Following an old suggestion of Clozel, recently realized by Harris-Lan-Taylor-Thorne for characteristic 0 cohomology classes, one realizes the cohomology of the locally symmetric spaces for $\\GL_n$ as a boundary contribution of the cohomology of symplectic or unitary Shimura varieties, so that the key problem is to understand torsion in the cohomology of Shimura varieties.   Thus, we prove new results on the $p$-adic geometry of Shimura varieties (of Hodge type). Namely, the Shimura varieties become perfectoid when passing to the inverse limit over all levels at $p$, and a new period map towards the flag variety exists on them, called the Hodge-Tate period map. It is roughly analogous to the embedding of the hermitian symmetric domain (which is roughly the inverse limit over all levels of the complex points of the Shimura variety) into its compact dual. The Hodge-Tate period map has several favorable properties, the most important being that it commutes with the Hecke operators away from $p$ (for the trivial action of these Hecke operators on the flag variety), and that automorphic vector bundles come via pullback from the flag variety.",
+      "published": "2013-06-09T22:48:34Z",
+      "updated": "2015-06-02T05:36:58Z",
+      "primary_category": "math.NT",
+      "categories": [
+        "math.NT",
+        "math.AG",
+        "math.RT"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/1306.2070v2",
+      "abs_url": "https://arxiv.org/abs/1306.2070v2"
+    }
+  ]
+}

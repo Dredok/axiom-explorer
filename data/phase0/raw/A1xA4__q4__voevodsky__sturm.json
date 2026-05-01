@@ -1,7 +1,7 @@
 {
   "query": "au:\"Voevodsky\" AND au:\"Sturm\" AND cat:math.*",
   "label": "co-author:Voevodsky+Sturm(math)",
-  "timestamp_utc": "2026-04-30T23:46:54Z",
+  "timestamp_utc": "2026-05-01T00:48:42Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

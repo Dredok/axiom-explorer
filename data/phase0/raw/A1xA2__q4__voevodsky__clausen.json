@@ -1,7 +1,7 @@
 {
   "query": "au:\"Voevodsky\" AND au:\"Clausen\" AND cat:math.*",
   "label": "co-author:Voevodsky+Clausen(math)",
-  "timestamp_utc": "2026-04-30T23:44:49Z",
+  "timestamp_utc": "2026-05-01T00:45:28Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

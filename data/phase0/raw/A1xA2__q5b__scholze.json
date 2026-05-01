@@ -1,0 +1,8 @@
+{
+  "query": "au:\"Scholze\" AND (all:\"univalence\" OR all:\"homotopy type theory\" OR all:\"HoTT\" OR all:\"cubical type theory\" OR all:\"univalent foundations\" OR all:\"synthetic homotopy theory\" OR all:\"higher inductive type\") AND cat:math.*",
+  "label": "author-topic:Scholze+7terms(math)",
+  "timestamp_utc": "2026-05-01T00:46:04Z",
+  "total_results": 0,
+  "fetched": 0,
+  "papers": []
+}
