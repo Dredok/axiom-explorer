@@ -1,7 +1,7 @@
 {
   "query": "(all:\"perfectoid\" OR all:\"tilting equivalence\" OR all:\"diamond\" OR all:\"prismatic cohomology\" OR all:\"almost mathematics\" OR all:\"p-adic Hodge\" OR all:\"Fargues-Fontaine\" OR all:\"v-sheaves\" OR all:\"Berkovich space p-adic\" OR all:\"perfectoid space\" OR all:\"untilt\") AND (all:\"synthetic Ricci\" OR all:\"CD(K,N)\" OR all:\"Lott-Sturm-Villani\" OR all:\"RCD space\" OR all:\"metric measure space curvature\" OR all:\"optimal transport curvature\" OR all:\"RCD(K,N)\" OR all:\"Bakry-Emery\" OR all:\"BE(K,N)\" OR all:\"MCP(K,N)\" OR all:\"Wasserstein curvature\" OR all:\"lower Ricci bound metric measure\" OR all:\"Ricci limit space\" OR all:\"displacement convexity\")",
   "label": "q2-grouped",
-  "timestamp_utc": "2026-04-30T23:49:37Z",
+  "timestamp_utc": "2026-05-01T00:53:06Z",
   "total_results": 13,
   "fetched": 13,
   "papers": [

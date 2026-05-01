@@ -63,6 +63,12 @@ SEEDS: dict[str, Seed] = {
             "condensed cohomology",
             "Mann thesis",
             "p-adic functional analysis condensed",
+            # Added in Phase 3 after manual discovery of these threads:
+            "condensed homotopy type",
+            "kappa-pyknotic",
+            "condensed infinity-category",
+            "Solovay model condensed",
+            "Whitehead condensed",
         ),
         key_authors=(
             "Scholze",
@@ -70,6 +76,13 @@ SEEDS: dict[str, Seed] = {
             "Mann",
             "Bhatt",
             "Asgeirsson",
+            # Added in Phase 3:
+            "Haine",
+            "Holzschuh",
+            "Lara",
+            "Bergfalk",
+            "Lambie-Hanson",
+            "Bannister",
         ),
     ),
     "A3": Seed(

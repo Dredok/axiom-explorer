@@ -1,0 +1,8 @@
+{
+  "query": "au:\"Fargues\" AND (all:\"condensed mathematics\" OR all:\"condensed sets\" OR all:\"liquid tensor experiment\" OR all:\"solid module\" OR all:\"condensed abelian\" OR all:\"pyknotic\" OR all:\"condensed module\" OR all:\"condensed group\") AND cat:math.*",
+  "label": "author-topic:Fargues+8terms(math)",
+  "timestamp_utc": "2026-05-01T00:51:08Z",
+  "total_results": 0,
+  "fetched": 0,
+  "papers": []
+}

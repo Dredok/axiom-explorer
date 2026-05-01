@@ -1,7 +1,7 @@
 {
   "query": "au:\"Voevodsky\" AND au:\"Villani\" AND cat:math.*",
   "label": "co-author:Voevodsky+Villani(math)",
-  "timestamp_utc": "2026-04-30T23:47:02Z",
+  "timestamp_utc": "2026-05-01T00:48:51Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

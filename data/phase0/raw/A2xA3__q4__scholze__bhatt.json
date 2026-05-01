@@ -1,7 +1,7 @@
 {
   "query": "au:\"Scholze\" AND au:\"Bhatt\" AND cat:math.*",
   "label": "co-author:Scholze+Bhatt(math)",
-  "timestamp_utc": "2026-04-30T23:47:55Z",
+  "timestamp_utc": "2026-05-01T00:50:18Z",
   "total_results": 8,
   "fetched": 8,
   "papers": [

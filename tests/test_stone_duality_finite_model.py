@@ -4,7 +4,7 @@ import pytest
 
 z3 = pytest.importorskip("z3")
 
-from axiom_explorer.compute.stone_duality_finite_model import (
+from axiom_explorer.compute.stone_duality_finite_model import (  # noqa: E402
     axiom_independence_check,
     consequence_finite_LLPO,
     consequence_finite_markov,

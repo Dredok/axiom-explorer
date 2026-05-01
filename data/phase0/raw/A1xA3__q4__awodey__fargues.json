@@ -1,7 +1,7 @@
 {
   "query": "au:\"Awodey\" AND au:\"Fargues\" AND cat:math.*",
   "label": "co-author:Awodey+Fargues(math)",
-  "timestamp_utc": "2026-04-30T23:46:06Z",
+  "timestamp_utc": "2026-05-01T00:47:19Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

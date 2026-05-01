@@ -1,7 +1,7 @@
 {
   "query": "au:\"Scholze\" AND au:\"Lott\" AND cat:math.*",
   "label": "co-author:Scholze+Lott(math)",
-  "timestamp_utc": "2026-04-30T23:50:09Z",
+  "timestamp_utc": "2026-05-01T00:53:41Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

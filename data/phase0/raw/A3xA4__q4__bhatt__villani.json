@@ -1,7 +1,7 @@
 {
   "query": "au:\"Bhatt\" AND au:\"Villani\" AND cat:math.*",
   "label": "co-author:Bhatt+Villani(math)",
-  "timestamp_utc": "2026-04-30T23:50:25Z",
+  "timestamp_utc": "2026-05-01T00:53:58Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

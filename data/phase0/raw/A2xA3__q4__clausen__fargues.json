@@ -1,7 +1,7 @@
 {
   "query": "au:\"Clausen\" AND au:\"Fargues\" AND cat:math.*",
   "label": "co-author:Clausen+Fargues(math)",
-  "timestamp_utc": "2026-04-30T23:48:11Z",
+  "timestamp_utc": "2026-05-01T00:50:36Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

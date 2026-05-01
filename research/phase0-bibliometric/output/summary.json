@@ -1,6 +1,6 @@
 {
-  "started_utc": "2026-04-30T23:44:00Z",
-  "finished_utc": "2026-04-30T23:50:29Z",
+  "started_utc": "2026-05-01T00:44:35Z",
+  "finished_utc": "2026-05-01T00:54:28Z",
   "pairs": {
     "A1xA2": {
       "pair": "A1xA2",
@@ -11,8 +11,9 @@
       "q3_total_hits_sum": 0,
       "q4_bridge_papers": 0,
       "q4_self_authors": [],
-      "n_queries": 17,
-      "classification": "virgin"
+      "q5_topic_papers": 1,
+      "n_queries": 23,
+      "classification": "frontier-bridged"
     },
     "A1xA3": {
       "pair": "A1xA3",
@@ -23,7 +24,8 @@
       "q3_total_hits_sum": 1,
       "q4_bridge_papers": 0,
       "q4_self_authors": [],
-      "n_queries": 15,
+      "q5_topic_papers": 0,
+      "n_queries": 21,
       "classification": "virgin"
     },
     "A1xA4": {
@@ -35,7 +37,8 @@
       "q3_total_hits_sum": 0,
       "q4_bridge_papers": 0,
       "q4_self_authors": [],
-      "n_queries": 17,
+      "q5_topic_papers": 0,
+      "n_queries": 23,
       "classification": "virgin"
     },
     "A2xA3": {
@@ -49,7 +52,8 @@
       "q4_self_authors": [
         "Scholze"
       ],
-      "n_queries": 15,
+      "q5_topic_papers": 20,
+      "n_queries": 21,
       "classification": "frontier-bridged"
     },
     "A2xA4": {
@@ -61,7 +65,8 @@
       "q3_total_hits_sum": 0,
       "q4_bridge_papers": 0,
       "q4_self_authors": [],
-      "n_queries": 17,
+      "q5_topic_papers": 0,
+      "n_queries": 23,
       "classification": "virgin"
     },
     "A3xA4": {
@@ -73,7 +78,8 @@
       "q3_total_hits_sum": 0,
       "q4_bridge_papers": 0,
       "q4_self_authors": [],
-      "n_queries": 15,
+      "q5_topic_papers": 0,
+      "n_queries": 21,
       "classification": "sparse"
     }
   }

@@ -1,7 +1,7 @@
 {
   "query": "au:\"Clausen\" AND au:\"Sturm\" AND cat:math.*",
   "label": "co-author:Clausen+Sturm(math)",
-  "timestamp_utc": "2026-04-30T23:49:16Z",
+  "timestamp_utc": "2026-05-01T00:52:16Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []

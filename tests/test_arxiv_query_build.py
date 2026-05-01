@@ -45,3 +45,17 @@ def test_build_author_pair_query_no_math_filter():
         build_author_pair_query("Scholze", "Lott", math_only=False)
         == 'au:"Scholze" AND au:"Lott"'
     )
+
+
+def test_build_author_topic_query():
+    from axiom_explorer.arxiv_search import build_author_topic_query
+    q = build_author_topic_query("Haine", ["condensed", "perfectoid"])
+    assert q == 'au:"Haine" AND (all:"condensed" OR all:"perfectoid") AND cat:math.*'
+
+
+def test_build_author_topic_rejects_empty():
+    import pytest
+
+    from axiom_explorer.arxiv_search import build_author_topic_query
+    with pytest.raises(ValueError):
+        build_author_topic_query("Haine", [])

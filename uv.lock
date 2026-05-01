@@ -64,6 +64,7 @@ dev = [
     { name = "mypy" },
     { name = "pytest" },
     { name = "ruff" },
+    { name = "sympy" },
     { name = "z3-solver" },
 ]
 
@@ -90,6 +91,7 @@ requires-dist = [
     { name = "scipy", marker = "extra == 'compute'", specifier = ">=1.11" },
     { name = "sympy", marker = "extra == 'all'", specifier = ">=1.12" },
     { name = "sympy", marker = "extra == 'compute'", specifier = ">=1.12" },
+    { name = "sympy", marker = "extra == 'dev'", specifier = ">=1.12" },
     { name = "z3-solver", marker = "extra == 'all'", specifier = ">=4.13" },
     { name = "z3-solver", marker = "extra == 'compute'", specifier = ">=4.13" },
     { name = "z3-solver", marker = "extra == 'dev'", specifier = ">=4.13" },

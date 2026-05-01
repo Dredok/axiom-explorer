@@ -1,7 +1,7 @@
 {
   "query": "(all:\"univalence\" OR all:\"homotopy type theory\" OR all:\"HoTT\" OR all:\"cubical type theory\" OR all:\"univalent foundations\" OR all:\"synthetic homotopy theory\" OR all:\"higher inductive type\") AND (all:\"perfectoid\" OR all:\"tilting equivalence\" OR all:\"diamond\" OR all:\"prismatic cohomology\" OR all:\"almost mathematics\" OR all:\"p-adic Hodge\" OR all:\"Fargues-Fontaine\" OR all:\"v-sheaves\" OR all:\"Berkovich space p-adic\" OR all:\"perfectoid space\" OR all:\"untilt\")",
   "label": "q2-grouped",
-  "timestamp_utc": "2026-04-30T23:45:17Z",
+  "timestamp_utc": "2026-05-01T00:46:26Z",
   "total_results": 3,
   "fetched": 3,
   "papers": [

@@ -1,7 +1,7 @@
 {
-  "query": "(all:\"univalence\" OR all:\"homotopy type theory\" OR all:\"HoTT\" OR all:\"cubical type theory\" OR all:\"univalent foundations\" OR all:\"synthetic homotopy theory\" OR all:\"higher inductive type\") AND (all:\"condensed mathematics\" OR all:\"condensed sets\" OR all:\"liquid tensor experiment\" OR all:\"solid module\" OR all:\"condensed abelian\" OR all:\"pyknotic\" OR all:\"condensed module\" OR all:\"condensed group\" OR all:\"condensed cohomology\" OR all:\"Mann thesis\" OR all:\"p-adic functional analysis condensed\")",
+  "query": "(all:\"univalence\" OR all:\"homotopy type theory\" OR all:\"HoTT\" OR all:\"cubical type theory\" OR all:\"univalent foundations\" OR all:\"synthetic homotopy theory\" OR all:\"higher inductive type\") AND (all:\"condensed mathematics\" OR all:\"condensed sets\" OR all:\"liquid tensor experiment\" OR all:\"solid module\" OR all:\"condensed abelian\" OR all:\"pyknotic\" OR all:\"condensed module\" OR all:\"condensed group\" OR all:\"condensed cohomology\" OR all:\"Mann thesis\" OR all:\"p-adic functional analysis condensed\" OR all:\"condensed homotopy type\" OR all:\"kappa-pyknotic\" OR all:\"condensed infinity-category\" OR all:\"Solovay model condensed\" OR all:\"Whitehead condensed\")",
   "label": "q2-grouped",
-  "timestamp_utc": "2026-04-30T23:44:16Z",
+  "timestamp_utc": "2026-05-01T00:44:53Z",
   "total_results": 1,
   "fetched": 1,
   "papers": [

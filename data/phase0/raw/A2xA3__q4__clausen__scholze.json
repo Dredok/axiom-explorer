@@ -1,7 +1,7 @@
 {
   "query": "au:\"Clausen\" AND au:\"Scholze\" AND cat:math.*",
   "label": "co-author:Clausen+Scholze(math)",
-  "timestamp_utc": "2026-04-30T23:48:03Z",
+  "timestamp_utc": "2026-05-01T00:50:27Z",
   "total_results": 0,
   "fetched": 0,
   "papers": []
