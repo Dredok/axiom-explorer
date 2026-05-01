@@ -118,3 +118,72 @@ n ≥ 2 + non-trivial higher homotopy).
 This Phase 5 dossier is **the cleanest forward question** the
 experiment surfaces: a falsifiable, well-posed L3 question whose
 answer would refine the central L2 candidate of the run.
+
+
+---
+
+## Update — derived-limit constraints (Bergfalk-Lambie-Hanson)
+
+After writing the dossier, I read deeper into Bergfalk-Lambie-Hanson
+arXiv:2412.19605 ("Infinitary combinatorics in condensed math and
+strong homology"). Their Theorems A-D are concrete constraints on the
+infinitary structure of Cond(Ab):
+
+- **Theorem A** (ZFC): the natural functor `Pro(D(Ab)) → D(Cond(Ab))`
+  is not full. Specifically:
+  ```
+  RHom_{Pro(D≥0(Ab))}(∏ ⊕ Z, Z) ≠ RHom_{D≥0(Cond(Ab))}(∏ ⊕ Z, Z)
+  ```
+  The first is concentrated in degree 0, the second is not.
+
+- **Theorem D** (ZFC): for any S, T ∈ ED that are Čech-Stone of
+  discrete sets of cardinality ≥ ℵ_ω, the constant sheaf K (any
+  field) on S × T has **infinite injective dimension**. Hence
+  compact-projective condensed anima are not closed under products.
+
+### How this relates to the candidate envelope
+
+Bergfalk-LH constrain the **derived/extension structure** of Cond(Ab),
+not directly the cardinality of homotopy groups π_n^{cond}. The two
+are different invariants:
+
+- Our envelope: `|π_n^{cond}(X_k)(*)| ≤ 2^|k|`. About cardinality.
+- Bergfalk-LH: dimensions of `Ext^n` groups can be infinite, certain
+  natural functors are not full. About structure.
+
+These two statements are **compatible**: a homotopy group of cardinality
+≤ 2^|k| can perfectly well give rise to an Ext-tower of infinite
+dimension. The cardinality envelope does not constrain dimensions.
+
+### Caveat the Bergfalk-LH results introduce
+
+Their results show that **straight cardinality bounds may underestimate
+the "actual structural complexity"** of condensed mathematics. Two
+condensed groups of the same cardinality can have completely different
+derived-category behaviour; one finite-injective-dim, the other
+infinite. So while the candidate envelope on |π_n^{cond}| might be
+true, it is also a **coarse invariant** — useful as an upper bound, but
+not the deepest layer of structure.
+
+This is honest reporting: the cardinality pattern is a **first-order
+structural observation**, not the whole story. The full picture
+includes derived/extension dimensions which can be infinite even at
+small cardinalities.
+
+### Stronger statement that would survive both
+
+> For X smooth qcqs over an infinite field k of cardinality κ, every
+> π_n^{cond}(X_k, x̄) is an inverse limit of profinite groups indexed
+> by closed points of X, hence has cardinality ≤ 2^κ. The derived
+> structure (Ext-towers, dimensions) is **not** bounded by such a
+> coarse rule and can grow with cardinality of the parameter index.
+
+This refines the candidate to a more honest position: the envelope
+applies to **cardinality only**, and the deeper structure (derived
+limits, injective dims, additivity of strong homology) is genuinely
+sensitive to set-theoretic axioms (Theorem B of Bergfalk-LH is
+consistent under specific cardinal assumptions; not provable in ZFC
+alone).
+
+This is **not a refutation** of the candidate — it is a refinement to
+its appropriate scope.
