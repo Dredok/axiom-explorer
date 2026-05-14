@@ -84,6 +84,6 @@ publish on the user's behalf** — this is an explicit stop rule.
 - [ ] Update `CITATION.cff` with the assigned DOI.
 - [ ] Issue a release commit `release: v1-preprint` and a matching git tag.
 - [ ] Send the courtesy email to Peter J. Haine (template:
-      `docs/synthesis/EMAIL_DRAFT_HAINE.md`) with the DOI included.
+      `.agent/EMAIL_DRAFT_HAINE.md`, kept local only) with the DOI included.
 - [ ] Optional: notify Cherubini-Coquand-Geerligs-Moeneclaey for the Lean
       skeleton link, Bergfalk-Lambie-Hanson for the set-theoretic angle.
