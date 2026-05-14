@@ -1,0 +1,623 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{authblk}
+\usepackage[final,babel=true,activate={true,nocompatibility},protrusion=true,expansion=false]{microtype}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={axiom-explorer: an LLM-assisted harness for cross-search over modern axiomatic seeds},
+  pdfauthor={Vera Gomez, Francisco Javier},
+  pdfsubject={Methodology, LLM-assisted research, open science},
+  pdfkeywords={axiom-explorer, LLM-assisted research, open science, methodology, mathematical discovery, preprint, Zenodo}
+}
+
+\theoremstyle{definition}
+\newtheorem*{principle}{Principle}
+\newtheorem*{stop-rule}{Stop rule}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% Lightweight typewriter for commands and code
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  showstringspaces=false,
+  columns=fullflexible,
+}
+
+\setlist[itemize]{nosep,leftmargin=*}
+\setlist[enumerate]{nosep,leftmargin=*}
+
+\title{axiom-explorer: an LLM-assisted harness for cross-search\\
+over modern axiomatic seeds in mathematics, with one\\
+case study (condensed classifying anima envelope)}
+
+\author[1]{Francisco Javier Vera G\'omez}
+\affil[1]{Independent researcher\\
+\href{https://orcid.org/0009-0001-3516-5871}{ORCID: 0009-0001-3516-5871}\\
+Repository:
+\href{https://github.com/Dredok/axiom-explorer}{github.com/Dredok/axiom-explorer}\\
+Version: v1.0-preprint}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We describe \emph{axiom-explorer}, an autonomous LLM-assisted experimental
+harness that performs systematic cross-search over modern axiomatic seeds in
+mathematics. The harness selects a small set of recent, productive axioms
+from distinct branches of mathematics, runs a controlled bibliometric and
+formal-state sweep over their pairwise combinations, builds dossiers
+integrating literature search, finite-case sanity checks (Z3, SymPy), and
+where applicable Lean 4 axiomatic skeletons, and filters surviving
+candidates against four explicit relevance tests. The role of the large
+language model is constrained by explicit stop rules: the LLM is the
+orchestrator and an interpretive filter, not an oracle of mathematical
+truth, and the human author retains final approval on every release,
+publication, and external communication. We describe the architecture,
+workflow, confidence ladder, and stop rules; report a single case study (a
+quadruple of seeds whose synthesis is reported as a separate companion
+preprint); and discuss what the experiment validates, what it does not
+attempt to validate, and the methodological and ethical questions
+LLM-assisted mathematical-discovery workflows raise. Code, prompts, raw
+data, and per-phase reports of the case study are openly available at the
+linked repository. \emph{This preprint is itself the output of the
+workflow it describes; see~\S\ref{sec:self-disclosure}.}
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction and contribution}\label{sec:intro}
+
+We address a methodological question that the recent rise of capable
+language models makes newly tractable:
+
+\begin{quote}
+\emph{Can a curated workflow assist a non-specialist human in surfacing
+plausible inter-branch connections in current mathematical research, in
+a way whose evidential value is bounded and whose risks are explicit?}
+\end{quote}
+
+We do not claim to answer it in the affirmative. We propose a concrete
+instrument, \emph{axiom-explorer}, which lets the question be asked
+empirically over specific seeds. The instrument has three components:
+
+\begin{enumerate}
+\item A \textbf{seeded cross-search procedure} that takes a small set of
+``modern productive'' axiomatic frameworks from distinct branches and
+explores their pairwise (and higher) combinations through five explicit
+phases.
+\item A \textbf{confidence ladder} that labels every claim it surfaces by
+its epistemic status, from L0 (mechanically verified) to L3 (speculative
+guess emerging from the cross-search).
+\item A \textbf{governed orchestration layer}, where a large language
+model orchestrates the workflow under explicit stop rules and the human
+author retains all release decisions.
+\end{enumerate}
+
+The contribution of this paper is the methodology and its
+operationalisation, not a mathematical theorem. We report one case study
+(\S\ref{sec:case}) where the methodology surfaced a candidate
+inter-branch cardinality envelope; that case study is the subject of a
+separate companion preprint, \emph{A conjectural cardinality envelope for
+the condensed classifying anima of spectral $\infty$-topoi: a synthesis
+across geometric and analogical instances}~\cite{Vera2026Conjecture}, and
+we summarise here only the parts of the case study that illustrate the
+methodology.
+
+\paragraph{What this paper is not.} This paper is not a proof that
+LLM-assisted methodology produces correct mathematics; it cannot be,
+since the test of mathematical correctness happens at the level of
+individual claims, not of a workflow. It is also not a comparative
+evaluation across LLMs, prompting strategies, or tooling choices; we
+describe one configuration that ran end-to-end and produced a
+checkable, citable artefact, and we do not vary the configuration here.
+
+\paragraph{Audience.} Readers interested in methodology of open
+science, LLM-assisted research, philosophy of mathematics, or
+mathematical discovery tools. The case study presupposes informal
+familiarity with the language of $\infty$-topoi and condensed
+mathematics; specialists in those areas are referred to the companion
+preprint for the mathematical claims.
+
+\section{Related work}\label{sec:related}
+
+Several lines of prior work motivate axiom-explorer.
+
+\paragraph{Automated conjecture generation in mathematics.} Fajtlowicz's
+Graffiti~\cite{Fajtlowicz1988Graffiti}, a system that produced
+non-trivial graph-theoretic conjectures from the late 1980s onwards, and
+Lenat's AM and EURISKO~\cite{Lenat1976AM} from the same era, are the
+classical references for automated mathematical conjecturing. More
+recently, the Ramanujan Machine~\cite{RamanujanMachine2021Nature}
+produced thousands of conjectured continued-fraction identities; several
+have been subsequently proved. AlphaProof and
+AlphaGeometry~\cite{DeepMind2024AlphaGeometry, DeepMind2024AlphaProof}
+attack the dual problem of \emph{proving} given theorems with the
+assistance of LLMs and formal-prover infrastructure. Our work differs:
+we do not aim to prove or to conjecture in a single narrow domain, but
+to surface inter-branch synthesis candidates that an expert human can
+then prove, refute, or recognise as folklore.
+
+\paragraph{Formalisation projects as backbone.} The Mathlib4
+library~\cite{Mathlib2020Community} and major formalisation efforts such
+as the Liquid Tensor Experiment~\cite{Scholze2022LTE,
+LeanCommunity2022LTEFinal}, the formalisation of perfectoid
+spaces~\cite{BuzzardCommelinMassot2020Perfectoid}, and the synthetic
+Stone duality work in HoTT/Cubical Agda
+literature~\cite{CherubiniCoquandGeerligsMoeneclaey2024SSD,
+SyntheticZariskiRepo} provide the formal substrate that axiom-explorer
+introspects. Without these libraries, the formal-state inventory of
+\S\ref{sec:workflow} would have nothing to inspect.
+
+\paragraph{Open science and preprint infrastructure.}
+Zenodo~\cite{ZenodoCERN} provides DOI minting, versioning, and a
+concept-DOI mechanism that distinguishes individual versions of a
+preprint from the work itself. CITATION.cff~\cite{CITATIONcff} and
+.zenodo.json~\cite{ZenodoMetadata} provide
+machine-readable metadata standards. These are essential for an
+LLM-assisted workflow because the workflow can iterate quickly and must
+register each iteration honestly.
+
+\paragraph{Disclosure standards for LLM-assisted work.} As of 2026,
+major publishers have settled on a position that LLMs are not
+co-authors but their use must be disclosed, typically in
+acknowledgments or a methods section~\cite{Nature2023LLMPolicy,
+ICMJE2023AIGuidance}. Our workflow internalises this requirement: the
+disclosure is a structural section of the preprint, not a footnote.
+
+\section{Architecture and workflow}\label{sec:workflow}
+
+We describe axiom-explorer top-down: first what it does at the level of
+a research session (Phases 0--5), then how the LLM orchestrator is
+governed, then the supporting tooling.
+
+\subsection{Phases of a research session}
+
+A run of axiom-explorer is organised into five sequential phases. Each
+phase produces a stable artefact on disk before the next phase begins.
+
+\begin{description}[style=nextline,leftmargin=1.5em]
+\item[Phase 0 --- Bibliometric mapping.]
+For a chosen quadruple of axiomatic seeds, the harness queries
+arXiv across the six binary combinations using five query strategies
+(Q1--Q5): strict canonical-phrase AND, grouped OR/AND with synonyms,
+primary $\times$ related fanout, author-pair co-publication restricted to
+\texttt{cat:math.*}, and single key-author topic search restricted to
+\texttt{cat:math.*}. The output is a per-pair density score and a
+classification (\emph{saturated}, \emph{warm}, \emph{warm-bridged},
+\emph{sparse}, \emph{frontier-bridged}, \emph{virgin}).
+
+\item[Phase 1 --- Formal-state inventory.]
+For each seed, the harness clones the relevant formalisation
+repositories (Mathlib4 and adjacent Lean/Agda projects) and counts files,
+definitions, theorems, lemmas, and explicit TODOs in source headers.
+Per-seed gaps are noted as formalisable targets.
+
+\item[Phase 2 --- Binary-combination dossiers.]
+For each pair that survives Phase 0 filtering, the harness builds a
+dossier integrating literature (the Phase 0 hits), bridging functors or
+constructions reported in those papers, and where applicable a
+small-scale numerical or symbolic experiment in Python (NumPy, SymPy) or
+finite-model SMT in Z3.
+
+\item[Phase 3 --- Deep dives on surviving candidates.]
+A candidate that emerges from a binary dossier (typically a conjectured
+inequality, identification, or structural pattern) is promoted to a
+dossier of its own: precise statement, evidence trail, falsifiability,
+explicit confidence level. Where the candidate is a formalisation-shaped
+gap, the harness emits a Lean 4 axiomatic skeleton that type-checks the
+axioms involved.
+
+\item[Phase 4 --- Filtering against the four relevance tests.]
+Each surviving candidate is tested against four criteria:
+\textbf{novelty} (not in the literature found in Phase 0),
+\textbf{inter-branch connectivity} (touches at least two of the four
+seed branches), \textbf{open-problem tangency} (relates to a stated open
+problem or programme), and \textbf{non-triviality} (the conjunction of
+the two seeds is genuinely required). Candidates failing two or more
+tests are demoted.
+
+\item[Phase 5 --- Synthesis and reporting.]
+The surviving candidates, together with the methodology meta-analysis
+and any forward open questions identified, are written up. Phase 5
+output is a draft manuscript that is then iterated against AI peer
+review (see~\S\ref{sec:peer-review-loop}) before becoming a public
+preprint.
+\end{description}
+
+\subsection{Confidence ladder}\label{sec:ladder}
+
+Every substantive claim that survives Phase 4 is tagged on a four-level
+ladder, written explicitly into the dossier and propagated into the
+preprint:
+
+\begin{itemize}
+\item \textbf{L0 --- Verified mechanically}: directly checked in source
+code, formal proof, or finite enumeration (Z3 search, Lean type-check).
+\item \textbf{L1 --- Strong}: a standard, named result in the cited
+literature, with page or theorem reference.
+\item \textbf{L2 --- Plausible}: argued or supported by the cited
+evidence; not directly verified by the harness or the author.
+\item \textbf{L3 --- Speculative}: a guess emerging from the
+cross-search, recorded as a question, not an assertion.
+\end{itemize}
+
+The ladder is the single most important downstream-protective device in
+the workflow. It is the difference between a preprint that promises
+folklore-style certainty and one that hands the reader exactly the level
+of trust the workflow earned for each claim.
+
+\subsection{LLM orchestrator and stop rules}\label{sec:stop-rules}
+
+The role of the LLM is bounded by four stop rules, encoded in the
+operating prompt of the orchestrator:
+
+\begin{stop-rule}
+The orchestrator does not publish to Zenodo or any other archive
+automatically. The final ``Publish'' click is the human author's.
+\end{stop-rule}
+
+\begin{stop-rule}
+The orchestrator does not send emails, social-media posts, or any
+external communication. Drafts are produced and committed; the human
+author dispatches.
+\end{stop-rule}
+
+\begin{stop-rule}
+The orchestrator does not claim novelty beyond what the preprint
+explicitly claims, which is restricted to ``this formulation does not
+appear as such in any single source we found''. Claims of unconditional
+correctness, proof, or originality of underlying constructions are
+suppressed.
+\end{stop-rule}
+
+\begin{stop-rule}
+The orchestrator does not impersonate mathematical authority. Author
+identity, level of expertise, and the LLM-assisted production method are
+declared on the title page or in an early section of every preprint
+output.
+\end{stop-rule}
+
+These stop rules are checked at code-review boundaries: the harness
+refuses to mark a candidate as ``done'' for Phase 4 unless the
+confidence ladder is filled in for every claim and the production-method
+disclosure has been inserted.
+
+\subsection{Tooling}\label{sec:tooling}
+
+The harness is implemented in Python with a small set of dependencies.
+Bibliometric queries use the arXiv API (Atom feed). Formal-state
+inventory uses git clone (shallow, blob-filter) plus
+\texttt{ripgrep} on Mathlib4 and on the Cubical Agda
+synthetic-zariski project~\cite{SyntheticZariskiRepo}. Finite-model
+checks use Z3~\cite{Z3deMouraBjorner2008}. Symbolic algebra uses
+SymPy~\cite{SymPy2017}. Lean axiomatic skeletons use Lean
+4~\cite{Lean42021Moura} with the standard library only (no Mathlib4
+dependency, to keep the skeletons self-contained). The publication
+pipeline uses \texttt{latexmk} for PDF building and a small Python
+script that produces a Zenodo-ready ZIP bundle with a
+SHA-256-manifested release.
+
+The full software stack and reproducibility instructions are at the
+GitHub repository linked in the title block.
+
+\section{The peer-review loop}\label{sec:peer-review-loop}
+
+A distinctive feature of axiom-explorer is that draft preprints are
+iterated against multiple independent AI peer reviews before any human
+review or any external publication. Concretely: the Phase 5 draft is
+submitted to one or more distinct LLM-based reviewers (different model
+families, different prompting); each review produces a structured
+critique that the orchestrator must address point by point in a new
+version of the draft, with explicit retraction of any v1 claims that
+the review proved wrong. The trajectory of revisions is tracked in the
+acknowledgments section of the final preprint.
+
+In the case study of \S\ref{sec:case}, four AI peer-review rounds
+(v1~$\to$~v1.1, v1.1~$\to$~v1.2, v1.2~$\to$~v1.2.1, v1.2.1~$\to$~v1.2.2)
+caught three substantive mathematical errors that the original draft had
+made:
+
+\begin{itemize}
+\item An invariance failure in the proposed size invariant.
+\item A cardinality bound on free profinite groups stated in a form
+inconsistent with the geometric attestations being cited.
+\item A model-theoretic example (the Lascar group of $\mathrm{ACF}_0$)
+misclassified as trivial when it is in fact the absolute Galois group
+of $\mathbf{Q}$.
+\end{itemize}
+
+A fifth round caught a citation error (an arXiv identifier referring to
+a paper on turbulence rather than the intended Campion--Cousins--Ye work
+on Lascar groups~\cite{CampionCousinsYe2021}). None of these would have
+been caught by a single-shot LLM generation; all of them \emph{were}
+caught before any human expert reviewer was approached. The loop is not
+a substitute for human expert review (\S\ref{sec:limits}) but it is a
+cheap and effective first line of defence.
+
+The methodology takes no position on the eventual ceiling of AI peer
+review. In the case study, every successive review surfaced strictly
+fewer errors than its predecessor, suggesting either convergence or a
+shared LLM blind spot; we cannot distinguish these without a human
+review.
+
+\section{Case study summary}\label{sec:case}
+
+This section summarises what axiom-explorer surfaced when seeded with a
+specific quadruple. Mathematical statements, attestations, falsifiability
+criteria, and the structural argument supporting the candidate are
+deferred to the companion preprint~\cite{Vera2026Conjecture}.
+
+\subsection{The seed quadruple}
+
+The four chosen seeds, with the rationale for each, were:
+
+\begin{enumerate}
+\item \textbf{A1 --- Univalence Axiom and HoTT.} A modern foundational
+axiom system distinct from ZFC, with active formal development in
+Cubical Agda and Coq~\cite{UniMath, Agda-cubical}.
+\item \textbf{A2 --- Condensed mathematics.} The Clausen--Scholze
+programme~\cite{ClausenScholze2019Lectures}, a recent (post-2019)
+reformulation of topology that has produced striking results in
+algebra, functional analysis, and now \'etale homotopy theory.
+\item \textbf{A3 --- Perfectoid spaces.} Scholze's
+framework~\cite{Scholze2012Perfectoid}, the source of major recent
+progress in $p$-adic Hodge theory and the Langlands programme.
+\item \textbf{A4 --- Synthetic Ricci curvature.} The CD$(K,N)$ /
+Lott--Sturm--Villani synthetic framework for Ricci curvature in metric
+measure spaces, an active programme in geometric analysis.
+\end{enumerate}
+
+The choice was made by the human author before any LLM cross-search
+began, and was not adjusted during the run. The rationale was
+\emph{ex ante} that A1--A3 had recent activity at the Scholze school
+and A4 was a deliberate near-stranger to provide a negative control.
+
+\subsection{What the run produced}
+
+\paragraph{Phase 0 classification (after Q5 author-topic search added
+in iteration v1.1).} Six binary pairs were classified into three
+groups:
+
+\begin{itemize}
+\item \textbf{Frontier-bridged}: A1$\times$A2 (Univalence $\times$
+Condensed) and A2$\times$A3 (Condensed $\times$ Perfectoid). Both showed
+the harness's expected pattern: heavy recent activity across distinct
+subcommunities, with cross-pair publication via the Scholze school
+(A2$\times$A3) or via Cherubini--Coquand and collaborators in synthetic
+Stone duality (A1$\times$A2).
+\item \textbf{Sparse}: A1$\times$A3 (Univalence $\times$ Perfectoid).
+Plausible bridges exist (synthetic algebraic geometry over HoTT) but
+the visible literature is thin.
+\item \textbf{Virgin}: A1$\times$A4, A2$\times$A4, A3$\times$A4. The
+expected negative control held: synthetic Ricci has essentially no
+overlap with the other three seeds at the arXiv level.
+\end{itemize}
+
+\paragraph{Phase 1 formal-state inventory.}
+A1: extensive Cubical Agda development in
+synthetic-zariski~\cite{SyntheticZariskiRepo}, none in Mathlib4.
+A2: 34 files in \texttt{Mathlib/Condensed/} including
+\texttt{Solid.lean} (the solid module class) and \texttt{Cohomology.lean};
+the Liquid Tensor Experiment exists as a completed separate
+project~\cite{LeanCommunity2022LTEFinal}.
+A3: 4 files in \texttt{Mathlib/RingTheory/Perfectoid/}, including a
+2025 \texttt{FontaineTheta.lean} with an explicit TODO bridging to
+Bhatt's cotangent-complex approach to prismatic cohomology.
+A4: no Mathlib4 formalisation found; a small set of
+optimal-transport definitions exists but does not connect to
+CD$(K,N)$.
+
+\paragraph{Phase 2--3 deep dive.}
+The deep dive ran on the A2$\times$A3 pair and surfaced two recent
+arXiv preprints that the strict canonical-phrase Q1 search had missed
+and that the Q5 author-topic search caught: Haine
+et~al.~\cite{HHLMMW2025}, on the condensed homotopy type of a scheme,
+and Haine~\cite{Haine2026classifying}, on classifying anima of
+condensed $\infty$-categories of points. The second of these announces
+a uniform construction whose specialisations recover the pro-\'etale
+fundamental group of a scheme (geometric side, A2$\times$A3) and the
+Lascar group of a complete first-order theory (model-theoretic side,
+adjacent to A4 in spirit but not in literature).
+
+Cross-reading these two papers together with existing
+Bergfalk--Lambie-Hanson--\v{S}aroch and Bannister--Basak work on
+condensed set theory~\cite{BLHS2023, BannisterBasak2026} yielded the
+case study's candidate observation: that the underlying group at
+section level of the fundamental group of the condensed classifying
+anima of a spectral $\infty$-topos appears to be bounded by
+$2^{\kappa_{\mathcal X}}$ for a suitable size invariant
+$\kappa_{\mathcal X}$, with two direct geometric attestations
+(\textbf{$\mathbf{P}^1_{\mathbf C}$} and \textbf{$\mathbf{P}^1_{\mathbf Q}$})
+and several analogical attestations from model theory and set theory.
+
+\paragraph{Phase 4 filtering.}
+The candidate passed the four relevance tests (after the AI peer-review
+loop refined the formulation): the formulation does not appear in any
+single source we found (novelty), it involves at least two of the four
+seed branches (inter-branch connectivity), it relates to the announced
+Haine--Damaj--Zhang programme on Lascar groups as classifying anima
+(open-problem tangency), and the condensed setting is non-trivially
+required (non-triviality).
+
+The candidate, the structural argument supporting it, the falsifiability
+section, and the explicit confidence labelling are reported in the
+companion preprint~\cite{Vera2026Conjecture} at confidence
+\textbf{L2~--~Plausible}.
+
+\subsection{What the run did not produce}
+
+\begin{itemize}
+\item No proof. The candidate is a conjecture, registered for
+community feedback.
+\item No new mathematical \emph{construction}. The classifying-anima
+unification it sits on is due to Haine~\cite{Haine2026classifying}; the
+geometric attestations are due to Haine
+et~al.~\cite{HHLMMW2025}; the Lascar-group identification is due to
+Campion--Cousins--Ye~\cite{CampionCousinsYe2021}; the condensed
+set-theoretic context is due to several recent
+papers~\cite{BLHS2023, BannisterBasak2026, BergfalkLH2024}. The
+synthesis contribution is the \emph{formulation of a uniform
+cardinality envelope across} those constructions, recorded as a
+falsifiable conjecture.
+\item No claim about LLM-orchestrated mathematics in general. We
+report what happened in one run. The methodology section above
+describes the configuration; the case study reports its output. A
+generalisation to other seeds, other domains, or other LLM
+configurations is future work.
+\end{itemize}
+
+\section{Discussion: limits and risks}\label{sec:limits}
+
+We separate methodological limits from ethical and sociological risks.
+
+\subsection{Methodological limits}
+
+\begin{itemize}
+\item \textbf{Shared LLM blind spots.} The AI peer-review loop catches
+many errors but cannot reliably catch the errors all LLM reviewers share.
+In our case, all reviewers were derived from a small set of foundation
+models with overlapping pre-training. A single human expert review on
+the eventual preprint is necessary to close this gap; our preprint is
+explicitly an invitation for that review.
+\item \textbf{Selection bias in the bibliometric layer.} The arXiv
+sweep finds papers indexed on arXiv. Important work published in
+non-arXiv venues, in non-English sources, or whose terminology has
+drifted (the harness missed several papers in iteration v1 that were
+caught in v1.1 only after the related-terms vocabulary was expanded by
+the author) is silently absent. The harness reports this honestly but
+cannot fix it.
+\item \textbf{Confidence ladder is not calibrated.} L2 means
+``plausible to us'', not ``probability $> p$'' for any specific
+$p$. We do not have empirical data to calibrate the levels, only an
+ordinal scale.
+\item \textbf{One case study is not validation.} A single run that
+surfaced a single candidate does not prove the methodology generalises.
+It proves the methodology terminates with an artefact.
+\end{itemize}
+
+\subsection{Ethical and sociological risks}\label{sec:ethics}
+
+\begin{itemize}
+\item \textbf{Reputation laundering.} An LLM-assisted workflow could be
+used to publish quickly with thin substance, leveraging the author's
+identity to lend credibility to LLM output. The four stop rules
+(\S\ref{sec:stop-rules}) and the explicit production-method disclosure
+in every preprint are the structural defence; we do not claim they are
+sufficient.
+\item \textbf{Citation-graph pollution.} Issuing many low-quality
+preprints with DOIs pollutes the citation graph. The methodology
+encourages \emph{registered conjectural observations}, not unlimited
+output. We have run a single case study and expect to run at most a
+small number more before reassessing.
+\item \textbf{Asymmetric burden on human reviewers.} A workflow that
+produces preprints faster than humans can review them shifts review
+burden to the community. We address this by (a) explicitly stating
+that the preprint is intended as a falsifiable observation, not as a
+new theorem; (b) keeping the preprint short; (c) listing the four
+ways the conjecture could be falsified (folklore, counterexample, scope
+sharpening, contextualisation) so a reviewer can engage at low cost.
+\item \textbf{LLM authorship boundary.} We follow the emerging
+consensus~\cite{Nature2023LLMPolicy, ICMJE2023AIGuidance} that LLMs are
+not authors. The orchestrator is a tool whose use is disclosed, with
+the same epistemological status as Z3, SymPy, or a literature
+database.
+\end{itemize}
+
+\section{Production-method disclosure}\label{sec:self-disclosure}
+
+This preprint is itself the output of the workflow it describes. The
+text was drafted by an LLM orchestrator (Claude, Anthropic; precise
+model version recorded in the repository commit history) operating
+under the four stop rules of~\S\ref{sec:stop-rules}, iterated against
+AI peer review, and committed to git with the human author's explicit
+approval at each merge boundary. The mathematical references are
+verified by the human author; the methodology claims (the stop rules
+in particular) are committed by the human author. As with the
+companion preprint, the human author retains full responsibility for
+the artefact.
+
+\section{What is in the repository}\label{sec:repo}
+
+The full reproducibility package is at
+\url{https://github.com/Dredok/axiom-explorer}:
+
+\begin{itemize}
+\item \texttt{paper/methodology/} --- the source of this preprint.
+\item \texttt{paper/conjecture/} --- the source of the companion
+preprint~\cite{Vera2026Conjecture}.
+\item \texttt{src/axiom\_explorer/} --- Python implementation of the
+harness phases.
+\item \texttt{research/phase0-bibliometric/} through
+\texttt{research/phase5-pi-n-cond/} --- per-phase reports of the
+case study, including raw arXiv search dumps and dossiers.
+\item \texttt{lean/AxiomExplorer/} --- a Lean~4 axiomatic skeleton of
+Synthetic Stone Duality, built clean.
+\item \texttt{docs/} --- methodology documents, including reviewer
+checklists.
+\item \texttt{scripts/build\_publication\_bundle.py} --- the bundle
+builder.
+\item \texttt{.zenodo.json} and \texttt{CITATION.cff} --- machine-readable
+metadata.
+\item \texttt{.mailmap} --- canonical author-identity mapping.
+\end{itemize}
+
+\section{Future work}\label{sec:future}
+
+Concrete directions that we leave for v2 of the methodology or for a
+second case study:
+
+\begin{itemize}
+\item A second case study, with a deliberately different seed
+quadruple, to test whether the workflow surfaces different kinds of
+candidates from different seeds, or only the same shape of finding.
+\item Calibration of the confidence ladder: in particular,
+distinguishing L2 (plausible) from L3 (speculative) by an explicit
+operational test rather than by orchestrator judgement.
+\item Cross-LLM peer review: running the same Phase 5 draft through
+reviewers from genuinely independent model families (different
+pre-training data, not only different fine-tunings), to test the
+shared-blind-spot hypothesis of~\S\ref{sec:limits}.
+\item Human expert review pre-publication: requiring an expert reading
+before the Zenodo deposit. We did not require this in the case study
+because the preprint is framed as an invitation to such review; a
+future methodological iteration could move the human review forward in
+the pipeline.
+\end{itemize}
+
+\section*{Acknowledgments}
+
+We thank the multiple anonymous AI reviewers who critiqued successive
+drafts of the case study and of this methodology paper, and whose
+specific corrections are credited in detail in the companion
+preprint~\cite{Vera2026Conjecture}. We thank the developers of arXiv,
+Mathlib4, Zenodo, Lean, Z3, and SymPy, on whose open infrastructure
+this workflow is built. The error of any methodological framing in
+this paper is the author's.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
