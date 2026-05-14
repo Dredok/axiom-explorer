@@ -89,6 +89,11 @@
       "identifier": "10.1038/d41586-023-00191-1",
       "relation": "cites",
       "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.5281/zenodo.20184660",
+      "relation": "isContinuedBy",
+      "resource_type": "publication-preprint"
     }
   ],
   "notes": "Methodology preprint. The companion case-study preprint is at paper/conjecture/ in the same repository, with its own Zenodo deposit and DOI. Produced via the workflow it describes; LLM-assisted with explicit stop rules and a multi-round AI peer-review loop. Reproducibility instructions and per-phase reports are at https://github.com/Dredok/axiom-explorer.",
