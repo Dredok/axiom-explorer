@@ -33,6 +33,8 @@ artifacts/
 !artifacts/.gitkeep
 .agent/notes.md
 .agent/checkpoint.md
+# Per ~/.ai-rules/domains/research/zenodo.md: ephemeral Zenodo deposition state stays local
+.agent/zenodo_*.json
 *.log
 .envrc
 .env

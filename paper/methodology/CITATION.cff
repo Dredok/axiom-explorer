@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this work, please cite the preprint and the archived release."
 title: "axiom-explorer: an LLM-assisted harness for cross-search over modern axiomatic seeds in mathematics, with one case study (condensed classifying anima envelope)"
 version: "v1.0-preprint"
+doi: "10.5281/zenodo.20184068"
 date-released: "2026-05-14"
 authors:
   - family-names: "Vera Gómez"
@@ -33,6 +34,7 @@ license: "CC-BY-4.0"
 repository-code: "https://github.com/Dredok/axiom-explorer"
 preferred-citation:
   type: article
+  doi: "10.5281/zenodo.20184068"
   authors:
     - family-names: "Vera Gómez"
       given-names: "Francisco Javier"

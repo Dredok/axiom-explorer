@@ -5,7 +5,7 @@
   "description": "axiom-explorer is an autonomous LLM-assisted experimental harness that performs systematic cross-search over modern axiomatic seeds in mathematics. The harness selects a small set of recent, productive axioms from distinct branches of mathematics, runs a controlled bibliometric and formal-state sweep over their pairwise combinations, builds dossiers integrating literature search, finite-case sanity checks (Z3, SymPy), and where applicable Lean 4 axiomatic skeletons, and filters surviving candidates against four explicit relevance tests. The role of the large language model is constrained by explicit stop rules: the LLM is the orchestrator and an interpretive filter, not an oracle of mathematical truth, and the human author retains final approval on every release, publication, and external communication. This preprint describes the architecture, workflow, confidence ladder, and stop rules; reports a single case study (a quadruple of seeds whose synthesis is reported as a separate companion preprint); and discusses what the experiment validates, what it does not attempt to validate, and the methodological and ethical questions LLM-assisted mathematical-discovery workflows raise. Code, prompts, raw data, and per-phase reports of the case study are openly available at https://github.com/Dredok/axiom-explorer. This preprint is itself the output of the workflow it describes.",
   "creators": [
     {
-      "name": "Vera G\u00f3mez, Francisco Javier",
+      "name": "Vera Gómez, Francisco Javier",
       "affiliation": "Independent researcher",
       "orcid": "0009-0001-3516-5871"
     }
@@ -91,5 +91,6 @@
       "resource_type": "publication-article"
     }
   ],
-  "notes": "Methodology preprint. The companion case-study preprint is at paper/conjecture/ in the same repository, with its own Zenodo deposit and DOI. Produced via the workflow it describes; LLM-assisted with explicit stop rules and a multi-round AI peer-review loop. Reproducibility instructions and per-phase reports are at https://github.com/Dredok/axiom-explorer."
+  "notes": "Methodology preprint. The companion case-study preprint is at paper/conjecture/ in the same repository, with its own Zenodo deposit and DOI. Produced via the workflow it describes; LLM-assisted with explicit stop rules and a multi-round AI peer-review loop. Reproducibility instructions and per-phase reports are at https://github.com/Dredok/axiom-explorer.",
+  "doi": "10.5281/zenodo.20184068"
 }
