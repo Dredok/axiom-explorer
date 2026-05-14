@@ -1,8 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite the preprint and the archived release."
 title: "A conjectural cardinality envelope for the condensed classifying anima of spectral infinity-topoi: a synthesis across geometric and analogical instances"
-version: "v1.2.1-preprint"
-date-released: "2026-05-01"
+version: "v1.2.2-preprint"
+doi: "10.5281/zenodo.20184660"
+date-released: "2026-05-14"
 authors:
   - family-names: "Vera Gómez"
     given-names: "Francisco Javier"
@@ -29,6 +30,7 @@ license: "CC-BY-4.0"
 repository-code: "https://github.com/Dredok/axiom-explorer"
 preferred-citation:
   type: article
+  doi: "10.5281/zenodo.20184660"
   authors:
     - family-names: "Vera Gómez"
       given-names: "Francisco Javier"
