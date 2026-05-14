@@ -17,7 +17,7 @@
 - **Currently paused awaiting the user** to:
   1. Replace the three ORCID placeholders flagged in `docs/preprint_checklist.md`.
   2. Click "Publish" on Zenodo manually (orchestrator does not publish).
-  3. Send the courtesy email to Haine using `docs/synthesis/EMAIL_DRAFT_HAINE.md`.
+  3. Send the courtesy email to Haine using the draft kept locally at `.agent/EMAIL_DRAFT_HAINE.md` (gitignored; never committed to the public mirror).
 
 ## What to read, in order, before doing anything
 
@@ -28,9 +28,10 @@
 3. **`docs/synthesis/CONJECTURE.md`** — the central conjecture
    formulated as a synthesis paper draft. This is the object to
    publish.
-4. **`docs/synthesis/EMAIL_DRAFT_HAINE.md`** — the draft email to
-   Peter J. Haine; will be rewritten to reference the DOI once
-   Zenodo issues one.
+4. **`.agent/EMAIL_DRAFT_HAINE.md`** (gitignored, local only) — the
+   draft email to Peter J. Haine. Kept out of the public mirror by
+   design; see commit history of MR !21 for the cleanup that removed
+   it from the public repo.
 5. **`research/phase4-final-report/REPORT.md`** — full meta-analysis
    of the run.
 6. **`research/phase5-pi-n-cond/REPORT.md`** — the forward open
@@ -101,9 +102,10 @@ Manual. Orchestrator stops at draft state.
 
 ### Step D — short email to Haine
 
-Rewrite `docs/synthesis/EMAIL_DRAFT_HAINE.md` to be a one-screen
-note. Must reference the Zenodo DOI. Tone: "I published this preprint,
-here's the DOI, no need to reply unless something is obvious to you."
+Update `.agent/EMAIL_DRAFT_HAINE.md` (gitignored, local only) so it
+is a one-screen note referencing the Zenodo DOI. Tone: "I published this
+preprint, here's the DOI, no need to reply unless something is obvious to
+you."
 
 ## Open questions for the user when next session starts
 
@@ -139,7 +141,7 @@ The next agent must ask the user (do not assume):
 gitlab.loneorc.com/research/axiom-explorer     (remote, private)
 
 docs/synthesis/CONJECTURE.md                   (the object to publish)
-docs/synthesis/EMAIL_DRAFT_HAINE.md            (email starting point)
+.agent/EMAIL_DRAFT_HAINE.md                    (email draft, gitignored)
 research/phase4-final-report/REPORT.md         (full context)
 research/phase5-pi-n-cond/REPORT.md            (forward question)
 src/axiom_explorer/                            (Python harness)

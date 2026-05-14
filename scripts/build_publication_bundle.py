@@ -32,7 +32,6 @@ STATIC_PUBLICATION_FILES = [
     "pyproject.toml",
     "uv.lock",
     "docs/synthesis/CONJECTURE.md",
-    "docs/synthesis/EMAIL_DRAFT_HAINE.md",
     "docs/00-hypothesis.md",
     "docs/01-methodology.md",
 ]

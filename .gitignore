@@ -62,3 +62,6 @@ paper/*/*.toc
 
 # Publication bundles
 dist/
+
+# Email drafts are operational state per ~/.ai-rules; never publish to public mirror
+.agent/EMAIL_DRAFT_*.md
