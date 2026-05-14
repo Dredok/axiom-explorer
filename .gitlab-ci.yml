@@ -32,7 +32,7 @@ pytest:
     - python -m pytest -q
     - python -m compileall src
 
-paper-pdf:
+.paper-pdf-base:
   extends: .python-base
   stage: paper
   before_script:
@@ -48,36 +48,70 @@ paper-pdf:
       texlive-pictures
     - rm -rf /var/lib/apt/lists/*
     - !reference [.python-base, before_script]
+
+paper-pdf:conjecture:
+  extends: .paper-pdf-base
   script:
-    - cd paper
+    - cd paper/conjecture
     - latexmk -pdf -interaction=nonstopmode -halt-on-error preprint.tex
   artifacts:
     paths:
-      - paper/preprint.pdf
-      - paper/preprint.bbl
+      - paper/conjecture/preprint.pdf
+      - paper/conjecture/preprint.bbl
     expire_in: 30 days
 
-publication-bundle:
+paper-pdf:methodology:
+  extends: .paper-pdf-base
+  rules:
+    - exists:
+        - paper/methodology/preprint.tex
+  script:
+    - cd paper/methodology
+    - latexmk -pdf -interaction=nonstopmode -halt-on-error preprint.tex
+  artifacts:
+    paths:
+      - paper/methodology/preprint.pdf
+      - paper/methodology/preprint.bbl
+    expire_in: 30 days
+
+.publication-bundle-base:
   extends: .python-base
   stage: package
-  needs:
-    - job: paper-pdf
-      artifacts: true
   before_script:
     - apt-get update
     - apt-get install -y --no-install-recommends git
     - rm -rf /var/lib/apt/lists/*
     - !reference [.python-base, before_script]
-  script:
-    - python3 scripts/build_publication_bundle.py --allow-dirty
   artifacts:
-    name: "axiom-explorer-publication-bundle-${CI_COMMIT_SHORT_SHA}"
     paths:
       - dist/publication/*-zenodo.zip
       - dist/publication/*-arxiv-source.zip
       - dist/publication/*/release_manifest.json
       - dist/publication/*/RELEASE_MANIFEST.txt
     expire_in: 90 days
+
+publication-bundle:conjecture:
+  extends: .publication-bundle-base
+  needs:
+    - job: paper-pdf:conjecture
+      artifacts: true
+  script:
+    - python3 scripts/build_publication_bundle.py --paper conjecture --allow-dirty
+  artifacts:
+    name: "axiom-explorer-conjecture-bundle-${CI_COMMIT_SHORT_SHA}"
+
+publication-bundle:methodology:
+  extends: .publication-bundle-base
+  rules:
+    - exists:
+        - paper/methodology/preprint.tex
+  needs:
+    - job: paper-pdf:methodology
+      artifacts: true
+  script:
+    - python3 scripts/build_publication_bundle.py --paper methodology --allow-dirty
+  artifacts:
+    name: "axiom-explorer-methodology-bundle-${CI_COMMIT_SHORT_SHA}"
 
 # Manual job to run a research phase end-to-end and persist outputs as artifacts.
 research:phase:

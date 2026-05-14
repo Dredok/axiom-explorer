@@ -26,7 +26,7 @@ keywords:
   - cardinal arithmetic
   - LLM-assisted research
 license: "CC-BY-4.0"
-repository-code: "https://gitlab.loneorc.com/research/axiom-explorer"
+repository-code: "https://github.com/Dredok/axiom-explorer"
 preferred-citation:
   type: article
   authors:

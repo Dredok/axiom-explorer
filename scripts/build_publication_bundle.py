@@ -19,21 +19,28 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 
-PUBLICATION_FILES = [
+PAPER_FILE_TEMPLATES = [
+    "paper/{paper}/preprint.pdf",
+    "paper/{paper}/preprint.tex",
+    "paper/{paper}/references.bib",
+]
+
+STATIC_PUBLICATION_FILES = [
     "README.md",
     "HANDOFF.md",
     "LICENSE",
-    "CITATION.cff",
-    ".zenodo.json",
     "pyproject.toml",
     "uv.lock",
-    "paper/preprint.pdf",
-    "paper/preprint.tex",
-    "paper/references.bib",
     "docs/synthesis/CONJECTURE.md",
     "docs/synthesis/EMAIL_DRAFT_HAINE.md",
     "docs/00-hypothesis.md",
     "docs/01-methodology.md",
+]
+
+# Per-paper metadata travels with the paper subdirectory.
+PAPER_METADATA_TEMPLATES = [
+    "paper/{paper}/.zenodo.json",
+    "paper/{paper}/CITATION.cff",
 ]
 
 SOURCE_DIRS = [
@@ -48,10 +55,10 @@ RESEARCH_DIRS = [
     "docs",
 ]
 
-ARXIV_FILES = [
-    "paper/preprint.tex",
-    "paper/references.bib",
-    "paper/preprint.bbl",
+ARXIV_FILE_TEMPLATES = [
+    "paper/{paper}/preprint.tex",
+    "paper/{paper}/references.bib",
+    "paper/{paper}/preprint.bbl",
 ]
 
 
@@ -171,13 +178,23 @@ def make_zip(source_root: Path, zip_path: Path) -> None:
                 archive.write(path, path.relative_to(source_root))
 
 
-def build_zenodo_bundle(version: str, output_dir: Path, commit: str) -> Path:
+def build_zenodo_bundle(version: str, output_dir: Path, commit: str, paper: str) -> Path:
     stage = output_dir / version
     if stage.exists():
         shutil.rmtree(stage)
     stage.mkdir(parents=True)
 
-    for relative in PUBLICATION_FILES:
+    for tpl in PAPER_FILE_TEMPLATES:
+        copy_file(tpl.format(paper=paper), stage)
+    # Place per-paper metadata at the bundle root so Zenodo auto-reads them
+    # (it does not look inside subdirectories for .zenodo.json).
+    for tpl in PAPER_METADATA_TEMPLATES:
+        source = ROOT / tpl.format(paper=paper)
+        if source.is_file():
+            target = stage / source.name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+    for relative in STATIC_PUBLICATION_FILES:
         copy_file(relative, stage)
     for relative in SOURCE_DIRS:
         copy_dir(relative, stage)
@@ -190,14 +207,14 @@ def build_zenodo_bundle(version: str, output_dir: Path, commit: str) -> Path:
     return zip_path
 
 
-def build_arxiv_bundle(version: str, output_dir: Path) -> Path:
+def build_arxiv_bundle(version: str, output_dir: Path, paper: str) -> Path:
     stage = output_dir / f"{version}-arxiv-source"
     if stage.exists():
         shutil.rmtree(stage)
     stage.mkdir(parents=True)
 
-    for relative in ARXIV_FILES:
-        source = require_file(relative)
+    for tpl in ARXIV_FILE_TEMPLATES:
+        source = require_file(tpl.format(paper=paper))
         shutil.copy2(source, stage / source.name)
 
     zip_path = output_dir / f"{version}-arxiv-source.zip"
@@ -208,9 +225,15 @@ def build_arxiv_bundle(version: str, output_dir: Path) -> Path:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--paper",
+        required=True,
+        choices=("conjecture", "methodology"),
+        help="Which paper subdirectory under paper/ to bundle.",
+    )
+    parser.add_argument(
         "--version",
-        default="axiom-explorer-v1-preprint",
-        help="Bundle directory and zip prefix.",
+        default=None,
+        help="Bundle directory and zip prefix (default: axiom-explorer-<paper>-vX).",
     )
     parser.add_argument(
         "--output-dir",
@@ -230,14 +253,17 @@ def main() -> None:
     output_dir = (ROOT / args.output_dir).resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    version = args.version or f"axiom-explorer-{args.paper}-v1"
+
     ensure_clean_worktree(args.allow_dirty)
     commit = run_git("rev-parse", "HEAD")
-    zenodo_zip = build_zenodo_bundle(args.version, output_dir, commit)
-    arxiv_zip = build_arxiv_bundle(args.version, output_dir)
+    zenodo_zip = build_zenodo_bundle(version, output_dir, commit, args.paper)
+    arxiv_zip = build_arxiv_bundle(version, output_dir, args.paper)
 
     print(json.dumps(
         {
-            "version": args.version,
+            "paper": args.paper,
+            "version": version,
             "git_commit": commit,
             "zenodo_bundle": str(zenodo_zip.relative_to(ROOT)),
             "arxiv_source_bundle": str(arxiv_zip.relative_to(ROOT)),

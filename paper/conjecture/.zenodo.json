@@ -30,7 +30,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://gitlab.loneorc.com/research/axiom-explorer",
+      "identifier": "https://github.com/Dredok/axiom-explorer",
       "relation": "isSupplementTo",
       "resource_type": "software"
     },
@@ -70,5 +70,5 @@
       "resource_type": "publication-article"
     }
   ],
-  "notes": "Produced via the axiom-explorer workflow, a systematic LLM-assisted cross-search across modern axiomatic seeds. v1.1, v1.2, and v1.2.1 incorporate corrections from successive AI reviews of earlier drafts; see the Acknowledgments section of the manuscript for the full delta. v1.2.1 in particular replaces the third term of the size invariant kappa with the topological weight of the mapping data of Pt(X) (removing a potential circularity present in v1.2), softens the v1.2 claim that profinite weight equals minimum generation size, corrects the cited Campion-Cousins-Ye example numbers (Example 4.8 for ACF, Example 4.4 for DLO), and updates the P^1_Q paragraph to use Remark 7.14 of arXiv:2510.07443's exact formulation. Code, data, full per-phase reports, and a Lean 4 axiomatic skeleton of the closely related Synthetic Stone Duality axioms (Cherubini-Coquand-Geerligs-Moeneclaey) are versioned at https://gitlab.loneorc.com/research/axiom-explorer with reproducibility instructions in the repository's HANDOFF.md."
+  "notes": "Produced via the axiom-explorer workflow, a systematic LLM-assisted cross-search across modern axiomatic seeds. v1.1, v1.2, and v1.2.1 incorporate corrections from successive AI reviews of earlier drafts; see the Acknowledgments section of the manuscript for the full delta. v1.2.1 in particular replaces the third term of the size invariant kappa with the topological weight of the mapping data of Pt(X) (removing a potential circularity present in v1.2), softens the v1.2 claim that profinite weight equals minimum generation size, corrects the cited Campion-Cousins-Ye example numbers (Example 4.8 for ACF, Example 4.4 for DLO), and updates the P^1_Q paragraph to use Remark 7.14 of arXiv:2510.07443's exact formulation. Code, data, full per-phase reports, and a Lean 4 axiomatic skeleton of the closely related Synthetic Stone Duality axioms (Cherubini-Coquand-Geerligs-Moeneclaey) are versioned at https://github.com/Dredok/axiom-explorer with reproducibility instructions in the repository's HANDOFF.md."
 }

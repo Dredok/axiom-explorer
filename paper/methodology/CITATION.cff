@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the preprint and the archived release."
+title: "axiom-explorer: an LLM-assisted harness for cross-search over modern axiomatic seeds in mathematics, with one case study (condensed classifying anima envelope)"
+version: "v1.0-preprint"
+date-released: "2026-05-14"
+authors:
+  - family-names: "Vera Gómez"
+    given-names: "Francisco Javier"
+    affiliation: "Independent researcher"
+    orcid: "https://orcid.org/0009-0001-3516-5871"
+abstract: >-
+  Methodology preprint describing axiom-explorer, an autonomous LLM-assisted
+  experimental harness for systematic cross-search over modern axiomatic seeds
+  in mathematics. The harness selects a small set of recent, productive axioms
+  from distinct branches, performs bibliometric and formal-state sweeps over
+  their pairwise combinations, builds dossiers, and filters candidates against
+  four explicit relevance tests. The role of the LLM is constrained by four
+  stop rules; a multi-round AI peer-review loop catches errors before any
+  human reviewer is approached. One case study is summarised; the full
+  case-study synthesis is in a companion preprint.
+keywords:
+  - LLM-assisted research
+  - open science
+  - methodology
+  - mathematical discovery
+  - automated conjecture
+  - preprint workflow
+  - Zenodo
+  - axiom-explorer
+  - AI peer review
+  - reproducibility
+license: "CC-BY-4.0"
+repository-code: "https://github.com/Dredok/axiom-explorer"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Vera Gómez"
+      given-names: "Francisco Javier"
+      affiliation: "Independent researcher"
+      orcid: "https://orcid.org/0009-0001-3516-5871"
+  title: "axiom-explorer: an LLM-assisted harness for cross-search over modern axiomatic seeds in mathematics, with one case study (condensed classifying anima envelope)"
+  year: 2026

@@ -46,17 +46,17 @@ data/cache/
 data/*.parquet
 data/*.feather
 
-# Paper build outputs (latexmk + bibtex)
-paper/*.aux
-paper/*.bbl
-paper/*.blg
-paper/*.fdb_latexmk
-paper/*.fls
-paper/*.log
-paper/*.out
-paper/*.pdf
-paper/*.synctex.gz
-paper/*.toc
+# Paper build outputs (latexmk + bibtex), one subdirectory per paper
+paper/*/*.aux
+paper/*/*.bbl
+paper/*/*.blg
+paper/*/*.fdb_latexmk
+paper/*/*.fls
+paper/*/*.log
+paper/*/*.out
+paper/*/*.pdf
+paper/*/*.synctex.gz
+paper/*/*.toc
 
 # Publication bundles
 dist/
