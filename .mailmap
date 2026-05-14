@@ -1,0 +1,8 @@
+# Map all variants of the author to fjvera@gmail.com for canonical GitHub
+# rendering. Per ~/.ai-rules global rules, the historical commit email
+# dredok@loneorc.com was used inside the GitLab infrastructure; for the
+# public GitHub mirror we surface fjvera@gmail.com as the authoritative
+# identity tied to the ORCID 0009-0001-3516-5871.
+Francisco Javier Vera Gómez <fjvera@gmail.com> <dredok@loneorc.com>
+Francisco Javier Vera Gómez <fjvera@gmail.com> Dredok <fjvera@gmail.com>
+Francisco Javier Vera Gómez <fjvera@gmail.com> dredok <dredok@loneorc.com>
