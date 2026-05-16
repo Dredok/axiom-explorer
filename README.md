@@ -1,34 +1,113 @@
 # axiom-explorer
 
-Autonomous experimental harness for deductive exploration over **modern axiomatic
-seeds** in mathematics, with tooling-assisted relevance filtering.
+[![Methodology paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20184068.svg)](https://doi.org/10.5281/zenodo.20184068)
+[![Conjecture paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20184660.svg)](https://doi.org/10.5281/zenodo.20184660)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+An LLM-assisted experimental harness for systematic cross-search over
+modern axiomatic seeds in mathematics, with explicit stop rules,
+confidence-ladder labelling of every output, and a multi-round AI
+peer-review loop before any human reviewer is approached.
+
+This repository accompanies two preprints:
+
+- **Paper A (methodology)** — *axiom-explorer: an LLM-assisted harness
+  for cross-search over modern axiomatic seeds in mathematics, with one
+  case study (condensed classifying anima envelope)*.
+  DOI: [10.5281/zenodo.20184068](https://doi.org/10.5281/zenodo.20184068).
+- **Paper B (case study)** — *A conjectural cardinality envelope for the
+  condensed classifying anima of spectral $\infty$-topoi: a synthesis
+  across geometric and analogical instances*.
+  DOI: [10.5281/zenodo.20184660](https://doi.org/10.5281/zenodo.20184660).
+
+Both are CC-BY-4.0 and open access on Zenodo.
 
 ## What this is
 
-A research lab that takes a small set of *productive and recent* axiomatic
-frameworks from distinct branches of mathematics, systematically explores their
-binary, ternary and quaternary combinations, and uses real tooling
-(arXiv/MathOverflow search, Mathlib4 introspection, Sage/SymPy/NumPy compute,
-ATPs and theorem provers when justified) to surface candidate theorems or
-inter-branch connections that may be **(a) novel, (b) tangent to known open
-problems, or (c) shorter proofs of classical results from a new vantage point**.
+axiom-explorer takes a small set of *productive and recent* axiomatic
+frameworks from distinct branches of mathematics, runs a structured
+bibliometric and formal-state sweep over their pairwise combinations,
+builds dossiers integrating literature, finite-case sanity checks
+(Z3, SymPy) and where applicable Lean 4 axiomatic skeletons, and
+filters surviving candidates against four explicit relevance tests.
 
-Originated from a conversation about whether such a pipeline could systematically
-shorten the distance to new mathematics by seeding the search at the *frontier*
-rather than at classical foundations.
+The role of the large language model is bounded by four hard stop
+rules (see Paper A §3.3) and the human author retains final approval
+on every release, publication, and external communication.
+
+## What this is not
+
+- It is not a proof. The case-study output is a falsifiable
+  conjecture registered for community feedback.
+- It is not a claim that LLM-assisted workflows can replace
+  expert mathematical review.
+- It is not a comparative evaluation across LLMs or prompting
+  strategies. It describes one configuration that ran end-to-end and
+  produced a checkable, citable artefact.
+
+## Repository layout
+
+```
+paper/
+  methodology/   LaTeX source of Paper A (preprint.tex + references.bib)
+  conjecture/    LaTeX source of Paper B (preprint.tex + references.bib)
+docs/
+  00-hypothesis.md         the original hypothesis the experiment tests
+  01-methodology.md        the design of the workflow
+  seeds/A{1..4}.md         per-seed cards for the case-study quadruple
+  synthesis/CONJECTURE.md  the synthesised statement of the candidate
+research/
+  phase0-bibliometric/  arXiv/Scholar density map across the 6 binary combos
+  phase1-formal-state/  Mathlib4 inventory and gaps
+  phase2-binary-combos/ per-pair dossiers (A2xA3 and A1xA2 advanced)
+  phase3-deep-dives/    full dossiers for surviving candidates
+  phase4-final-report/  ranking, evidence, honest false-positives, meta
+  phase5-pi-n-cond/     higher-pi forward question (K3 at n=2)
+src/axiom_explorer/   Python implementation of the harness phases
+data/phase0/raw/      raw arXiv query results (reproducible)
+lean/                 Lean 4 axiomatic skeleton of Synthetic Stone Duality
+tests/                pytest suite for the harness (51 tests)
+notebooks/            exploratory notebooks (Jupyter)
+```
+
+## Running the harness locally
+
+```bash
+uv venv .venv
+source .venv/bin/activate
+uv sync --extra dev
+pytest -q
+axiom-explorer --help
+```
+
+To run a phase end-to-end:
+
+```bash
+python -m axiom_explorer.run_phase phase0
+```
+
+To build either preprint PDF locally (requires a TeX Live install):
+
+```bash
+cd paper/methodology
+latexmk -pdf -interaction=nonstopmode preprint.tex
+```
+
+The Lean 4 skeleton builds with `lake build` from the `lean/`
+directory, using the toolchain pinned in `lean/lean-toolchain`.
 
 ## Hypothesis (short form)
 
-> Iterating deductively from modern productive axioms across multiple branches,
-> with expert-curated relevance filtering on the output, has higher density of
-> potentially-relevant findings per unit of search than iterating from classical
-> axioms — because (i) the frontier is by definition less-explored, and (ii)
-> modern axioms are pre-selected by the community for fertility.
+> Iterating deductively from modern productive axioms across multiple
+> branches, with expert-curated relevance filtering on the output, has
+> higher density of potentially-relevant findings per unit of search
+> than iterating from classical axioms — because (i) the frontier is
+> by definition less-explored, and (ii) modern axioms are pre-selected
+> by the community for fertility.
 
-Full hypothesis and methodology in [docs/00-hypothesis.md](docs/00-hypothesis.md)
-and [docs/01-methodology.md](docs/01-methodology.md).
+Full statement: [`docs/00-hypothesis.md`](docs/00-hypothesis.md).
 
-## Axiomatic seeds (current run)
+## Axiomatic seeds (case study)
 
 | # | Framework                                | Branch                       |
 |---|------------------------------------------|------------------------------|
@@ -37,92 +116,62 @@ and [docs/01-methodology.md](docs/01-methodology.md).
 | A3 | Perfectoid Spaces (Scholze)             | Arithmetic Geometry          |
 | A4 | Synthetic Ricci Curvature (LSV)         | Analysis / Metric Geometry   |
 
-One short markdown per seed in [docs/seeds/](docs/seeds/).
+Detail on each seed in [`docs/seeds/`](docs/seeds/).
 
-## Repository layout
+## Confidence ladder
 
-```
-docs/                      # hypothesis, methodology, seed sheets, ADRs
-research/                  # outputs by phase (markdown reports + data)
-  phase0-bibliometric/     # arXiv/Scholar density map across the 6 binary combos
-  phase1-formal-state/     # Mathlib4 inventory and gaps
-  phase2-binary-combos/    # one subdir per combination (A1xA2, A1xA3, ...)
-  phase3-deep-dives/       # full dossiers for surviving candidates
-  phase4-final-report/     # ranking, evidence, honest false-positives, meta
-src/axiom_explorer/        # Python package: search clients, compute, relevance
-data/                      # raw search outputs (JSON), reproducible
-notebooks/                 # exploratory Jupyter (Sage when needed)
-tests/                     # smoke tests for clients and core logic
-```
+Every claim that survives Phase 4 carries a confidence label:
 
-## Running locally
+- **L0** — verified mechanically.
+- **L1** — strong: a standard, cited result.
+- **L2** — plausible: argued, not directly verified.
+- **L3** — speculative: a guess emerging from the cross-search.
 
-```bash
-uv venv .venv && source .venv/bin/activate
-uv pip install -e ".[all]"
-pytest -q
-axiom-explorer --help
-```
-
-## Running a phase
-
-```bash
-# Local
-python -m axiom_explorer.run_phase phase0
-
-# In CI (manual job, see .gitlab-ci.yml)
-# Trigger pipeline with variable: RESEARCH_PHASE=phase0
-```
-
-## Reports
-
-Every phase produces a `REPORT.md` under `research/<phase>/`. The final
-synthesis lives in `research/phase4-final-report/REPORT.md`.
-
-## Stop rules
-
-The harness stops and reports to the human operator on any of:
-
-1. **Significant finding**: a candidate that passes all four relevance tests.
-2. **Hard technical block**: required tool inaccessible or compute out of scope.
-3. **Negative convergence**: all combinations exhausted with no surviving
-   candidates — also a result.
-4. **Irreversible decision**: any change of scope (replace a seed, add a new
-   branch) requires explicit approval.
+The cardinality envelope candidate sits at **L2** for the upper bound
+and **L3** for the saturation question.
 
 ## Honesty contract
 
-- Every claimed novel candidate carries an **explicit confidence level** and
-  **literature search trace**.
+- Every claimed novel candidate carries an **explicit confidence level**
+  and a literature search trace.
 - False positives are **reported, not silenced**.
-- "Re-discovery from a new route" is treated as a valid result, not a failure.
+- Re-discovery from a new route is treated as a valid result, not a
+  failure.
 
-## Status
+## Stop rules
 
-See [.agent/checkpoint.md](.agent/checkpoint.md) (gitignored, local state).
-Public progress: GitLab issues tagged by phase.
+The harness pauses and reports to the human operator on any of:
 
----
+1. **Significant finding** that passes all four relevance tests.
+2. **Hard technical block** (required tool inaccessible, compute out of
+   scope).
+3. **Negative convergence** — all combinations exhausted with no
+   surviving candidates.
+4. **Irreversible decision** — any change of scope requires explicit
+   approval.
 
-## Current state (autonomous run completed)
+## Citing this work
 
-After a full autonomous Phase 0 -> Phase 5 sweep:
+If you build on the methodology, please cite Paper A:
 
-- **Top candidate**: C-A2A3-2 cardinality envelope `|π_1^{cond}(X_k)| <= 2^|k|`, with
-  three independent corroboration angles (geometric, model-theoretic, set-theoretic).
-  L2-strong; falsifiable; structural argument written. See
-  [research/phase4-final-report/REPORT.md](research/phase4-final-report/REPORT.md).
-- **L0 verified deliverable**: Lean 4 axiomatic skeleton of Synthetic Stone Duality
-  in `lean/AxiomExplorer/SyntheticStoneDuality.lean`. Builds clean.
-- **Negative control**: A3 x A4 (Perfectoid x Synthetic Ricci) confirmed as
-  bibliometrically and structurally sparse.
-- **Methodology delta**: Q5 author-topic search added to the bibliometric harness
-  (Phase 0 v4); now catches Cherubini-Coquand and Mann/Haine/Scholze cross-area
-  work autonomously.
-- **Forward question (Phase 5)**: does the envelope extend to higher π_n^{cond},
-  n >= 2? Most informative test case identified: K3 surface at n=2.
+> Vera Gómez, Francisco Javier. *axiom-explorer: an LLM-assisted harness
+> for cross-search over modern axiomatic seeds in mathematics, with one
+> case study (condensed classifying anima envelope)*. Zenodo, 2026.
+> [doi.org/10.5281/zenodo.20184068](https://doi.org/10.5281/zenodo.20184068)
 
-Hypothesis qualitatively corroborated: cross-search across modern axiomatic
-seeds did surface fresh cross-branch unification (announced in 2024-2026 papers).
-The strongest output is a conjecture, not a theorem.
+If you engage with the conjecture, please cite Paper B:
 
+> Vera Gómez, Francisco Javier. *A conjectural cardinality envelope for
+> the condensed classifying anima of spectral $\infty$-topoi: a
+> synthesis across geometric and analogical instances*. Zenodo, 2026.
+> [doi.org/10.5281/zenodo.20184660](https://doi.org/10.5281/zenodo.20184660)
+
+## License
+
+All content in this repository is released under the
+[Creative Commons Attribution 4.0 International License](LICENSE).
+
+## Author
+
+Francisco Javier Vera Gómez ·
+[ORCID 0009-0001-3516-5871](https://orcid.org/0009-0001-3516-5871)

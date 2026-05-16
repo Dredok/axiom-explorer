@@ -118,8 +118,8 @@ not a discovery of new mathematical content.
 
 ## Reproducibility
 
-All artefacts of the run are versioned in `research/axiom-explorer` on
-`gitlab.loneorc.com`. Reports per phase under `research/phaseN-*/`,
+All artefacts of the run are versioned in the public repository at
+`github.com/Dredok/axiom-explorer`. Reports per phase under `research/phaseN-*/`,
 code under `src/axiom_explorer/`, Lean skeleton under `lean/`. The
 PDFs of the cited papers are downloaded by `curl` calls listed in
 the methodology and stored under `artifacts/papers/` (gitignored,
